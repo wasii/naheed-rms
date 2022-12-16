@@ -27,84 +27,122 @@ class _HomePageState extends State<HomePage> {
             width: width,
             height: height,
             child: Image.asset(
-              'assets/backgrounds/login.png',
-              fit: BoxFit.cover,
+              'assets/backgrounds/scan.png',
+              fit: BoxFit.fill,
             ),
           ),
           Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(35.0),
-                  child: Image.asset('assets/logos/rms_logo.png'),
-                ),
-                Container(
-                  width: 200,
-                  height: 60,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      scanQRCode();
-                    },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+            child: Container(
+              width: width * 0.9,
+              height: height * 0.55,
+              // color: Colors.black26,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Image.asset(
+                    'assets/logos/rms_logo.png',
+                    height: 150,
+                    width: 350,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(20),
+                    child: Column(
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.only(right:8.0),
-                          child: Text(
-                            'icon',
-                            style: GoogleFonts.montserrat(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 10,
+                        ElevatedButton(
+                          onPressed: () {},
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                'assets/icons/loadsheet-icon.png',
+                                height: 30,
+                                width: 30,
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                'Open Load Sheet',
+                                style: GoogleFonts.montserrat(
+                                    fontSize: 25, fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: kPrimaryColor,
+                            minimumSize: Size(0, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15),
                             ),
                           ),
                         ),
-                        Text(
-                          'Login',
-                          style: GoogleFonts.montserrat(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
+                        SizedBox(
+                          height: 20,
+                        ),
+                        ElevatedButton(
+                          onPressed: () {},
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                'assets/icons/search-icon.png',
+                                height: 30,
+                                width: 30,
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                'Search Trip',
+                                style: GoogleFonts.montserrat(
+                                    fontSize: 25, fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: kPrimaryColor,
+                            minimumSize: Size(0, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ),
                           ),
                         ),
                       ],
                     ),
-                    style: ButtonStyle(backgroundColor:
-                        MaterialStateProperty.resolveWith((states) {
-                      return kPrimaryColor;
-                    })),
-                  ),
+                  )
+                ],
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              height: 70,
+              decoration: BoxDecoration(
+                shape: BoxShape.rectangle,
+                color: kPrimaryColor,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(45.0),
+                  topRight: Radius.circular(45.0),
                 ),
-              ],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    icon: Image.asset('assets/icons/logout-icon.png'),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
       ),
     );
-  }
-
-  void scanQRCode() async {
-    try {
-      final qrCode = await FlutterBarcodeScanner.scanBarcode(
-          kPrimaryColorString, 'Cancel', false, ScanMode.QR);
-
-      if (!mounted) return;
-      setState(() {
-        if (qrCode != "-1") {
-          postData();
-        }
-      });
-      print('QRCode Result');
-      print(qrCode);
-    } on PlatformException {
-      getResult = 'Failed to scan QR Code';
-    }
-  }
-
-  postData() async {
-    var apiResponse = await http.post(
-      Uri.parse(
-          "https://insightopsmagento4.naheed.pk/index.php/rest/V1/naheed-rms/login?rider_qr=94/42301-5102628-1"),
-    );
-    print(apiResponse.body);
   }
 }
