@@ -6,12 +6,14 @@ class RemoteServices {
   Future<List<LoginModel>?> getUser(String qrCode) async {
     var client = http.Client();
 
-    var uri = Uri.parse(LoginURL+qrCode);
+    var uri = Uri.parse("$VerifyOTP$qrCode");
+    print(uri);
     var response = await client.post(uri);
 
     if (response.statusCode == 200) {
       var json = response.body;
       return loginModelFromJson(json);
     }
+    return null;
   }
 }

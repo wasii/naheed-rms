@@ -9,6 +9,7 @@ import 'package:http/http.dart' as http;
 import 'package:naheed_rider/models/login_model.dart';
 import 'package:naheed_rider/pages/home_page.dart';
 import 'package:naheed_rider/services/remote_services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -27,6 +28,7 @@ class _LoginPageState extends State<LoginPage> {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
+      extendBodyBehindAppBar: true,
       body: Stack(
         children: [
           Container(
@@ -75,9 +77,12 @@ class _LoginPageState extends State<LoginPage> {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  scanQRCode();
+                  // scanQRCode();
+                  getUserDetails('94/42301-5102628-1');
                 },
-                child: Row(
+                child: isLoaded ? CircularProgressIndicator(
+                  color: kPrimaryColor,
+                ) : Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
@@ -135,24 +140,133 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   getUserDetails(String qrCode) async {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return Center(
-          child: CircularProgressIndicator(),
-        );
-      },
-    );
-    user = await RemoteServices().getUser(qrCode);
+    setState(() {
+      isLoaded = true;
+    });
+    String qr = '285045';
+    user = await RemoteServices().getUser(qr);
     if (user != null) {
-      print(user?[0].token);
-      return Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => HomePage(),
+      final String message = user?[0].message ?? '';
+      if (message == '') {
+        final SharedPreferences pref = await SharedPreferences.getInstance();
+        pref.setString('token', user?[0].token ?? '');
+        pref.setString('id', user?[0].data.id ?? '');
+        pref.setString('name', user?[0].data.name ?? '');
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            duration: Duration(seconds: 2),
+            content: CustomSnackbar(
+              title: "Hurray!",
+              message: 'Rider Found!',
+              color: kSecondaryColor,
+            ),
+            behavior: SnackBarBehavior.floating,
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+          ),
+        );
+        Future.delayed(Duration(seconds: 3), () {
+          setState(() {
+            isLoaded = false;
+          });
+          return Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => HomePage(),
+            ),
+          );
+        });
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          duration: Duration(seconds: 2),
+          content: CustomSnackbar(title: "Oh Snap!", message: message, color: kErrorBackColor,),
+          behavior: SnackBarBehavior.floating,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
         ),
       );
+      setState(() {
+          isLoaded = false;
+        });
+      }
+    } else {
+      
     }
-    return Navigator.of(context).pop();
+  }
+}
+
+class CustomSnackbar extends StatelessWidget {
+  const CustomSnackbar({
+    Key? key,
+    required this.title,
+    required this.message, 
+    required this.color
+  }) : super(key: key,);
+
+  final String title;
+  final String message;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Container(
+          padding: EdgeInsets.all(16),
+          height: 90,
+          decoration: BoxDecoration(
+            color: color,
+            borderRadius: BorderRadius.all(Radius.circular(20),), 
+          ),
+          child: Row(
+            children: [
+              SizedBox(
+                width: 48,
+              ),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: GoogleFonts.montserrat(
+                        color: Colors.white,
+                        fontSize: 20,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      message, 
+                      style: GoogleFonts.montserrat(
+                        color: Colors.white,
+                        fontSize: 12,
+                      ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+
+
+class CustomSnackBar extends StatelessWidget {
+  const CustomSnackBar({super.key, required this.text});
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }

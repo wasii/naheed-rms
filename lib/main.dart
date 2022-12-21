@@ -2,15 +2,29 @@
 
 import 'package:flutter/material.dart';
 import 'package:naheed_rider/pages/authentication/login_screen.dart';
+import 'package:naheed_rider/pages/home_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  
+  bool hasData = false;
+
+  @override
+  void initState() {
+    super.initState();
+    getToken();
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,9 +32,19 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const LoginPage(),
+      home: hasData ? HomePage() : LoginPage(),
     );
   }
-}
 
+  Future<void> getToken() async {
+    final SharedPreferences pref = await SharedPreferences.getInstance();
+    final token = pref.getString('token');
+    print("token: $token");
+    if (token != null) {
+      setState(() {
+        hasData = true;
+      });
+    }
+  }
+}
 
