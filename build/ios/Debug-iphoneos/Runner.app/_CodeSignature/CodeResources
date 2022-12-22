@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		fzW0Upv6vAlhJ4wipBgRQHXyN/o=
+		X2mGBxzLAqUUFx6hpugzCPUdL2I=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,11 +54,11 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		77h0QISiyLXCoD95AceQSrfhDXU=
+		lcu1/uSHeJCJrE2kXc76qvJTvng=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		ggg85u+p8G2YWMH+Wf4wxQBl/tU=
+		G2jOc4nPy28AZyShUenCJAvhQnM=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		3JnIcJvrDd0ijjSfeXlKXjblCyc=
+		LUNbx7gCUl9/8ttQPJGhF1vAEVg=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/backgrounds/login.png</key>
 		<data>
@@ -110,7 +110,31 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		1if5Sk6xFGsWhGJYPrv4NUHrBoc=
+		v5g2vpb3aR74RHrteziItlcE9+o=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/packages/awesome_snackbar_content/assets/back.svg</key>
+		<data>
+		cf3A4jCcH87WAq3IYC3OiTiVyjk=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/packages/awesome_snackbar_content/assets/bubbles.svg</key>
+		<data>
+		1mgaDyOjwkZ128ciR4y81QOQCW4=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/packages/awesome_snackbar_content/assets/types/failure.svg</key>
+		<data>
+		+Tq36y0OtUJ9eX/m87/IOtX4x3k=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/packages/awesome_snackbar_content/assets/types/help.svg</key>
+		<data>
+		4yCQe856xThTuX0u/bWJNlUPp2o=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/packages/awesome_snackbar_content/assets/types/success.svg</key>
+		<data>
+		h8YffpDX+QU136sQ6zMiQnLiI6Q=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/packages/awesome_snackbar_content/assets/types/warning.svg</key>
+		<data>
+		zRMU+a05WWkTIOsVTWda61OsDZY=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -218,7 +242,7 @@
 		</data>
 		<key>Frameworks/flutter_barcode_scanner.framework/flutter_barcode_scanner</key>
 		<data>
-		egXVB1Q9/gEUN7eaC9Ha5aSsSj4=
+		us6FRI4fzp0Rk9NdqsL9zyzqm/I=
 		</data>
 		<key>Frameworks/flutter_barcode_scanner.framework/ic_flash_off.png</key>
 		<data>
@@ -242,11 +266,23 @@
 		</data>
 		<key>Frameworks/path_provider_ios.framework/path_provider_ios</key>
 		<data>
-		6YZeS713VejZWyHkGLxNNruuDdc=
+		V77bbsKX6eWjGDtGHvBNQj3gqa0=
+		</data>
+		<key>Frameworks/shared_preferences_ios.framework/Info.plist</key>
+		<data>
+		dONseVvFwJPzLWXuXBWDnAJOJKA=
+		</data>
+		<key>Frameworks/shared_preferences_ios.framework/_CodeSignature/CodeResources</key>
+		<data>
+		Ld59ZYr6HayoZyrVRV396/HZCPc=
+		</data>
+		<key>Frameworks/shared_preferences_ios.framework/shared_preferences_ios</key>
+		<data>
+		QzYpBX8TLbDODZVJ7ufFAF+reNo=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		SALEViD4O0vOSYw2FgWCQNr+jtc=
+		bigrsOldlRdbjnxHkQVQYAITl+c=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -254,7 +290,7 @@
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
-		g49xydq/DjzzDHtFch8J0Nqtk+c=
+		jwgvjIk+PgTBl7kgyJb1SMX1bks=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -333,7 +369,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NFzWw3YXf3Gr49pxntgLbVrVmwZxkfR7hZFWIOAn+Lg=
+			xhBo6rDwGHQRdTlIvhW147NPET7pIA9HSEy8yJ3yMoU=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -347,14 +383,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			KDugn3XXkibTS4bR+c8BQUW8XeMr7ndcsvFPQY23z18=
+			stnMC4RHFC41Bpiz11dBaueCOT0p2X3gVDbL1AGC9yo=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RNP40AZpdGJqSqKwj0Rknj5Ke4cWDxBpPTYRi+jGgHw=
+			yXgmaYBMhQ4e9Y+SrTjGJf+fkEpainTrduUJDiN9d5w=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -368,7 +404,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FIJ/sqQgxJhTFrVtB7jvtXuSO+7MOxUaQ1WddRrI1X8=
+			lc2ycAXhH14FdX++kLjnuGkmWWdBQu+BhMKsJmnmm6A=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/backgrounds/login.png</key>
@@ -445,7 +481,49 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			QPC7jVYIgH/5wAU5brNGskVfriEpyCaHdHvsjGKFfU8=
+			vGtOecdh1C+pQXs6ibIYyZ8WTjsDFzi51KPZ9Re4UYU=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/packages/awesome_snackbar_content/assets/back.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZAyljc3XBwjD6UKILfFujEG3Djkqi7zaMs9BRodoR4g=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/packages/awesome_snackbar_content/assets/bubbles.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			F86fxY2MecC8u2iGrzPYo1BYHsAS243NF0cQYNwP9+w=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/packages/awesome_snackbar_content/assets/types/failure.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Xq+VE5Y9oNj38961wcRolNmO6u7ctUYX1FdSZG6r3bY=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/packages/awesome_snackbar_content/assets/types/help.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			lnT9h9PD7BIdty5XiVKvfz3sdTaf0HAORQbzYPLupZ4=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/packages/awesome_snackbar_content/assets/types/success.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			084CKiQF7JCsxEBH5ZhQoT1BD3Y5MjHnUe87KMcJlcQ=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/packages/awesome_snackbar_content/assets/types/warning.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			sx91rskNI+UjdNXTS3mvC1Nn2cLvBAI3nmyH65dvUcY=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -634,7 +712,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xaOlJdThn9c4I4qlyUjCRgmwC42dm8fO54Q4LvH4VkA=
+			NjX3UKxeV/mOztwiN9uQnrTwSO3CNkD2F6aBP0vD3cg=
 			</data>
 		</dict>
 		<key>Frameworks/flutter_barcode_scanner.framework/ic_flash_off.png</key>
@@ -676,14 +754,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			87nvXf9WtiyigjThspfAIdjt3MJd/q6Pg+DtdZGT0DY=
+			S4yQu1R3LzWgU9g+GY+P0fPjOfe/G7L6OVJoT2THG/4=
+			</data>
+		</dict>
+		<key>Frameworks/shared_preferences_ios.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			K/mpUifNz11zxIDD2ezjhpiQhyuANuzcJ/7Nes3E8YM=
+			</data>
+		</dict>
+		<key>Frameworks/shared_preferences_ios.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Wr4AbQy+HfTdnNC9YMW8NIkVfLXr/iCZPU79Lh7tUOk=
+			</data>
+		</dict>
+		<key>Frameworks/shared_preferences_ios.framework/shared_preferences_ios</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+7LFAmkQnlE4QVl5mIbBwgRFjdk5L5XWzM8ZaGHZp/Q=
 			</data>
 		</dict>
 		<key>embedded.mobileprovision</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2JTzr7sml+K+CaXeYBXqHMzsH1mkyD/AxNrU6wPicNU=
+			TuQAGrVtb7YInNg6H3WWSbnbWZdtvfOImrOFGhBLL48=
 			</data>
 		</dict>
 	</dict>

@@ -18,7 +18,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		nSIecGcIjlcng1rZNMqIfYLllpQ=
+		14AjlTy4ru36cU8aGxNajBUoPew=
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		Nu4s2IyaVZ0YfNzMFpDTQdOhllw=
+		kLqjjzpMIvMuPx5/KProVTYmcfY=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,11 +54,11 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		xZWGyrtmFxSqSBUuOeMOWxb5zM4=
+		fWGl6XEGOVPdBloOfFiHXfypT7w=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		G2jOc4nPy28AZyShUenCJAvhQnM=
+		0ywwm84JyyqG6pR9jsU/UCMdnfA=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -96,6 +96,10 @@
 		<data>
 		PlG+MMN9aj5MUyTMpjVhTNv9T70=
 		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/trip-icon.png</key>
+		<data>
+		gsDQvFegpN0omIxFwZUk/9lDwOc=
+		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/logos/rms_logo.png</key>
 		<data>
 		6RGiyh5pYFKSDLpfHpuBgXjYRCw=
@@ -110,7 +114,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		PjFfmAgGox2tyIuKf0z8N9EbVWc=
+		rBnCDhmdCbMqDW6C0RBVhH0fNS0=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/awesome_snackbar_content/assets/back.svg</key>
 		<data>
@@ -316,7 +320,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tHuycqPwiQmwnuesdu7D9MkqTQJj42UHYeyPqmp6JZY=
+			uiXz6LBu/aiffOzFbIz1sg9IOR9xoCNQOjeyrZZXscY=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
@@ -365,7 +369,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JhWL1zu6yNxR3DqfDrbcNtVDEPP0qdToKjNeiPNtdjY=
+			yyD7jRRI9FMxt9ahcq3xaO+n0BUKF4wIFRqAZZcJHl4=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -379,14 +383,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1QEiamVYsVznRWIiXpAB4Vdflbz4wOmH0vUaXksJis8=
+			7RXzEVq9PB6iBVq7FcpXOTPSgBHAwoW4biVWxE5vXgU=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yXgmaYBMhQ4e9Y+SrTjGJf+fkEpainTrduUJDiN9d5w=
+			h3TgHw4XPt1pJuHvINFPzOg3lHlqODiopTFPUkd4gzY=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -452,6 +456,13 @@
 			MPz3G0TBtODZ1N22he62JCJKW0T0aam6DdphZG5CH3k=
 			</data>
 		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/trip-icon.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			50j8e42LGw0sOVo1kMKzmfBn9T4pBsljftgJ1dS9l6Q=
+			</data>
+		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/logos/rms_logo.png</key>
 		<dict>
 			<key>hash2</key>
@@ -477,7 +488,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tkovOSc9ry9KzSnYO2/KxvDMZ4uDGS9oP8wENWBDo3k=
+			1zvAnulIvMH3u44vt+W/g5reBiP+/Dbt3ebJtU2cSqc=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/awesome_snackbar_content/assets/back.svg</key>

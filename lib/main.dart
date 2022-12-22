@@ -2,7 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:naheed_rider/pages/authentication/login_screen.dart';
-import 'package:naheed_rider/pages/home_page.dart';
+import 'package:naheed_rider/pages/loadsheet/load_sheet.dart';
+import 'package:naheed_rider/pages/main/home_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
@@ -32,7 +33,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: hasData ? HomePage() : LoginPage(),
+      home: LoadSheet()// hasData ? HomePage() : LoginPage(),
     );
   }
 

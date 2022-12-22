@@ -4,10 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:naheed_rider/constants.dart';
+import 'package:naheed_rider/components/constants.dart';
 import 'package:http/http.dart' as http;
 import 'package:naheed_rider/models/login_model.dart';
-import 'package:naheed_rider/pages/home_page.dart';
+import 'package:naheed_rider/pages/authentication/otp/otp_screen.dart';
+import 'package:naheed_rider/pages/main/home_page.dart';
 import 'package:naheed_rider/services/remote_services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -19,7 +20,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  List<LoginModel>? user;
+  List<VerifyUser>? user;
   var isLoaded = false;
   var getResult = 'QR Code Result';
 
@@ -29,6 +30,10 @@ class _LoginPageState extends State<LoginPage> {
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
       extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
       body: Stack(
         children: [
           Container(
@@ -65,11 +70,11 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
           Positioned(
-            left: 120,
-            right: 120,
+            left: 110,
+            right: 110,
             top: height * 0.70,
             child: Container(
-              height: 60,
+              height: 50,
               decoration: BoxDecoration(
                 boxShadow: [
                   kDefaultShadow,
@@ -143,15 +148,10 @@ class _LoginPageState extends State<LoginPage> {
     setState(() {
       isLoaded = true;
     });
-    String qr = '285045';
-    user = await RemoteServices().getUser(qr);
+    user = await RemoteServices().getUser(qrCode);
     if (user != null) {
       final String message = user?[0].message ?? '';
-      if (message == '') {
-        final SharedPreferences pref = await SharedPreferences.getInstance();
-        pref.setString('token', user?[0].token ?? '');
-        pref.setString('id', user?[0].data.id ?? '');
-        pref.setString('name', user?[0].data.name ?? '');
+      if (message == 'OTP sent') {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             duration: Duration(seconds: 2),
@@ -172,7 +172,7 @@ class _LoginPageState extends State<LoginPage> {
           return Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => HomePage(),
+              builder: (context) => OTPScreen(),
             ),
           );
         });
