@@ -33,7 +33,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: LoadSheet()// hasData ? HomePage() : LoginPage(),
+      home: hasData ? HomePage() : LoginPage(),
     );
   }
 

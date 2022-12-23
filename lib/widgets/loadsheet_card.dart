@@ -18,9 +18,9 @@ class _LoadsheetCardState extends State<LoadsheetCard> {
       padding: EdgeInsets.symmetric(vertical: 5, horizontal: 0),
       child: Card(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(15),
         ),
-        // elevation: 5,
+        elevation: 5,
         shadowColor: kPrimaryColor,
         child: Padding(
           padding: EdgeInsets.all(10),
@@ -29,10 +29,11 @@ class _LoadsheetCardState extends State<LoadsheetCard> {
               //Header
               LoadsheetCardHeader(),
 
-              SizedBox(height: 20),
+              SizedBox(height: 10),
 
               //Order Details
               Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Expanded(
                     flex: 7,
@@ -49,9 +50,100 @@ class _LoadsheetCardState extends State<LoadsheetCard> {
                       ],
                     ),
                   ),
+                  SizedBox(width: 5,),
                   Expanded(
-                    flex: 3,
-                    child: Text('as'),
+                    flex: 4,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Payment Mode',
+                          style: GoogleFonts.montserrat(
+                            color: Colors.red,
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 2,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Cash',
+                              style: GoogleFonts.montserrat(
+                                color: kPrimaryColor,
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              'change',
+                              style: GoogleFonts.montserrat(
+                                color: Colors.grey[500],
+                                fontSize: 11,
+                                fontWeight: FontWeight.normal,
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 2,
+                        ),
+                        Container(
+                          height: 1,
+                          color: Colors.grey[500],
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          'Amount Due',
+                          style: GoogleFonts.montserrat(
+                            color: Colors.red,
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 2,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              '5000',
+                              style: GoogleFonts.montserrat(
+                                color: kPrimaryColor,
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Text('Cancelled'),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Text('Undelivered'),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Text('Delivered'),
                   ),
                 ],
               )
@@ -93,7 +185,7 @@ class OrderLeftDetails extends StatelessWidget {
             child: Text(
               value,
               style: GoogleFonts.montserrat(
-                color: Colors.grey[500],
+                color: Colors.black87,
                 fontSize: 13,
                 fontWeight: FontWeight.w600
               ),

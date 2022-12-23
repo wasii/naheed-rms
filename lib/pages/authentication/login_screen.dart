@@ -83,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
               child: ElevatedButton(
                 onPressed: () {
                   // scanQRCode();
-                  getUserDetails('94/42301-5102628-1');
+                  verifyRider('94/42301-5102628-1');
                 },
                 child: isLoaded ? CircularProgressIndicator(
                   color: kPrimaryColor,
@@ -134,7 +134,7 @@ class _LoginPageState extends State<LoginPage> {
       if (!mounted) return;
       setState(() {
         if (qrCode != "-1") {
-          getUserDetails(qrCode);
+          verifyRider(qrCode);
         }
       });
       print('QRCode Result');
@@ -144,14 +144,17 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
-  getUserDetails(String qrCode) async {
+  verifyRider(String qrCode) async {
     setState(() {
       isLoaded = true;
     });
-    user = await RemoteServices().getUser(qrCode);
+    user = await RemoteServices().verifyUser(qrCode);
     if (user != null) {
       final String message = user?[0].message ?? '';
       if (message == 'OTP sent') {
+        setState(() {
+          isLoaded = false;
+        });
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             duration: Duration(seconds: 2),
@@ -166,9 +169,6 @@ class _LoginPageState extends State<LoginPage> {
           ),
         );
         Future.delayed(Duration(seconds: 3), () {
-          setState(() {
-            isLoaded = false;
-          });
           return Navigator.push(
             context,
             MaterialPageRoute(

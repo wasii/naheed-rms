@@ -32,9 +32,19 @@ class LoadSheet extends StatelessWidget {
               padding: EdgeInsets.symmetric(vertical: 0, horizontal: 20),
               child: Column(
                 children: [
-                  MyTripHeader(),
-                  LoadsheetCard(),
-                  
+                  Padding(
+                    padding: const EdgeInsets.only(left:20.0, right: 20.0),
+                    child: MyTripHeader(),
+                  ),
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: 5,
+                      itemBuilder: ((context, index) { 
+                        return LoadsheetCard();
+                        }
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),
