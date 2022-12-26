@@ -5,12 +5,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:naheed_rider/components/constants.dart';
-import 'package:http/http.dart' as http;
-import 'package:naheed_rider/models/login_model.dart';
 import 'package:naheed_rider/pages/authentication/otp/otp_screen.dart';
-import 'package:naheed_rider/pages/main/home_page.dart';
 import 'package:naheed_rider/services/remote_services.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../models/verify_user.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -183,7 +181,7 @@ class _LoginPageState extends State<LoginPage> {
           content: CustomSnackbar(title: "Oh Snap!", message: message, color: kErrorBackColor,),
           behavior: SnackBarBehavior.floating,
           backgroundColor: Colors.transparent,
-          elevation: 0,
+          elevation: 1,
         ),
       );
       setState(() {

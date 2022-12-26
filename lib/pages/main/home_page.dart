@@ -58,7 +58,9 @@ class _HomePageState extends State<HomePage> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => LoadSheet(),
+                                builder: (context) {
+                                  return LoadSheet();
+                                },
                               ),
                             );
                           },
@@ -148,6 +150,7 @@ class _HomePageState extends State<HomePage> {
                   IconButton(
                     onPressed: () {
                       Navigator.of(context).pop();
+                      // Restart.restartApp();
                     },
                     icon: Image.asset('assets/icons/logout-icon.png'),
                   ),

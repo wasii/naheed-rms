@@ -44,5 +44,5 @@ const poweredString = 'Powered by NaheedPk';
 //URLs
 const BaseURL = "https://insightopsmagento4.naheed.pk/";
 const LoginURL = BaseURL + "index.php/rest/V1/naheed-rms/login?rider_qr=";
-const VerifyOTP = BaseURL +
-    "index.php/rest/V1/naheed-rms/otpverify?rider_qr=";
+const VerifyOTP = BaseURL + "index.php/rest/V1/naheed-rms/otpverify?rider_qr=";
+const GetLoadSheet = BaseURL + "index.php/rest/V1/naheed-rms/loadsheet?rider_id=";

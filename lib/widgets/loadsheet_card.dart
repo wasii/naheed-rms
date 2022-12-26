@@ -3,9 +3,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:naheed_rider/components/constants.dart';
+import 'package:naheed_rider/models/load_sheet_model.dart';
 
 class LoadsheetCard extends StatefulWidget {
-  const LoadsheetCard({super.key});
+  final RiderLoadSheetData rLoadSheet;
+  const LoadsheetCard({super.key, required this.rLoadSheet});
 
   @override
   State<LoadsheetCard> createState() => _LoadsheetCardState();
@@ -23,134 +25,162 @@ class _LoadsheetCardState extends State<LoadsheetCard> {
         elevation: 5,
         shadowColor: kPrimaryColor,
         child: Padding(
-          padding: EdgeInsets.all(10),
+          padding: EdgeInsets.fromLTRB(10, 15, 10, 10),
           child: Column(
             children: [
               //Header
               LoadsheetCardHeader(),
-
               SizedBox(height: 10),
 
               //Order Details
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    flex: 7,
-                    child: Column(
-                      children: [
-                        OrderLeftDetails(title: 'Area', value: 'Gulshan e Iqbal',),
-                        SizedBox(height: 10,),
-                        OrderLeftDetails(title: 'Address', value: 'H.No 1726/324 Block G',),
-                        SizedBox(height: 10,),
-                        OrderLeftDetails(title: 'City', value: 'Lahore',),
-                        SizedBox(height: 10,),
-                        OrderLeftDetails(title: 'Phone', value: '92 333 1234567',),
-                        SizedBox(height: 10,),
-                      ],
-                    ),
-                  ),
-                  SizedBox(width: 5,),
-                  Expanded(
-                    flex: 4,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Payment Mode',
-                          style: GoogleFonts.montserrat(
-                            color: Colors.red,
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        SizedBox(
-                          height: 2,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Cash',
-                              style: GoogleFonts.montserrat(
-                                color: kPrimaryColor,
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              'change',
-                              style: GoogleFonts.montserrat(
-                                color: Colors.grey[500],
-                                fontSize: 11,
-                                fontWeight: FontWeight.normal,
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 2,
-                        ),
-                        Container(
-                          height: 1,
-                          color: Colors.grey[500],
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          'Amount Due',
-                          style: GoogleFonts.montserrat(
-                            color: Colors.red,
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        SizedBox(
-                          height: 2,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              '5000',
-                              style: GoogleFonts.montserrat(
-                                color: kPrimaryColor,
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+              OrderDetails(rLoadSheet: widget.rLoadSheet,),
               SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: Text('Cancelled'),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: Text('Undelivered'),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: Text('Delivered'),
-                  ),
-                ],
-              )
+
+              //Buttons
+              OrderButtons(),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class OrderButtons extends StatelessWidget {
+  const OrderButtons({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        ElevatedButton(
+          onPressed: () {},
+          child: Text('Cancelled'),
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          child: Text('Undelivered'),
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          child: Text('Delivered'),
+        ),
+      ],
+    );
+  }
+}
+
+class OrderDetails extends StatelessWidget {
+  final RiderLoadSheetData rLoadSheet;
+  const OrderDetails({super.key, required this.rLoadSheet});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Expanded(
+          flex: 7,
+          child: Column(
+            children: [
+              OrderLeftDetails(title: 'Phone', value: rLoadSheet.shippingPhone,),
+              OrderLeftDetails(title: 'Area', value: rLoadSheet.deliveryArea,),
+              OrderLeftDetails(title: 'Address', value: rLoadSheet.shippingAddress,),
+            ],
+          ),
+        ),
+        SizedBox(width: 5,),
+        Expanded(
+          flex: 4,
+          child: OrderRightDetails(),
+        ),
+      ],
+    );
+  }
+}
+
+class OrderRightDetails extends StatelessWidget {
+  const OrderRightDetails({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Payment Mode',
+          style: GoogleFonts.montserrat(
+            color: Colors.red,
+            fontSize: 14,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        SizedBox(
+          height: 2,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              'Cash',
+              style: GoogleFonts.montserrat(
+                color: kPrimaryColor,
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              'change',
+              style: GoogleFonts.montserrat(
+                color: Colors.grey[500],
+                fontSize: 11,
+                fontWeight: FontWeight.normal,
+              ),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 2,
+        ),
+        Container(
+          height: 1,
+          color: Colors.grey[500],
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        Text(
+          'Amount Due',
+          style: GoogleFonts.montserrat(
+            color: Colors.red,
+            fontSize: 14,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        SizedBox(
+          height: 2,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              '5000',
+              style: GoogleFonts.montserrat(
+                color: kPrimaryColor,
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            )
+          ],
+        ),
+      ],
     );
   }
 }
@@ -165,34 +195,40 @@ class OrderLeftDetails extends StatelessWidget {
   final String value;
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
       children: [
-        Expanded(
-          flex: 2,
-          child: Text(
-            title,
-            style: GoogleFonts.montserrat(
-              color: Colors.grey[500],
-              fontSize: 13,
-              fontWeight: FontWeight.w500
-            ),
-          ),
-        ),
-        Expanded(
-          flex: 5,
-          child: Padding(
-            padding: const EdgeInsets.only(left:5.0, right: 5.0),
-            child: Text(
-              value,
-              style: GoogleFonts.montserrat(
-                color: Colors.black87,
-                fontSize: 13,
-                fontWeight: FontWeight.w600
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              flex: 2,
+              child: Text(
+                title,
+                style: GoogleFonts.montserrat(
+                  color: Colors.grey[500],
+                  fontSize: 13,
+                  fontWeight: FontWeight.w500
+                ),
               ),
-              maxLines: 2,
             ),
-          ),
+            Expanded(
+              flex: 5,
+              child: Padding(
+                padding: const EdgeInsets.only(left:5.0, right: 5.0),
+                child: Text(
+                  value,
+                  style: GoogleFonts.montserrat(
+                    color: Colors.black87,
+                    fontSize: 13,
+                    fontWeight: FontWeight.w600
+                  ),
+                  maxLines: 3,
+                ),
+              ),
+            ),
+          ],
         ),
+        SizedBox(height: 10,),
       ],
     );
   }

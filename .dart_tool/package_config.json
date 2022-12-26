@@ -242,6 +242,12 @@
       "languageVersion": "2.14"
     },
     {
+      "name": "restart_app",
+      "rootUri": "file:///Users/naheedpk/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/restart_app-1.1.1+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "shared_preferences",
       "rootUri": "file:///Users/naheedpk/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-2.0.15",
       "packageUri": "lib/",
@@ -368,7 +374,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2022-12-21T13:12:19.623761Z",
+  "generated": "2022-12-26T07:25:32.579147Z",
   "generator": "pub",
   "generatorVersion": "2.18.4"
 }
