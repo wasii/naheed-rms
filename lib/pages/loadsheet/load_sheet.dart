@@ -58,27 +58,30 @@ class _LoadSheetState extends State<LoadSheet> {
               fit: BoxFit.fill,
             ),
           ),
-
           isLoaded ? 
-          SafeArea(
-            child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 0, horizontal: 20),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left:20.0, right: 20.0),
-                    child: MyTripHeader(),
-                  ),
-                  Expanded(
-                    child: ListView.builder(
-                      itemCount: (loadSheet.isNotEmpty) ? listCount : 0,
-                      itemBuilder: ((context, index) { 
-                        return LoadsheetCard(rLoadSheet: loadSheet[0].data[index],);
-                        }
-                      ),
+          SizedBox(
+            height: SizeConfig.screenHeight * 0.94,
+            child: SafeArea(
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: 0, horizontal: 20),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left:20.0, right: 20.0),
+                      child: MyTripHeader(),
                     ),
-                  ) 
-                ],
+                    SizedBox(height: 20,),
+                    Expanded(
+                      child: ListView.builder(
+                        itemCount: (loadSheet.isNotEmpty) ? listCount : 0,
+                        itemBuilder: ((context, index) { 
+                          return LoadsheetCard(rLoadSheet: loadSheet[0].data[index],);
+                          }
+                        ),
+                      ),
+                    ) 
+                  ],
+                ),
               ),
             ),
           ) : Center(

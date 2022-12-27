@@ -8,23 +8,59 @@ class RiderLoadSheet {
     RiderLoadSheet({
         required this.status,
         required this.message,
+        required this.changePaymentMethod,
+        required this.cancelReasons,
+        required this.undeliveredReasons,
         required this.data,
     });
 
     int status;
     String message;
+    ChangePaymentMethod changePaymentMethod;
+    List<String> cancelReasons;
+    List<String> undeliveredReasons;
     List<RiderLoadSheetData> data;
 
     factory RiderLoadSheet.fromJson(Map<String, dynamic> json) => RiderLoadSheet(
         status: json["status"],
         message: json["message"],
+        changePaymentMethod: ChangePaymentMethod.fromJson(json["change_payment_method"]),
+        cancelReasons: List<String>.from(json["cancel_reasons"].map((x) => x)),
+        undeliveredReasons: List<String>.from(json["undelivered_reasons"].map((x) => x)),
         data: List<RiderLoadSheetData>.from(json["data"].map((x) => RiderLoadSheetData.fromJson(x))),
     );
 
     Map<String, dynamic> toJson() => {
         "status": status,
         "message": message,
+        "change_payment_method": changePaymentMethod.toJson(),
+        "cancel_reasons": List<dynamic>.from(cancelReasons.map((x) => x)),
+        "undelivered_reasons": List<dynamic>.from(undeliveredReasons.map((x) => x)),
         "data": List<dynamic>.from(data.map((x) => x.toJson())),
+    };
+}
+
+class ChangePaymentMethod {
+    ChangePaymentMethod({
+        required this.cashondelivery,
+        required this.ccondelivery,
+        required this.banktransfer,
+    });
+
+    String cashondelivery;
+    String ccondelivery;
+    String banktransfer;
+
+    factory ChangePaymentMethod.fromJson(Map<String, dynamic> json) => ChangePaymentMethod(
+        cashondelivery: json["cashondelivery"],
+        ccondelivery: json["ccondelivery"],
+        banktransfer: json["banktransfer"],
+    );
+
+    Map<String, dynamic> toJson() => {
+        "cashondelivery": cashondelivery,
+        "ccondelivery": ccondelivery,
+        "banktransfer": banktransfer,
     };
 }
 

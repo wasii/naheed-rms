@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:naheed_rider/components/constants.dart';
 import 'package:naheed_rider/models/load_sheet_model.dart';
+import 'package:naheed_rider/pages/alerts/warning_alert.dart';
 
 class LoadsheetCard extends StatefulWidget {
   final RiderLoadSheetData rLoadSheet;
@@ -29,11 +30,15 @@ class _LoadsheetCardState extends State<LoadsheetCard> {
           child: Column(
             children: [
               //Header
-              LoadsheetCardHeader(),
+              LoadsheetCardHeader(
+                rLoadSheet: widget.rLoadSheet,
+              ),
               SizedBox(height: 10),
 
               //Order Details
-              OrderDetails(rLoadSheet: widget.rLoadSheet,),
+              OrderDetails(
+                rLoadSheet: widget.rLoadSheet,
+              ),
               SizedBox(height: 10),
 
               //Buttons
@@ -57,16 +62,39 @@ class OrderButtons extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         ElevatedButton(
-          onPressed: () {},
-          child: Text('Cancelled'),
+          onPressed: () {
+            showDialog(context: context, builder: (_) => WarningAlert());
+          },
+          style: ElevatedButton.styleFrom(
+            backgroundColor: kPrimaryColor,
+            minimumSize: Size(0, 40),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15),
+            ),
+          ),
+          child: Text('CANCELLED'),
         ),
         ElevatedButton(
           onPressed: () {},
-          child: Text('Undelivered'),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: kPrimaryColor,
+            minimumSize: Size(0, 40),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15),
+            ),
+          ),
+          child: Text('UNDELIVERED'),
         ),
         ElevatedButton(
           onPressed: () {},
-          child: Text('Delivered'),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: kPrimaryColor,
+            minimumSize: Size(0, 40),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15),
+            ),
+          ),
+          child: Text('DELIVERED'),
         ),
       ],
     );
@@ -86,13 +114,24 @@ class OrderDetails extends StatelessWidget {
           flex: 7,
           child: Column(
             children: [
-              OrderLeftDetails(title: 'Phone', value: rLoadSheet.shippingPhone,),
-              OrderLeftDetails(title: 'Area', value: rLoadSheet.deliveryArea,),
-              OrderLeftDetails(title: 'Address', value: rLoadSheet.shippingAddress,),
+              OrderLeftDetails(
+                title: 'Phone',
+                value: rLoadSheet.shippingPhone,
+              ),
+              OrderLeftDetails(
+                title: 'Area',
+                value: rLoadSheet.deliveryArea,
+              ),
+              OrderLeftDetails(
+                title: 'Address',
+                value: rLoadSheet.shippingAddress,
+              ),
             ],
           ),
         ),
-        SizedBox(width: 5,),
+        SizedBox(
+          width: 5,
+        ),
         Expanded(
           flex: 4,
           child: OrderRightDetails(),
@@ -186,11 +225,8 @@ class OrderRightDetails extends StatelessWidget {
 }
 
 class OrderLeftDetails extends StatelessWidget {
-  const OrderLeftDetails({
-    Key? key,
-    required this.title,
-    required this.value
-  }) : super(key: key);
+  const OrderLeftDetails({Key? key, required this.title, required this.value})
+      : super(key: key);
   final String title;
   final String value;
   @override
@@ -205,37 +241,38 @@ class OrderLeftDetails extends StatelessWidget {
               child: Text(
                 title,
                 style: GoogleFonts.montserrat(
-                  color: Colors.grey[500],
-                  fontSize: 13,
-                  fontWeight: FontWeight.w500
-                ),
+                    color: Colors.grey[500],
+                    fontSize: 13,
+                    fontWeight: FontWeight.w500),
               ),
             ),
             Expanded(
               flex: 5,
               child: Padding(
-                padding: const EdgeInsets.only(left:5.0, right: 5.0),
+                padding: const EdgeInsets.only(left: 5.0, right: 5.0),
                 child: Text(
                   value,
                   style: GoogleFonts.montserrat(
-                    color: Colors.black87,
-                    fontSize: 13,
-                    fontWeight: FontWeight.w600
-                  ),
+                      color: Colors.black87,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600),
                   maxLines: 3,
                 ),
               ),
             ),
           ],
         ),
-        SizedBox(height: 10,),
+        SizedBox(
+          height: 10,
+        ),
       ],
     );
   }
 }
 
 class LoadsheetCardHeader extends StatelessWidget {
-  const LoadsheetCardHeader({super.key});
+  final RiderLoadSheetData rLoadSheet;
+  const LoadsheetCardHeader({super.key, required this.rLoadSheet});
 
   @override
   Widget build(BuildContext context) {
@@ -253,7 +290,7 @@ class LoadsheetCardHeader extends StatelessWidget {
               ),
             ),
             Text(
-              'Akhtar Lava',
+              rLoadSheet.shippingName,
               style: GoogleFonts.montserrat(
                 color: kPrimaryColor,
                 fontWeight: FontWeight.w600,
@@ -273,7 +310,7 @@ class LoadsheetCardHeader extends StatelessWidget {
               ),
             ),
             Text(
-              '090078601',
+              rLoadSheet.orderNumber,
               style: GoogleFonts.montserrat(
                 color: kPrimaryColor,
                 fontWeight: FontWeight.w600,
@@ -293,7 +330,7 @@ class LoadsheetCardHeader extends StatelessWidget {
               ),
             ),
             Text(
-              '12',
+              rLoadSheet.packages,
               style: GoogleFonts.montserrat(
                 color: kPrimaryColor,
                 fontWeight: FontWeight.w600,
