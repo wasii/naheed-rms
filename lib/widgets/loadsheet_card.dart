@@ -72,7 +72,7 @@ class OrderButtons extends StatelessWidget {
               borderRadius: BorderRadius.circular(15),
             ),
           ),
-          child: Text('CANCELLED'),
+          child: Text('Cancelled'),
         ),
         ElevatedButton(
           onPressed: () {},
@@ -83,7 +83,7 @@ class OrderButtons extends StatelessWidget {
               borderRadius: BorderRadius.circular(15),
             ),
           ),
-          child: Text('UNDELIVERED'),
+          child: Text('Undelivered'),
         ),
         ElevatedButton(
           onPressed: () {},
@@ -94,7 +94,7 @@ class OrderButtons extends StatelessWidget {
               borderRadius: BorderRadius.circular(15),
             ),
           ),
-          child: Text('DELIVERED'),
+          child: Text('Delivered'),
         ),
       ],
     );

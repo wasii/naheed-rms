@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:naheed_rider/components/constants.dart';
 import 'package:naheed_rider/pages/authentication/otp/otp_screen.dart';
@@ -83,9 +84,7 @@ class _LoginPageState extends State<LoginPage> {
                   // scanQRCode();
                   verifyRider('94/42301-5102628-1');
                 },
-                child: isLoaded ? CircularProgressIndicator(
-                  color: kPrimaryColor,
-                ) : Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
@@ -99,7 +98,8 @@ class _LoginPageState extends State<LoginPage> {
                     Text(
                       'Login',
                       style: GoogleFonts.montserrat(
-                          fontSize: 25, fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
                           color: kPrimaryColor),
                     ),
                   ],
@@ -143,9 +143,8 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   verifyRider(String qrCode) async {
-    setState(() {
-      isLoaded = true;
-    });
+    await EasyLoading.show(
+        status: 'Please wait.....', maskType: EasyLoadingMaskType.black);
     user = await RemoteServices().verifyUser(qrCode);
     if (user != null) {
       final String message = user?[0].message ?? '';
@@ -153,54 +152,33 @@ class _LoginPageState extends State<LoginPage> {
         setState(() {
           isLoaded = false;
         });
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            duration: Duration(seconds: 2),
-            content: CustomSnackbar(
-              title: "Hurray!",
-              message: 'Rider Found!',
-              color: kSecondaryColor,
-            ),
-            behavior: SnackBarBehavior.floating,
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-          ),
-        );
-        Future.delayed(Duration(seconds: 3), () {
+        EasyLoading.dismiss();
+        Future.delayed(Duration(seconds: 1), () {
           return Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => OTPScreen(),
+              builder: (context) => OTPScreen(qrCode: qrCode),
             ),
           );
         });
       } else {
-        ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          duration: Duration(seconds: 2),
-          content: CustomSnackbar(title: "Oh Snap!", message: message, color: kErrorBackColor,),
-          behavior: SnackBarBehavior.floating,
-          backgroundColor: Colors.transparent,
-          elevation: 1,
-        ),
-      );
-      setState(() {
-          isLoaded = false;
-        });
+        EasyLoading.showError(message);
       }
     } else {
-      
+      EasyLoading.showError('Something went wrong.');
     }
   }
 }
 
 class CustomSnackbar extends StatelessWidget {
-  const CustomSnackbar({
-    Key? key,
-    required this.title,
-    required this.message, 
-    required this.color
-  }) : super(key: key,);
+  const CustomSnackbar(
+      {Key? key,
+      required this.title,
+      required this.message,
+      required this.color})
+      : super(
+          key: key,
+        );
 
   final String title;
   final String message;
@@ -215,7 +193,9 @@ class CustomSnackbar extends StatelessWidget {
           height: 90,
           decoration: BoxDecoration(
             color: color,
-            borderRadius: BorderRadius.all(Radius.circular(20),), 
+            borderRadius: BorderRadius.all(
+              Radius.circular(20),
+            ),
           ),
           child: Row(
             children: [
@@ -237,7 +217,7 @@ class CustomSnackbar extends StatelessWidget {
                       height: 10,
                     ),
                     Text(
-                      message, 
+                      message,
                       style: GoogleFonts.montserrat(
                         color: Colors.white,
                         fontSize: 12,
@@ -255,8 +235,6 @@ class CustomSnackbar extends StatelessWidget {
     );
   }
 }
-
-
 
 class CustomSnackBar extends StatelessWidget {
   const CustomSnackBar({super.key, required this.text});

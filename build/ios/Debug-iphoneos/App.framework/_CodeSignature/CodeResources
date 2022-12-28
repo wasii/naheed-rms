@@ -10,7 +10,7 @@
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		0ywwm84JyyqG6pR9jsU/UCMdnfA=
+		WwNrZSgZniDbhEysavNMMuKNfYw=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		oEntEF2IaqKwS6zhItFGfO+PkSY=
+		QBYEWMPnvZ1jaP/QMvWwpV340/0=
 		</data>
 		<key>flutter_assets/assets/backgrounds/login.png</key>
 		<data>
@@ -70,31 +70,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		ZyhmSIG8QVQT4xtWhX+R8aWBQco=
-		</data>
-		<key>flutter_assets/packages/awesome_snackbar_content/assets/back.svg</key>
-		<data>
-		cf3A4jCcH87WAq3IYC3OiTiVyjk=
-		</data>
-		<key>flutter_assets/packages/awesome_snackbar_content/assets/bubbles.svg</key>
-		<data>
-		1mgaDyOjwkZ128ciR4y81QOQCW4=
-		</data>
-		<key>flutter_assets/packages/awesome_snackbar_content/assets/types/failure.svg</key>
-		<data>
-		+Tq36y0OtUJ9eX/m87/IOtX4x3k=
-		</data>
-		<key>flutter_assets/packages/awesome_snackbar_content/assets/types/help.svg</key>
-		<data>
-		4yCQe856xThTuX0u/bWJNlUPp2o=
-		</data>
-		<key>flutter_assets/packages/awesome_snackbar_content/assets/types/success.svg</key>
-		<data>
-		h8YffpDX+QU136sQ6zMiQnLiI6Q=
-		</data>
-		<key>flutter_assets/packages/awesome_snackbar_content/assets/types/warning.svg</key>
-		<data>
-		zRMU+a05WWkTIOsVTWda61OsDZY=
+		LPgPN6R8U1Nsnsc0EbNOZ60itTk=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -115,7 +91,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			h3TgHw4XPt1pJuHvINFPzOg3lHlqODiopTFPUkd4gzY=
+			vIeucygHmPlSK8EbWT2a9UFkb1aCelgDH2CirgLg43w=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -129,7 +105,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			hX6gfFcKxwV+0esVKZS6zwgd4KN/gA4L49G0gYeZ0o8=
+			BFVAofAJYmBJqcddJqZQVuwCtc5g9kkcuegnneUh72Y=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/backgrounds/login.png</key>
@@ -213,49 +189,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			h7XJbgnSaCkmUedD7gYaIJrtolFnEiBKXz3Jnr27zZw=
-			</data>
-		</dict>
-		<key>flutter_assets/packages/awesome_snackbar_content/assets/back.svg</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			ZAyljc3XBwjD6UKILfFujEG3Djkqi7zaMs9BRodoR4g=
-			</data>
-		</dict>
-		<key>flutter_assets/packages/awesome_snackbar_content/assets/bubbles.svg</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			F86fxY2MecC8u2iGrzPYo1BYHsAS243NF0cQYNwP9+w=
-			</data>
-		</dict>
-		<key>flutter_assets/packages/awesome_snackbar_content/assets/types/failure.svg</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			Xq+VE5Y9oNj38961wcRolNmO6u7ctUYX1FdSZG6r3bY=
-			</data>
-		</dict>
-		<key>flutter_assets/packages/awesome_snackbar_content/assets/types/help.svg</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			lnT9h9PD7BIdty5XiVKvfz3sdTaf0HAORQbzYPLupZ4=
-			</data>
-		</dict>
-		<key>flutter_assets/packages/awesome_snackbar_content/assets/types/success.svg</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			084CKiQF7JCsxEBH5ZhQoT1BD3Y5MjHnUe87KMcJlcQ=
-			</data>
-		</dict>
-		<key>flutter_assets/packages/awesome_snackbar_content/assets/types/warning.svg</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			sx91rskNI+UjdNXTS3mvC1Nn2cLvBAI3nmyH65dvUcY=
+			ON5bDkdifmyScPLC1gV6awiVrm04I4Nb84x29m3O/D0=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

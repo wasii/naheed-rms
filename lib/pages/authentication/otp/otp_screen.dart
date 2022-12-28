@@ -9,7 +9,8 @@ import 'package:naheed_rider/components/size_config.dart';
 import 'otp_form.dart';
 
 class OTPScreen extends StatefulWidget {
-  const OTPScreen({super.key});
+  final String qrCode;
+  const OTPScreen({super.key, required this.qrCode});
 
   @override
   State<OTPScreen> createState() => _OTPScreenState();
@@ -65,7 +66,7 @@ class _OTPScreenState extends State<OTPScreen> {
                   ),
                 ),
                 SizedBox(height: 50),
-                OTPForm(),
+                OTPForm(qrCode: widget.qrCode,),
                 SizedBox(height: 50),
                 SizedBox(height: 50),
               ],

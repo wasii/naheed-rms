@@ -1,0 +1,8 @@
+version: "Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)"
+options: "9f0600064e685cadca3c3ed9f22567e14de1533a1a67bda70197d12c9fc75488"
+build_start_time: [1672143495, 118072986]
+build_end_time: [1672143501, 426170825]
+inputs:
+  "/Users/naheedpk/Desktop/naheed-rms/macos/Flutter/GeneratedPluginRegistrant.swift": [1672143472, 403902530]
+  "/Users/naheedpk/Desktop/naheed-rms/macos/Runner/AppDelegate.swift": [1645244457, 0]
+  "/Users/naheedpk/Desktop/naheed-rms/macos/Runner/MainFlutterWindow.swift": [1645244457, 0]

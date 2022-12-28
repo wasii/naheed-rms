@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, avoid_print, sort_child_properties_last
 
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:naheed_rider/pages/alerts/warning_alert.dart';
 import 'package:naheed_rider/pages/authentication/login_screen.dart';
 import 'package:naheed_rider/pages/loadsheet/load_sheet.dart';
@@ -34,7 +35,8 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: hasData ? HomePage() : LoginPage(),
+      builder: EasyLoading.init(),
+      home: hasData ? HomePage(): LoginPage(),
     );
   }
 
