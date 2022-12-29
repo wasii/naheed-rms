@@ -66,10 +66,10 @@ class OrderButtons extends StatelessWidget {
             showDialog(context: context, builder: (_) => WarningAlert());
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: kPrimaryColor,
+            backgroundColor: Colors.red[600],
             minimumSize: Size(0, 40),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(20),
             ),
           ),
           child: Text('Cancelled'),
@@ -80,7 +80,7 @@ class OrderButtons extends StatelessWidget {
             backgroundColor: kPrimaryColor,
             minimumSize: Size(0, 40),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(20),
             ),
           ),
           child: Text('Undelivered'),
@@ -88,10 +88,10 @@ class OrderButtons extends StatelessWidget {
         ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
-            backgroundColor: kPrimaryColor,
+            backgroundColor: Colors.green[800],
             minimumSize: Size(0, 40),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(20),
             ),
           ),
           child: Text('Delivered'),
@@ -134,18 +134,33 @@ class OrderDetails extends StatelessWidget {
         ),
         Expanded(
           flex: 4,
-          child: OrderRightDetails(),
+          child: OrderRightDetails(riderLoadSheetData: rLoadSheet,),
         ),
       ],
     );
   }
 }
+class OrderRightDetails extends StatefulWidget {
+  final RiderLoadSheetData riderLoadSheetData;
+  const OrderRightDetails({super.key, required this.riderLoadSheetData});
 
-class OrderRightDetails extends StatelessWidget {
-  const OrderRightDetails({
-    Key? key,
-  }) : super(key: key);
+  @override
+  State<OrderRightDetails> createState() => _OrderRightDetailsState();
+}
 
+class _OrderRightDetailsState extends State<OrderRightDetails> {
+  String amountHeading = "";
+  String amountValue = "";
+  @override void initState() {
+    super.initState();
+    if (widget.riderLoadSheetData.paymentMethod == "Cash" || widget.riderLoadSheetData.paymentMethod == "Card") {
+      amountHeading = 'Amount Due';
+      amountValue = widget.riderLoadSheetData.amountDue;
+    } else {
+      amountHeading = 'Amount Refund';
+      amountValue = widget.riderLoadSheetData.amountRefund;
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -167,10 +182,10 @@ class OrderRightDetails extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              'Cash',
+              widget.riderLoadSheetData.paymentMethod,
               style: GoogleFonts.montserrat(
                 color: kPrimaryColor,
-                fontSize: 24,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -195,7 +210,7 @@ class OrderRightDetails extends StatelessWidget {
           height: 10,
         ),
         Text(
-          'Amount Due',
+          amountHeading,
           style: GoogleFonts.montserrat(
             color: Colors.red,
             fontSize: 14,
@@ -210,10 +225,10 @@ class OrderRightDetails extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              '5000',
+              amountValue,
               style: GoogleFonts.montserrat(
                 color: kPrimaryColor,
-                fontSize: 24,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
             )

@@ -158,7 +158,12 @@ class _OTPFormState extends State<OTPForm> {
                 decoration: otpInputDecoration,
                 onChanged: (value) {
                   focusNode6?.unfocus();
-                  final otp = textField1.text + textField2.text + textField3.text + textField4.text + textField5.text + textField6.text;
+                  final otp = textField1.text +
+                      textField2.text +
+                      textField3.text +
+                      textField4.text +
+                      textField5.text +
+                      textField6.text;
                   verifyOtp(otp);
                   // Navigator.push(
                   //   context,
@@ -176,10 +181,15 @@ class _OTPFormState extends State<OTPForm> {
   }
 
   verifyOtp(String otp) async {
-    await EasyLoading.show(
-      status: 'Verifying OTP........',
-      maskType: EasyLoadingMaskType.black
+    return Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => HomePage(),
+      ),
     );
+
+    await EasyLoading.show(
+        status: 'Verifying OTP........', maskType: EasyLoadingMaskType.black);
     final rider = await RemoteServices().verifyOTP(widget.qrCode, otp);
     print(rider);
     EasyLoading.dismiss();
@@ -192,11 +202,11 @@ class _OTPFormState extends State<OTPForm> {
 
       // ignore: use_build_context_synchronously
       return Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => HomePage(),
-            ),
-          );
+        context,
+        MaterialPageRoute(
+          builder: (context) => HomePage(),
+        ),
+      );
     } else {
       EasyLoading.showError(
         rider?[0].message ?? '',

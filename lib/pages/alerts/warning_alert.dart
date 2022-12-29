@@ -12,12 +12,12 @@ class WarningAlert extends StatefulWidget {
 }
 
 class _WarningAlertState extends State<WarningAlert> {
-  List<String> cancelled_reason = [
-    "Refused to accept",
-    "Damaged package",
-    "Damaged product",
-    "Wrong product",
-    "Late delivery"
+  List<Map<String,dynamic>> cancelled_reason = [
+    {'value' : "Refused to accept", 'isSelected' : false},
+    {'value' : "Damaged package", 'isSelected' : false},
+    {'value' : "Damaged product", 'isSelected' : false},
+    {'value' : "Wrong product", 'isSelected' : false},
+    {'value' : "Late delivery", 'isSelected' : false},
   ];
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class _WarningAlertState extends State<WarningAlert> {
             color: kPrimaryColor.withOpacity(0.3),
             child: Center(
               child: Container(
-                height: 450,
+                height: 460,
                 margin: EdgeInsets.all(30),
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -49,18 +49,19 @@ class _WarningAlertState extends State<WarningAlert> {
                 child: Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(top: 15.0, bottom: 15.0),
+                      padding: const EdgeInsets.symmetric(vertical: 15),
                       child: Text(
                         'Cancel Reasons',
                         style: GoogleFonts.montserrat(
                           fontSize: 30,
                           fontWeight: FontWeight.w600,
+                          color: kPrimaryColor
                         ),
                       ),
                     ),
                     Container(
-                      color: Colors.black,
-                      height: 1,
+                      color: kPrimaryColor,
+                      height: 2,
                     ),
                     Expanded(
                       child: ListView.builder(
@@ -85,12 +86,29 @@ class _WarningAlertState extends State<WarningAlert> {
                                       offset: Offset(0, 0))
                                 ], // Make rounded corner of border
                               ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(5.0),
-                                child: Text(
-                                  cancelled_reason[index],
-                                  style: GoogleFonts.montserrat(
-                                    fontSize: 23,
+                              child: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    for(int i = 0; i < cancelled_reason.length; i++) {
+                                      cancelled_reason[i]['isSelected'] = false;
+                                    }
+                                    cancelled_reason[index]['isSelected'] = true;                                  });
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.all(5.0),
+                                  child: Row(
+                                    children: [
+                                      Icon(
+                                        cancelled_reason[index]['isSelected'] ? Icons.radio_button_on : Icons.radio_button_off, 
+                                        color: kPrimaryColor,),
+                                      SizedBox(width: 10,),
+                                      Text(
+                                        cancelled_reason[index]['value'],
+                                        style: GoogleFonts.montserrat(
+                                          fontSize: 23,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
@@ -99,26 +117,54 @@ class _WarningAlertState extends State<WarningAlert> {
                         }),
                       ),
                     ),
+                    Container(
+                      color: kPrimaryColor,
+                      height: 2,
+                    ),
                     Padding(
-                      padding: const EdgeInsets.only(bottom: 15.0),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.of(context).pop();
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: kPrimaryColor,
-                          minimumSize: Size(150, 40),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
+                      padding: const EdgeInsets.symmetric(vertical: 10.0,horizontal: 0.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.red[600],
+                              minimumSize: Size(130, 40),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                            ),
+                            child: Text(
+                              'Cancel',
+                              style: GoogleFonts.montserrat(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
                           ),
-                        ),
-                        child: Text(
-                          'Cancel',
-                          style: GoogleFonts.montserrat(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w600,
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: kPrimaryColor,
+                              minimumSize: Size(130, 40),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                            ),
+                            child: Text(
+                              'Submit',
+                              style: GoogleFonts.montserrat(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
                           ),
-                        ),
+                        ],
                       ),
                     ),
                   ],

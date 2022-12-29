@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:naheed_rider/components/constants.dart';
 import 'package:naheed_rider/components/size_config.dart';
@@ -21,23 +22,27 @@ class _LoadSheetState extends State<LoadSheet> {
   List<RiderLoadSheet> loadSheet = [];
   @override void initState() {
     super.initState();
-    // timer();
     getLoadSheet();
-  }
-  void timer() {
-    Future.delayed(Duration(seconds: 4), () {
-      setState(() {
-        isLoaded = true;
-      });
-    });
   }
 
   void getLoadSheet() async {
+    EasyLoading.show(
+      status: 'Fetching Loadsheet....',
+      maskType: EasyLoadingMaskType.black,
+      dismissOnTap: false,
+
+    );
     loadSheet = await RemoteServices().riderLoadSheet('94');
-    listCount = loadSheet[0].data.length;
-    setState(() {
-      isLoaded = true;
-    });
+    EasyLoading.dismiss();
+    if (loadSheet.isNotEmpty) {
+      listCount = loadSheet[0].data.length;
+      setState(() {
+        isLoaded = true;
+      });
+      return;
+    }
+    
+
   }
   @override
   Widget build(BuildContext context) {
@@ -85,9 +90,13 @@ class _LoadSheetState extends State<LoadSheet> {
               ),
             ),
           ) : Center(
-            child: CircularProgressIndicator(
+            child: Text('No\n Load Sheet\n Found', style: GoogleFonts.montserrat(
+              fontSize: 40,
               color: kPrimaryColor,
+              fontWeight: FontWeight.bold,
+              
             ),
+            textAlign: TextAlign.center,)
           ),
           Positioned(
             bottom: 0,
