@@ -72,7 +72,11 @@ class OrderButtons extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
             ),
           ),
-          child: Text('Cancelled'),
+          child: Text(
+            'Cancelled',
+            style: GoogleFonts.montserrat(
+                fontSize: 12, fontWeight: FontWeight.w500),
+          ),
         ),
         ElevatedButton(
           onPressed: () {},
@@ -83,7 +87,11 @@ class OrderButtons extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
             ),
           ),
-          child: Text('Undelivered'),
+          child: Text(
+            'Undelivered',
+            style: GoogleFonts.montserrat(
+                fontSize: 12, fontWeight: FontWeight.w500),
+          ),
         ),
         ElevatedButton(
           onPressed: () {},
@@ -94,7 +102,11 @@ class OrderButtons extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
             ),
           ),
-          child: Text('Delivered'),
+          child: Text(
+            'Delivered',
+            style: GoogleFonts.montserrat(
+                fontSize: 12, fontWeight: FontWeight.w500),
+          ),
         ),
       ],
     );
@@ -170,7 +182,7 @@ class _OrderRightDetailsState extends State<OrderRightDetails> {
           'Payment Mode',
           style: GoogleFonts.montserrat(
             color: Colors.red,
-            fontSize: 14,
+            fontSize: 12,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -185,7 +197,7 @@ class _OrderRightDetailsState extends State<OrderRightDetails> {
               widget.riderLoadSheetData.paymentMethod,
               style: GoogleFonts.montserrat(
                 color: kPrimaryColor,
-                fontSize: 20,
+                fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -213,7 +225,7 @@ class _OrderRightDetailsState extends State<OrderRightDetails> {
           amountHeading,
           style: GoogleFonts.montserrat(
             color: Colors.red,
-            fontSize: 14,
+            fontSize: 12,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -228,7 +240,7 @@ class _OrderRightDetailsState extends State<OrderRightDetails> {
               amountValue,
               style: GoogleFonts.montserrat(
                 color: kPrimaryColor,
-                fontSize: 20,
+                fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
             )
@@ -257,7 +269,7 @@ class OrderLeftDetails extends StatelessWidget {
                 title,
                 style: GoogleFonts.montserrat(
                     color: Colors.grey[500],
-                    fontSize: 13,
+                    fontSize: 12,
                     fontWeight: FontWeight.w500),
               ),
             ),
@@ -269,7 +281,7 @@ class OrderLeftDetails extends StatelessWidget {
                   value,
                   style: GoogleFonts.montserrat(
                       color: Colors.black87,
-                      fontSize: 13,
+                      fontSize: 12,
                       fontWeight: FontWeight.w600),
                   maxLines: 3,
                 ),

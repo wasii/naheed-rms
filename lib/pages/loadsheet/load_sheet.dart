@@ -19,8 +19,11 @@ class LoadSheet extends StatefulWidget {
 class _LoadSheetState extends State<LoadSheet> {
   int listCount = 0;
   bool isLoaded = false;
-  List<RiderLoadSheet> loadSheet = [];
-  @override void initState() {
+  List<RiderLoadSheetData> loadSheet = [];
+
+  final GlobalKey<AnimatedListState> _key = GlobalKey();
+  @override
+  void initState() {
     super.initState();
     getLoadSheet();
   }
@@ -30,29 +33,32 @@ class _LoadSheetState extends State<LoadSheet> {
       status: 'Fetching Loadsheet....',
       maskType: EasyLoadingMaskType.black,
       dismissOnTap: false,
-
     );
-    loadSheet = await RemoteServices().riderLoadSheet('94');
+    final ls = await RemoteServices().riderLoadSheet('94');
     EasyLoading.dismiss();
-    if (loadSheet.isNotEmpty) {
-      listCount = loadSheet[0].data.length;
-      setState(() {
-        isLoaded = true;
-      });
+    if (ls.isNotEmpty) {
+      if (ls[0].data.isNotEmpty) {
+        listCount = ls[0].data.length;
+        setState(() {
+          isLoaded = true;
+        });
+        Future.delayed(Duration(milliseconds: 500), () {
+          for (int i = 0; i < listCount; i++) {
+          loadSheet.insert(i, ls[0].data[i]);
+          _key.currentState!.insertItem(i, duration: Duration(milliseconds: 250));
+          }
+        });
+        
+      }
+
       return;
     }
-    
-
   }
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),
       body: Stack(
         children: [
           SizedBox(
@@ -63,47 +69,86 @@ class _LoadSheetState extends State<LoadSheet> {
               fit: BoxFit.fill,
             ),
           ),
-          isLoaded ? 
-          SizedBox(
-            height: SizeConfig.screenHeight * 0.94,
-            child: SafeArea(
-              child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 0, horizontal: 20),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left:20.0, right: 20.0),
-                      child: MyTripHeader(),
-                    ),
-                    SizedBox(height: 20,),
-                    Expanded(
-                      child: ListView.builder(
-                        itemCount: (loadSheet.isNotEmpty) ? listCount : 0,
-                        itemBuilder: ((context, index) { 
-                          return LoadsheetCard(rLoadSheet: loadSheet[0].data[index],);
-                          }
-                        ),
+          isLoaded
+              ? SizedBox(
+                  height: SizeConfig.screenHeight * 0.92,
+                  child: SafeArea(
+                    child: Padding(
+                      padding:
+                          EdgeInsets.symmetric(vertical: 0, horizontal: 12),
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Center(
+                            child: Text(
+                              'Trip ID: 12321',
+                              style: GoogleFonts.montserrat(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(left: 10.0, right: 10.0),
+                            child: MyTripHeader(),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Expanded(
+                            // child: AnimatedList(
+                            //   key: _listKey,
+                            //   initialItemCount:
+                            //       (loadSheet.isNotEmpty) ? listCount : 0,
+                            //   itemBuilder: ((context, index, animated) {
+                            // return LoadsheetCard(
+                            //   rLoadSheet: loadSheet[0].data[index],
+                            // );
+                            //   }),
+                            // ),
+                            child: AnimatedList(
+                              key: _key,
+                              initialItemCount: 0,
+                              itemBuilder: ((context, index, animation) {
+                                return SizeTransition(
+                                  key: UniqueKey(),
+                                  sizeFactor: animation,
+                                  child: LoadsheetCard(
+                                    rLoadSheet: loadSheet[index],
+                                  ),
+                                );
+                              }),
+                            ),
+                          ),
+                        ],
                       ),
-                    ) 
-                  ],
+                    ),
+                  ),
+                )
+              : Center(
+                  child: Text(
+                    'No\n Load Sheet\n Found',
+                    style: GoogleFonts.montserrat(
+                      fontSize: 40,
+                      color: kPrimaryColor,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
-              ),
-            ),
-          ) : Center(
-            child: Text('No\n Load Sheet\n Found', style: GoogleFonts.montserrat(
-              fontSize: 40,
-              color: kPrimaryColor,
-              fontWeight: FontWeight.bold,
-              
-            ),
-            textAlign: TextAlign.center,)
-          ),
           Positioned(
             bottom: 0,
             left: 0,
             right: 0,
             child: Container(
-              height: 70,
+              height: 50,
               decoration: BoxDecoration(
                 shape: BoxShape.rectangle,
                 color: kPrimaryColor,
@@ -112,17 +157,37 @@ class _LoadSheetState extends State<LoadSheet> {
                   topRight: Radius.circular(45.0),
                 ),
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      // Navigator.of(context).pop();
-                      // Restart.restartApp();
-                    },
-                    icon: Image.asset('assets/icons/logout-icon.png'),
-                  ),
-                ],
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.account_circle_outlined,
+                          color: Colors.white,
+                        ),
+                        Text(
+                          'Akhtar Lava',
+                          style: GoogleFonts.montserrat(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 14),
+                        ),
+                      ],
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      icon: Icon(
+                        Icons.home_outlined,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
@@ -141,7 +206,6 @@ class MyTripHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           "My Trip",

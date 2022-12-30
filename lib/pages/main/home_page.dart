@@ -140,7 +140,7 @@ class _HomePageState extends State<HomePage> {
               left: 0,
               right: 0,
               child: Container(
-                height: 70,
+                height: 50,
                 decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
                   color: kPrimaryColor,

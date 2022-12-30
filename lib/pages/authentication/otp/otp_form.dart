@@ -181,12 +181,12 @@ class _OTPFormState extends State<OTPForm> {
   }
 
   verifyOtp(String otp) async {
-    return Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => HomePage(),
-      ),
-    );
+    // return Navigator.push(
+    //   context,
+    //   MaterialPageRoute(
+    //     builder: (context) => HomePage(),
+    //   ),
+    // );
 
     await EasyLoading.show(
         status: 'Verifying OTP........', maskType: EasyLoadingMaskType.black);
