@@ -6,6 +6,7 @@ import 'package:naheed_rider/components/constants.dart';
 import 'package:naheed_rider/components/size_config.dart';
 import 'package:naheed_rider/pages/authentication/login_screen.dart';
 import 'package:naheed_rider/pages/loadsheet/load_sheet.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -153,7 +154,12 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     IconButton(
-                      onPressed: () {
+                      onPressed: () async {
+                        final SharedPreferences pref = await SharedPreferences.getInstance();
+                        pref.remove('token');
+                        pref.remove('name');
+                        pref.remove('id');
+                        pref.remove('cnic');
                         Navigator.of(context).pushAndRemoveUntil(
                             MaterialPageRoute(
                                 builder: (context) => LoginPage()),

@@ -63,7 +63,7 @@ class OrderButtons extends StatelessWidget {
       children: [
         ElevatedButton(
           onPressed: () {
-            showDialog(context: context, builder: (_) => WarningAlert());
+            showDialog(context: context, builder: (_) => WarningAlert()).then((value) => print(value));
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.red[600],

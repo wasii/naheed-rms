@@ -19,6 +19,7 @@ class _WarningAlertState extends State<WarningAlert> {
     {'value' : "Wrong product", 'isSelected' : false},
     {'value' : "Late delivery", 'isSelected' : false},
   ];
+  String selectedValue = "";
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -92,7 +93,9 @@ class _WarningAlertState extends State<WarningAlert> {
                                     for(int i = 0; i < cancelled_reason.length; i++) {
                                       cancelled_reason[i]['isSelected'] = false;
                                     }
-                                    cancelled_reason[index]['isSelected'] = true;                                  });
+                                    cancelled_reason[index]['isSelected'] = true;    
+                                    selectedValue = cancelled_reason[index]['value'];                              
+                                    });
                                 },
                                 child: Padding(
                                   padding: const EdgeInsets.all(5.0),
@@ -147,7 +150,9 @@ class _WarningAlertState extends State<WarningAlert> {
                           ),
                           ElevatedButton(
                             onPressed: () {
-                              Navigator.of(context).pop();
+                              if (selectedValue != "") {
+                                Navigator.pop(context,selectedValue);
+                              }
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: kPrimaryColor,

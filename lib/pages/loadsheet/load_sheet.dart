@@ -42,7 +42,7 @@ class _LoadSheetState extends State<LoadSheet> {
         setState(() {
           isLoaded = true;
         });
-        Future.delayed(Duration(milliseconds: 500), () {
+        Future.delayed(Duration(milliseconds: 100), () {
           for (int i = 0; i < listCount; i++) {
           loadSheet.insert(i, ls[0].data[i]);
           _key.currentState!.insertItem(i, duration: Duration(milliseconds: 250));
@@ -50,7 +50,6 @@ class _LoadSheetState extends State<LoadSheet> {
         });
         
       }
-
       return;
     }
   }
@@ -103,16 +102,6 @@ class _LoadSheetState extends State<LoadSheet> {
                             height: 10,
                           ),
                           Expanded(
-                            // child: AnimatedList(
-                            //   key: _listKey,
-                            //   initialItemCount:
-                            //       (loadSheet.isNotEmpty) ? listCount : 0,
-                            //   itemBuilder: ((context, index, animated) {
-                            // return LoadsheetCard(
-                            //   rLoadSheet: loadSheet[0].data[index],
-                            // );
-                            //   }),
-                            // ),
                             child: AnimatedList(
                               key: _key,
                               initialItemCount: 0,

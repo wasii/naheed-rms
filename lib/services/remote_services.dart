@@ -26,6 +26,7 @@ class RemoteServices {
 
   //Get Rider Details
   Future<List<LoginModel>?> verifyOTP(String qrCode, String otp) async {
+    
     var client = http.Client();
 // 94/42301-5102628-1&otp=
     var uri = Uri.parse("$VerifyOTP$qrCode&otp=$otp");
@@ -42,14 +43,14 @@ class RemoteServices {
 
   //Get Rider Load Sheet
   Future<List<RiderLoadSheet>> riderLoadSheet(String rider_id) async {
-    // final SharedPreferences pref = await SharedPreferences.getInstance();
-    // final token = pref.getString('token');
+    final SharedPreferences pref = await SharedPreferences.getInstance();
+    final token = pref.getString('token');
     var client = http.Client();
     var uri = Uri.parse('$GetLoadSheet$rider_id');
     print(uri);
 
     var response = await client.post(uri, headers: {
-      'Authorization': 'Bearer rm7gnpf97yfq880kvy72wlsoq9k8a1em',
+      'Authorization': 'Bearer $token',
     });
 
     if (response.statusCode == 200) {
