@@ -5,7 +5,8 @@ import 'package:naheed_rider/components/constants.dart';
 import 'package:naheed_rider/components/size_config.dart';
 
 class WarningAlert extends StatefulWidget {
-  const WarningAlert({super.key});
+  final List<String> sReasons;
+  const WarningAlert({super.key, required this.sReasons});
 
   @override
   State<WarningAlert> createState() => _WarningAlertState();
@@ -13,12 +14,21 @@ class WarningAlert extends StatefulWidget {
 
 class _WarningAlertState extends State<WarningAlert> {
   List<Map<String,dynamic>> cancelled_reason = [
-    {'value' : "Refused to accept", 'isSelected' : false},
-    {'value' : "Damaged package", 'isSelected' : false},
-    {'value' : "Damaged product", 'isSelected' : false},
-    {'value' : "Wrong product", 'isSelected' : false},
-    {'value' : "Late delivery", 'isSelected' : false},
+    // {'value' : "Refused to accept", 'isSelected' : false},
+    // {'value' : "Damaged package", 'isSelected' : false},
+    // {'value' : "Damaged product", 'isSelected' : false},
+    // {'value' : "Wrong product", 'isSelected' : false},
+    // {'value' : "Late delivery", 'isSelected' : false},
   ];
+  var height = 135.0;
+  @override void initState() {
+    super.initState();
+    for (var element in widget.sReasons) { 
+      final dictionary = {'value': element, 'isSelected': false};
+      cancelled_reason.add(dictionary);
+    }
+    height += widget.sReasons.length * 60;
+  }
   String selectedValue = "";
   @override
   Widget build(BuildContext context) {
@@ -33,7 +43,7 @@ class _WarningAlertState extends State<WarningAlert> {
             color: kPrimaryColor.withOpacity(0.3),
             child: Center(
               child: Container(
-                height: 460,
+                height: height,
                 margin: EdgeInsets.all(30),
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -52,12 +62,13 @@ class _WarningAlertState extends State<WarningAlert> {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 15),
                       child: Text(
-                        'Cancel Reasons',
+                        'Cancelled Reason',
                         style: GoogleFonts.montserrat(
-                          fontSize: 30,
+                          fontSize: 25,
                           fontWeight: FontWeight.w600,
-                          color: kPrimaryColor
+                          color: kPrimaryColor,
                         ),
+                        textAlign: TextAlign.center,
                       ),
                     ),
                     Container(
@@ -103,13 +114,15 @@ class _WarningAlertState extends State<WarningAlert> {
                                     children: [
                                       Icon(
                                         cancelled_reason[index]['isSelected'] ? Icons.radio_button_on : Icons.radio_button_off, 
-                                        color: kPrimaryColor,),
+                                        color: kPrimaryColor,
+                                        size: 20,),
                                       SizedBox(width: 10,),
                                       Text(
                                         cancelled_reason[index]['value'],
                                         style: GoogleFonts.montserrat(
-                                          fontSize: 23,
+                                          fontSize: 18,
                                         ),
+                                        maxLines: 2,
                                       ),
                                     ],
                                   ),

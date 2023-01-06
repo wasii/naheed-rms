@@ -10,7 +10,8 @@ import 'otp_form.dart';
 
 class OTPScreen extends StatefulWidget {
   final String qrCode;
-  const OTPScreen({super.key, required this.qrCode});
+  final String mobileNumber;
+  const OTPScreen({super.key, required this.qrCode, required this.mobileNumber});
 
   @override
   State<OTPScreen> createState() => _OTPScreenState();
@@ -56,7 +57,7 @@ class _OTPScreenState extends State<OTPScreen> {
                   padding:
                       const EdgeInsets.only(top: 5.0, left: 20.0, right: 20.0),
                   child: Text(
-                    'We sent your code to\n+92 333 1234567',
+                    'We sent your code to\n${widget.mobileNumber}',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.montserrat(
                       fontWeight: FontWeight.normal,

@@ -1,4 +1,4 @@
-//ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+//ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -7,8 +7,9 @@ import 'package:naheed_rider/models/load_sheet_model.dart';
 import 'package:naheed_rider/pages/alerts/warning_alert.dart';
 
 class LoadsheetCard extends StatefulWidget {
-  final RiderLoadSheetData rLoadSheet;
-  const LoadsheetCard({super.key, required this.rLoadSheet});
+  final RiderLoadSheet rLoadSheet;
+  final RiderLoadSheetData rLoadSheetData;
+  const LoadsheetCard({super.key, required this.rLoadSheet, required this.rLoadSheetData});
 
   @override
   State<LoadsheetCard> createState() => _LoadsheetCardState();
@@ -31,18 +32,18 @@ class _LoadsheetCardState extends State<LoadsheetCard> {
             children: [
               //Header
               LoadsheetCardHeader(
-                rLoadSheet: widget.rLoadSheet,
+                rLoadSheet: widget.rLoadSheetData,
               ),
               SizedBox(height: 10),
 
               //Order Details
               OrderDetails(
-                rLoadSheet: widget.rLoadSheet,
+                rLoadSheet: widget.rLoadSheetData,
               ),
               SizedBox(height: 10),
 
               //Buttons
-              OrderButtons(),
+              OrderButtons(rLoadSheet: widget.rLoadSheet,),
             ],
           ),
         ),
@@ -52,8 +53,9 @@ class _LoadsheetCardState extends State<LoadsheetCard> {
 }
 
 class OrderButtons extends StatelessWidget {
+  final RiderLoadSheet rLoadSheet;
   const OrderButtons({
-    Key? key,
+    Key? key, required this.rLoadSheet
   }) : super(key: key);
 
   @override
@@ -63,7 +65,11 @@ class OrderButtons extends StatelessWidget {
       children: [
         ElevatedButton(
           onPressed: () {
-            showDialog(context: context, builder: (_) => WarningAlert()).then((value) => print(value));
+            showDialog(context: context, builder: (_) {
+              return WarningAlert(sReasons: rLoadSheet.cancelReasons);
+            }).then((value) {
+              print(value);
+            });
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.red[600],
@@ -79,7 +85,13 @@ class OrderButtons extends StatelessWidget {
           ),
         ),
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            showDialog(context: context, builder: (_) {
+              return WarningAlert(sReasons: rLoadSheet.undeliveredReasons);
+            }).then((value) {
+              print(value);
+            });
+          },
           style: ElevatedButton.styleFrom(
             backgroundColor: kPrimaryColor,
             minimumSize: Size(0, 40),
@@ -114,8 +126,9 @@ class OrderButtons extends StatelessWidget {
 }
 
 class OrderDetails extends StatelessWidget {
+  final RiderLoadSheet r;
   final RiderLoadSheetData rLoadSheet;
-  const OrderDetails({super.key, required this.rLoadSheet});
+  const OrderDetails({super.key, required this.rLoadSheet, required this.r});
 
   @override
   Widget build(BuildContext context) {
@@ -153,8 +166,9 @@ class OrderDetails extends StatelessWidget {
   }
 }
 class OrderRightDetails extends StatefulWidget {
+  final RiderLoadSheet riderLoadSheet;
   final RiderLoadSheetData riderLoadSheetData;
-  const OrderRightDetails({super.key, required this.riderLoadSheetData});
+  const OrderRightDetails({super.key, required this.riderLoadSheetData, required this.riderLoadSheet});
 
   @override
   State<OrderRightDetails> createState() => _OrderRightDetailsState();
@@ -163,6 +177,7 @@ class OrderRightDetails extends StatefulWidget {
 class _OrderRightDetailsState extends State<OrderRightDetails> {
   String amountHeading = "";
   String amountValue = "";
+  List<String> menu = [];
   @override void initState() {
     super.initState();
     if (widget.riderLoadSheetData.paymentMethod == "Cash" || widget.riderLoadSheetData.paymentMethod == "Card") {
@@ -201,12 +216,21 @@ class _OrderRightDetailsState extends State<OrderRightDetails> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            Text(
-              'change',
-              style: GoogleFonts.montserrat(
-                color: Colors.grey[500],
-                fontSize: 11,
-                fontWeight: FontWeight.normal,
+            GestureDetector(
+              onTap: () {
+                showDialog(context: context, builder: (_) {
+              return WarningAlert(sReasons: menu);
+            }).then((value) {
+              print(value);
+            });
+              },
+              child: Text(
+                'change',
+                style: GoogleFonts.montserrat(
+                  color: Colors.grey[500],
+                  fontSize: 11,
+                  fontWeight: FontWeight.normal,
+                ),
               ),
             ),
           ],
@@ -249,6 +273,10 @@ class _OrderRightDetailsState extends State<OrderRightDetails> {
       ],
     );
   }
+  DropdownMenuItem<String> buildMenuItem(String item) => DropdownMenuItem(
+        child: Text(item),
+        value: item,
+      );
 }
 
 class OrderLeftDetails extends StatelessWidget {

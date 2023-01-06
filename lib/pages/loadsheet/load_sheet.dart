@@ -8,6 +8,7 @@ import 'package:naheed_rider/components/size_config.dart';
 import 'package:naheed_rider/models/load_sheet_model.dart';
 import 'package:naheed_rider/services/remote_services.dart';
 import 'package:naheed_rider/widgets/loadsheet_card.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoadSheet extends StatefulWidget {
   const LoadSheet({super.key});
@@ -19,7 +20,9 @@ class LoadSheet extends StatefulWidget {
 class _LoadSheetState extends State<LoadSheet> {
   int listCount = 0;
   bool isLoaded = false;
-  List<RiderLoadSheetData> loadSheet = [];
+  List<RiderLoadSheetData> loadSheetData = [];
+  List<RiderLoadSheet> loadSheet = [];
+  String userName = '';
 
   final GlobalKey<AnimatedListState> _key = GlobalKey();
   @override
@@ -29,6 +32,8 @@ class _LoadSheetState extends State<LoadSheet> {
   }
 
   void getLoadSheet() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    userName = pref.getString('name') ?? '';
     EasyLoading.show(
       status: 'Fetching Loadsheet....',
       maskType: EasyLoadingMaskType.black,
@@ -42,14 +47,15 @@ class _LoadSheetState extends State<LoadSheet> {
         setState(() {
           isLoaded = true;
         });
+        loadSheet = ls;
         Future.delayed(Duration(milliseconds: 100), () {
           for (int i = 0; i < listCount; i++) {
-          loadSheet.insert(i, ls[0].data[i]);
+          loadSheetData.insert(i, ls[0].data[i]);
           _key.currentState!.insertItem(i, duration: Duration(milliseconds: 250));
           }
         });
         
-      }
+      } 
       return;
     }
   }
@@ -70,7 +76,7 @@ class _LoadSheetState extends State<LoadSheet> {
           ),
           isLoaded
               ? SizedBox(
-                  height: SizeConfig.screenHeight * 0.92,
+                  height: SizeConfig.screenHeight * 0.94,
                   child: SafeArea(
                     child: Padding(
                       padding:
@@ -110,7 +116,8 @@ class _LoadSheetState extends State<LoadSheet> {
                                   key: UniqueKey(),
                                   sizeFactor: animation,
                                   child: LoadsheetCard(
-                                    rLoadSheet: loadSheet[index],
+                                    rLoadSheet: loadSheet[0],
+                                    rLoadSheetData: loadSheetData[index],
                                   ),
                                 );
                               }),
@@ -137,7 +144,7 @@ class _LoadSheetState extends State<LoadSheet> {
             left: 0,
             right: 0,
             child: Container(
-              height: 50,
+              height: 60,
               decoration: BoxDecoration(
                 shape: BoxShape.rectangle,
                 color: kPrimaryColor,
@@ -158,7 +165,7 @@ class _LoadSheetState extends State<LoadSheet> {
                           color: Colors.white,
                         ),
                         Text(
-                          'Akhtar Lava',
+                          userName,
                           style: GoogleFonts.montserrat(
                               color: Colors.white,
                               fontWeight: FontWeight.w500,

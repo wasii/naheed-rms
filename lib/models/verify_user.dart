@@ -8,18 +8,22 @@ class VerifyUser {
     VerifyUser({
         required this.status,
         required this.message,
+        required this.contactNumber,
     });
 
     int status;
     String message;
+    String contactNumber;
 
     factory VerifyUser.fromJson(Map<String, dynamic> json) => VerifyUser(
         status: json["status"],
         message: json["message"],
+        contactNumber: json['contact_number'],
     );
 
     Map<String, dynamic> toJson() => {
         "status": status,
         "message": message,
+        "contact_number": contactNumber
     };
 }

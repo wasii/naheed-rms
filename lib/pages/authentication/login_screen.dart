@@ -157,7 +157,7 @@ class _LoginPageState extends State<LoginPage> {
           return Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => OTPScreen(qrCode: qrCode),
+              builder: (context) => OTPScreen(qrCode: qrCode, mobileNumber: user![0].contactNumber,),
             ),
           );
         });
