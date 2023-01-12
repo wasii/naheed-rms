@@ -10,6 +10,8 @@ import 'package:naheed_rider/services/remote_services.dart';
 import 'package:naheed_rider/widgets/loadsheet_card.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../authentication/login_screen.dart';
+
 class LoadSheet extends StatefulWidget {
   const LoadSheet({super.key});
 
@@ -50,13 +52,27 @@ class _LoadSheetState extends State<LoadSheet> {
         loadSheet = ls;
         Future.delayed(Duration(milliseconds: 100), () {
           for (int i = 0; i < listCount; i++) {
-          loadSheetData.insert(i, ls[0].data[i]);
-          _key.currentState!.insertItem(i, duration: Duration(milliseconds: 250));
+            loadSheetData.insert(i, ls[0].data[i]);
+            _key.currentState!
+                .insertItem(i, duration: Duration(milliseconds: 250));
           }
         });
-        
-      } 
+      }
       return;
+    } else {
+      final SharedPreferences pref = await SharedPreferences.getInstance();
+      pref.remove('token');
+      pref.remove('name');
+      pref.remove('id');
+      pref.remove('cnic');
+      EasyLoading.showError('Session Expired....');
+      Future.delayed(Duration(seconds: 2), () {
+        EasyLoading.dismiss();
+        Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(builder: (context) => LoginPage()),
+          (Route<dynamic> route) => false);
+      });
+      
     }
   }
 

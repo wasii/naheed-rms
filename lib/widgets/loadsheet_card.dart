@@ -39,6 +39,7 @@ class _LoadsheetCardState extends State<LoadsheetCard> {
               //Order Details
               OrderDetails(
                 rLoadSheet: widget.rLoadSheetData,
+                r: widget.rLoadSheet,
               ),
               SizedBox(height: 10),
 
@@ -159,7 +160,7 @@ class OrderDetails extends StatelessWidget {
         ),
         Expanded(
           flex: 4,
-          child: OrderRightDetails(riderLoadSheetData: rLoadSheet,),
+          child: OrderRightDetails(riderLoadSheetData: rLoadSheet, riderLoadSheet: r,),
         ),
       ],
     );
@@ -187,6 +188,8 @@ class _OrderRightDetailsState extends State<OrderRightDetails> {
       amountHeading = 'Amount Refund';
       amountValue = widget.riderLoadSheetData.amountRefund;
     }
+    // menu = widget.riderLoadSheet.changePaymentMethod;
+    
   }
   @override
   Widget build(BuildContext context) {

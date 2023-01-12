@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/naheedpk/Desktop/naheed_rider/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v26/values-v26.xml",
+            "outputFile": "/Users/naheedpk/Desktop/naheed-rms/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v26/values-v26.xml",
             "map": [
                 {
                     "source": "/Users/naheedpk/.gradle/caches/transforms-3/c5e6066e343a23cadf0e84126bc54229/transformed/appcompat-1.2.0/res/values-v26/values-v26.xml",

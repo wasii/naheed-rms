@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/naheedpk/Desktop/naheed_rider/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-eu/values-eu.xml",
+            "outputFile": "/Users/naheedpk/Desktop/naheed-rms/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-eu/values-eu.xml",
             "map": [
                 {
                     "source": "/Users/naheedpk/.gradle/caches/transforms-3/6068c20e673d4349a1bd1f4e3933aa39/transformed/jetified-play-services-base-17.4.0/res/values-eu/values.xml",
