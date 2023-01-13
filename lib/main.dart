@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:naheed_rider/components/constants.dart';
 import 'package:naheed_rider/pages/alerts/warning_alert.dart';
 import 'package:naheed_rider/pages/authentication/login_screen.dart';
 import 'package:naheed_rider/pages/loadsheet/load_sheet.dart';
@@ -45,6 +46,7 @@ class _MyAppState extends State<MyApp> {
     final token = pref.getString('token');
     print("token: $token");
     if (token != null) {
+      RiderID = pref.getString('id') ?? '';
       setState(() {
         hasData = true;
       });

@@ -36,12 +36,13 @@ class _LoadSheetState extends State<LoadSheet> {
   void getLoadSheet() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
     userName = pref.getString('name') ?? '';
+
     EasyLoading.show(
       status: 'Fetching Loadsheet....',
       maskType: EasyLoadingMaskType.black,
       dismissOnTap: false,
     );
-    final ls = await RemoteServices().riderLoadSheet('94');
+    final ls = await RemoteServices().riderLoadSheet(RiderID);
     EasyLoading.dismiss();
     if (ls.isNotEmpty) {
       if (ls[0].data.isNotEmpty) {
@@ -134,6 +135,7 @@ class _LoadSheetState extends State<LoadSheet> {
                                   child: LoadsheetCard(
                                     rLoadSheet: loadSheet[0],
                                     rLoadSheetData: loadSheetData[index],
+                                    index: index,
                                   ),
                                 );
                               }),

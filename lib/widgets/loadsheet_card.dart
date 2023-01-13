@@ -1,15 +1,19 @@
 //ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
 
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:naheed_rider/components/constants.dart';
 import 'package:naheed_rider/models/load_sheet_model.dart';
 import 'package:naheed_rider/pages/alerts/warning_alert.dart';
+import 'package:naheed_rider/services/remote_services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoadsheetCard extends StatefulWidget {
+  final int index;
   final RiderLoadSheet rLoadSheet;
   final RiderLoadSheetData rLoadSheetData;
-  const LoadsheetCard({super.key, required this.rLoadSheet, required this.rLoadSheetData});
+  const LoadsheetCard({super.key, required this.rLoadSheet, required this.rLoadSheetData, required this.index});
 
   @override
   State<LoadsheetCard> createState() => _LoadsheetCardState();
@@ -44,7 +48,11 @@ class _LoadsheetCardState extends State<LoadsheetCard> {
               SizedBox(height: 10),
 
               //Buttons
-              OrderButtons(rLoadSheet: widget.rLoadSheet,),
+              OrderButtons(
+                rLoadSheet: widget.rLoadSheet,
+                index: widget.index,
+                rLoadSheetData: widget.rLoadSheetData,
+              ),
             ],
           ),
         ),
@@ -54,9 +62,11 @@ class _LoadsheetCardState extends State<LoadsheetCard> {
 }
 
 class OrderButtons extends StatelessWidget {
+  final int index;
+  final RiderLoadSheetData rLoadSheetData;
   final RiderLoadSheet rLoadSheet;
   const OrderButtons({
-    Key? key, required this.rLoadSheet
+    Key? key, required this.rLoadSheet, required this.index, required this.rLoadSheetData
   }) : super(key: key);
 
   @override
@@ -91,6 +101,31 @@ class OrderButtons extends StatelessWidget {
               return WarningAlert(sReasons: rLoadSheet.undeliveredReasons);
             }).then((value) {
               print(value);
+              if (value != null) {
+                EasyLoading.show(
+                  status: 'Updating your order....',
+                  maskType: EasyLoadingMaskType.black,
+                  dismissOnTap: false,
+                );
+                final val = (value as dynamic) as String;
+                Map<String,String> data = {
+                  'rider_id': RiderID,
+                  'order_id': rLoadSheetData.orderId,
+                  'order_number': rLoadSheetData.orderNumber,
+                  'order_status':'undelivered',
+                  'reason': val
+                };
+                updateOrderStatus(data).then((value) {
+                  EasyLoading.dismiss();
+                  if (value) {
+
+                  } else {
+                    EasyLoading.showError(
+                      'Something went wrong'
+                    );
+                  }
+                });
+              }
             });
           },
           style: ElevatedButton.styleFrom(
@@ -123,6 +158,20 @@ class OrderButtons extends StatelessWidget {
         ),
       ],
     );
+  }
+  //Network Call to update Order Status.........
+  Future<bool> updateOrderStatus(Map<String,String> data) async {
+    final response = await RemoteServices().updateOrderStatus(data);
+    if (response.isNotEmpty) {
+      if (response[0].status == 1) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      return false;
+    }
+    return false;
   }
 }
 

@@ -16,7 +16,7 @@ class RiderLoadSheet {
 
     int status;
     String message;
-    ChangePaymentMethod changePaymentMethod;
+    List<String> changePaymentMethod;
     List<String> cancelReasons;
     List<String> undeliveredReasons;
     List<RiderLoadSheetData> data;
@@ -24,7 +24,7 @@ class RiderLoadSheet {
     factory RiderLoadSheet.fromJson(Map<String, dynamic> json) => RiderLoadSheet(
         status: json["status"],
         message: json["message"],
-        changePaymentMethod: ChangePaymentMethod.fromJson(json["change_payment_method"]),
+        changePaymentMethod: List<String>.from(json["cancel_reasons"].map((x) => x)),
         cancelReasons: List<String>.from(json["cancel_reasons"].map((x) => x)),
         undeliveredReasons: List<String>.from(json["undelivered_reasons"].map((x) => x)),
         data: List<RiderLoadSheetData>.from(json["data"].map((x) => RiderLoadSheetData.fromJson(x))),
@@ -33,39 +33,16 @@ class RiderLoadSheet {
     Map<String, dynamic> toJson() => {
         "status": status,
         "message": message,
-        "change_payment_method": changePaymentMethod.toJson(),
+        "change_payment_method": List<dynamic>.from(cancelReasons.map((x) => x)),
         "cancel_reasons": List<dynamic>.from(cancelReasons.map((x) => x)),
         "undelivered_reasons": List<dynamic>.from(undeliveredReasons.map((x) => x)),
         "data": List<dynamic>.from(data.map((x) => x.toJson())),
     };
 }
 
-class ChangePaymentMethod {
-    ChangePaymentMethod({
-        required this.cashondelivery,
-        required this.ccondelivery,
-        required this.banktransfer,
-    });
-
-    String cashondelivery;
-    String ccondelivery;
-    String banktransfer;
-
-    factory ChangePaymentMethod.fromJson(Map<String, dynamic> json) => ChangePaymentMethod(
-        cashondelivery: json["cashondelivery"],
-        ccondelivery: json["ccondelivery"],
-        banktransfer: json["banktransfer"],
-    );
-
-    Map<String, dynamic> toJson() => {
-        "cashondelivery": cashondelivery,
-        "ccondelivery": ccondelivery,
-        "banktransfer": banktransfer,
-    };
-}
-
 class RiderLoadSheetData {
     RiderLoadSheetData({
+        required this.orderId,
         required this.orderNumber,
         required this.paymentMethod,
         required this.amountDue,
@@ -77,6 +54,7 @@ class RiderLoadSheetData {
         required this.packages,
     });
 
+    String orderId;
     String orderNumber;
     String paymentMethod;
     String amountDue;
@@ -88,6 +66,7 @@ class RiderLoadSheetData {
     String packages;
 
     factory RiderLoadSheetData.fromJson(Map<String, dynamic> json) => RiderLoadSheetData(
+        orderId: json["order_id"],
         orderNumber: json["order_number"],
         paymentMethod: json["payment_method"],
         amountDue: json["amount_due"],
@@ -100,6 +79,7 @@ class RiderLoadSheetData {
     );
 
     Map<String, dynamic> toJson() => {
+        "order_id": orderId,
         "order_number": orderNumber,
         "payment_method": paymentMethod,
         "amount_due": amountDue,

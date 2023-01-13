@@ -4,6 +4,7 @@ import 'package:naheed_rider/components/constants.dart';
 import 'package:naheed_rider/models/load_sheet_model.dart';
 import 'package:naheed_rider/models/login_model.dart';
 import 'package:http/http.dart' as http;
+import 'package:naheed_rider/models/update_rider_order_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models/verify_user.dart';
@@ -45,6 +46,7 @@ class RemoteServices {
   Future<List<RiderLoadSheet>> riderLoadSheet(String rider_id) async {
     final SharedPreferences pref = await SharedPreferences.getInstance();
     final token = pref.getString('token');
+    print(token);
     var client = http.Client();
     var uri = Uri.parse('$GetLoadSheet$rider_id');
     print(uri);
@@ -56,6 +58,27 @@ class RemoteServices {
     if (response.statusCode == 200) {
       var json = response.body;
       return riderLoadSheetFromJson(json);
+    }
+    return [];
+  }
+
+  //Update Rider Order Status....
+  Future<List<UpdateRiderOrder>> updateOrderStatus(Map<String, String> data) async {
+    final SharedPreferences pref = await SharedPreferences.getInstance();
+    final token = pref.getString('token');
+    print(token);
+    var client = http.Client();
+    String url = "rider_id=${data['rider_id'] ?? ''}&order_id=${data['order_id'] ?? ''}&order_number=${data['order_number'] ?? ''}&order_status=${data['order_status'] ?? ''}&reason=${data['reason'] ?? ''}";
+    var uri = Uri.parse('$UpdateOrder$url');
+    print(uri);
+
+    var response = await client.post(uri, headers: {
+      'Authorization': 'Bearer $token',
+    });
+
+    if (response.statusCode == 200) {
+      var json = response.body;
+      return updateRiderOrderFromJson(json);
     }
     return [];
   }
