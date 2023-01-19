@@ -52,10 +52,13 @@ class RemoteServices {
       return loginModelFromJson(json);
     }
     return [
-          LoginModel(status: 0, message: "Something went wrong...", token: '', data: null)
-        ];;
+      LoginModel(
+          status: 0, 
+          message: "Something went wrong...", 
+          token: '', 
+          data: null)
+    ];
   }
-
 
   //Get Rider Load Sheet
   Future<List<RiderLoadSheet>> riderLoadSheet(String rider_id) async {
@@ -82,7 +85,8 @@ class RemoteServices {
   }
 
   //Update Rider Order Status....
-  Future<List<UpdateRiderOrder>> updateOrderStatus(Map<String, String> data) async {
+  Future<List<UpdateRiderOrder>> updateOrderStatus(
+      Map<String, String> data) async {
     bool result = await InternetConnectionChecker().hasConnection;
     if (result == false) {
       return [];
@@ -91,7 +95,8 @@ class RemoteServices {
     final token = pref.getString('token');
     print(token);
     var client = http.Client();
-    String url = "rider_id=${data['rider_id'] ?? ''}&order_id=${data['order_id'] ?? ''}&order_number=${data['order_number'] ?? ''}&order_status=${data['order_status'] ?? ''}&reason=${data['reason'] ?? ''}";
+    String url =
+        "rider_id=${data['rider_id'] ?? ''}&order_id=${data['order_id'] ?? ''}&order_number=${data['order_number'] ?? ''}&order_status=${data['order_status'] ?? ''}&reason=${data['reason'] ?? ''}";
     var uri = Uri.parse('$UpdateOrder$url');
     print(uri);
 
