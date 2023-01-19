@@ -147,6 +147,14 @@ class _LoginPageState extends State<LoginPage> {
         status: 'Please wait.....', maskType: EasyLoadingMaskType.black);
     user = await RemoteServices().verifyUser(qrCode);
     if (user != null) {
+      if (user!.isEmpty) {
+        EasyLoading.dismiss();
+        EasyLoading.showError(
+          InternetError,
+          duration: Duration(seconds: 3,),
+        );
+        return;
+      }
       final String message = user?[0].message ?? '';
       if (message == 'OTP sent') {
         setState(() {

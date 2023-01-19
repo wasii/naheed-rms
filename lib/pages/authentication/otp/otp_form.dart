@@ -191,14 +191,22 @@ class _OTPFormState extends State<OTPForm> {
     await EasyLoading.show(
         status: 'Verifying OTP........', maskType: EasyLoadingMaskType.black);
     final rider = await RemoteServices().verifyOTP(widget.qrCode, otp);
-    print(rider);
     EasyLoading.dismiss();
-    if (rider?[0].message == "") {
+    if (rider!.isEmpty) {
+      EasyLoading.showError(
+        InternetError,
+        duration: Duration(seconds: 3),
+      );
+      return;
+    }
+    
+    if (rider[0].message == "") {
       SharedPreferences pref = await SharedPreferences.getInstance();
-      pref.setString('cnic', rider?[0].data?.cnic ?? '');
-      pref.setString('name', rider?[0].data?.name ?? '');
-      pref.setString('id', rider?[0].data?.id ?? '');
-      pref.setString('token', rider?[0].token ?? '');
+      RiderID = rider[0].data?.id ?? '';
+      pref.setString('cnic', rider[0].data?.cnic ?? '');
+      pref.setString('name', rider[0].data?.name ?? '');
+      pref.setString('id', rider[0].data?.id ?? '');
+      pref.setString('token', rider[0].token);
 
       // ignore: use_build_context_synchronously
       return Navigator.push(
@@ -209,7 +217,7 @@ class _OTPFormState extends State<OTPForm> {
       );
     } else {
       EasyLoading.showError(
-        rider?[0].message ?? '',
+        rider[0].message,
         duration: const Duration(seconds: 3),
         dismissOnTap: false,
       );

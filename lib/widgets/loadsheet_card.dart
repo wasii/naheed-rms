@@ -9,6 +9,8 @@ import 'package:naheed_rider/pages/alerts/warning_alert.dart';
 import 'package:naheed_rider/services/remote_services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../pages/authentication/login_screen.dart';
+
 class LoadsheetCard extends StatefulWidget {
   final int index;
   final RiderLoadSheet rLoadSheet;
@@ -72,33 +74,61 @@ class OrderButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         ElevatedButton(
           onPressed: () {
             showDialog(context: context, builder: (_) {
-              return WarningAlert(sReasons: rLoadSheet.cancelReasons);
+              return WarningAlert(sReasons: rLoadSheet.cancelReasons, heading: 'Cancelled Reasons',);
             }).then((value) {
               print(value);
+              if (value != null) {
+                EasyLoading.show(
+                  status: 'Updating your order....',
+                  maskType: EasyLoadingMaskType.black,
+                  dismissOnTap: false,
+                );
+                final val = (value as dynamic) as String;
+                Map<String,String> data = {
+                  'rider_id': RiderID,
+                  'order_id': rLoadSheetData.orderId,
+                  'order_number': rLoadSheetData.orderNumber,
+                  'order_status':'cancelled',
+                  'reason': val
+                };
+                updateOrderStatus(data).then((value) {
+                  EasyLoading.dismiss();
+                  if (value) {
+                    Future.delayed(Duration(milliseconds: 100), () {
+                      
+                    });
+                  } else {
+                    EasyLoading.showError(
+                      'Something went wrong'
+                    );
+                  }
+                });
+              }
             });
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.red[600],
             minimumSize: Size(0, 40),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(5),
             ),
           ),
           child: Text(
             'Cancelled',
             style: GoogleFonts.montserrat(
-                fontSize: 12, fontWeight: FontWeight.w500),
+                fontSize: 13, fontWeight: FontWeight.w500),
           ),
         ),
+        SizedBox(width: 8,),
         ElevatedButton(
           onPressed: () {
             showDialog(context: context, builder: (_) {
-              return WarningAlert(sReasons: rLoadSheet.undeliveredReasons);
+              return WarningAlert(sReasons: rLoadSheet.undeliveredReasons, heading: 'Undelivered Reasons',);
             }).then((value) {
               print(value);
               if (value != null) {
@@ -118,7 +148,9 @@ class OrderButtons extends StatelessWidget {
                 updateOrderStatus(data).then((value) {
                   EasyLoading.dismiss();
                   if (value) {
-
+                    Future.delayed(Duration(milliseconds: 100), () {
+                      
+                    });
                   } else {
                     EasyLoading.showError(
                       'Something went wrong'
@@ -132,28 +164,102 @@ class OrderButtons extends StatelessWidget {
             backgroundColor: kPrimaryColor,
             minimumSize: Size(0, 40),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(5),
             ),
           ),
           child: Text(
             'Undelivered',
             style: GoogleFonts.montserrat(
-                fontSize: 12, fontWeight: FontWeight.w500),
+                fontSize: 13, fontWeight: FontWeight.w500),
           ),
         ),
+        SizedBox(width: 8,),
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            showDialog(
+                context: context,
+                builder: (ctx) => AlertDialog(
+                  title: const Text("Order Delivered"),
+                  content: const Text("Are you sure you want to mark this order as Delivered?"),
+                  actions: <Widget>[
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red,
+                      minimumSize: Size(0, 40),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                    ),
+                    child: Text(
+                      'Cancel',
+                      style: GoogleFonts.montserrat(
+                          fontSize: 17, fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pop(context,'Confirm');
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green[900],
+                      minimumSize: Size(0, 40),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                    ),
+                    child: Text(
+                      'Confirm',
+                      style: GoogleFonts.montserrat(
+                          fontSize: 17, fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                ],
+                ),
+              ).then((value) {
+              if (value == 'Confirm') {
+                EasyLoading.show(
+                  status: 'Updating your order....',
+                  maskType: EasyLoadingMaskType.black,
+                  dismissOnTap: false,
+                );
+                Map<String,String> data = {
+                  'rider_id': RiderID,
+                  'order_id': rLoadSheetData.orderId,
+                  'order_number': rLoadSheetData.orderNumber,
+                  'order_status':'delivered',
+                  'reason': ''
+                };
+                updateOrderStatus(data).then((value) {
+                  EasyLoading.dismiss();
+                  if (value) {
+                    Future.delayed(Duration(milliseconds: 100), () {
+                      
+                    });
+                  } else {
+                    sessionExpired().then((value) => Navigator.of(context)
+                        .pushAndRemoveUntil(
+                            MaterialPageRoute(
+                                builder: (context) => LoginPage()),
+                            (Route<dynamic> route) => false));
+                  }
+                });
+              }
+            });
+          },
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.green[800],
             minimumSize: Size(0, 40),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(5),
             ),
           ),
           child: Text(
             'Delivered',
             style: GoogleFonts.montserrat(
-                fontSize: 12, fontWeight: FontWeight.w500),
+                fontSize: 13, fontWeight: FontWeight.w500),
           ),
         ),
       ],
@@ -171,7 +277,19 @@ class OrderButtons extends StatelessWidget {
     } else {
       return false;
     }
-    return false;
+  }
+
+  Future<void> sessionExpired() async {
+    final SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.remove('token');
+    pref.remove('name');
+    pref.remove('id');
+    pref.remove('cnic');
+    EasyLoading.showError('Session Expired....');
+    Future.delayed(Duration(seconds: 2), () {
+      EasyLoading.dismiss();
+      return false;
+    });
   }
 }
 
@@ -237,7 +355,7 @@ class _OrderRightDetailsState extends State<OrderRightDetails> {
       amountHeading = 'Amount Refund';
       amountValue = widget.riderLoadSheetData.amountRefund;
     }
-    // menu = widget.riderLoadSheet.changePaymentMethod;
+    menu = widget.riderLoadSheet.changePaymentMethod;
     
   }
   @override
@@ -271,13 +389,13 @@ class _OrderRightDetailsState extends State<OrderRightDetails> {
             GestureDetector(
               onTap: () {
                 showDialog(context: context, builder: (_) {
-              return WarningAlert(sReasons: menu);
+              return WarningAlert(sReasons: menu, heading: 'Payment Method',);
             }).then((value) {
               print(value);
             });
               },
               child: Text(
-                'change',
+                widget.riderLoadSheetData.paymentMethod == 'PrePaid' ? '' : 'change',
                 style: GoogleFonts.montserrat(
                   color: Colors.grey[500],
                   fontSize: 11,

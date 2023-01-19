@@ -40,6 +40,7 @@ OutlineInputBorder outlinedBorder() {
 }
 
 String RiderID = '';
+String InternetError = 'Connect your device with internet first.....';
 const poweredString = 'Powered by NaheedPk';
 
 //URLs

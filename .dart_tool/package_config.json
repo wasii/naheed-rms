@@ -128,6 +128,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "internet_connection_checker",
+      "rootUri": "file:///Users/naheedpk/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/internet_connection_checker-1.0.0+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "js",
       "rootUri": "file:///Users/naheedpk/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.4",
       "packageUri": "lib/",
@@ -344,7 +350,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-01-04T11:51:47.254904Z",
+  "generated": "2023-01-17T07:02:59.131986Z",
   "generator": "pub",
   "generatorVersion": "2.18.4"
 }

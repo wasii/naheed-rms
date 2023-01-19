@@ -24,7 +24,7 @@ class RiderLoadSheet {
     factory RiderLoadSheet.fromJson(Map<String, dynamic> json) => RiderLoadSheet(
         status: json["status"],
         message: json["message"],
-        changePaymentMethod: List<String>.from(json["cancel_reasons"].map((x) => x)),
+        changePaymentMethod: List<String>.from(json["change_payment_method"].map((x) => x)),
         cancelReasons: List<String>.from(json["cancel_reasons"].map((x) => x)),
         undeliveredReasons: List<String>.from(json["undelivered_reasons"].map((x) => x)),
         data: List<RiderLoadSheetData>.from(json["data"].map((x) => RiderLoadSheetData.fromJson(x))),
@@ -33,7 +33,7 @@ class RiderLoadSheet {
     Map<String, dynamic> toJson() => {
         "status": status,
         "message": message,
-        "change_payment_method": List<dynamic>.from(cancelReasons.map((x) => x)),
+        "change_payment_method": List<dynamic>.from(changePaymentMethod.map((x) => x)),
         "cancel_reasons": List<dynamic>.from(cancelReasons.map((x) => x)),
         "undelivered_reasons": List<dynamic>.from(undeliveredReasons.map((x) => x)),
         "data": List<dynamic>.from(data.map((x) => x.toJson())),
