@@ -31,7 +31,7 @@ class _WarningAlertState extends State<WarningAlert> {
             val = 'Card';
             break;
           case 'banktransfer':
-            val = 'Bank Transfer';
+            val = 'Bank';
             break;
         }
         final dictionary = {'key': element, 'value': val, 'isSelected': false};

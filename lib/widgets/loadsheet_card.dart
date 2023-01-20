@@ -346,6 +346,8 @@ class _OrderRightDetailsState extends State<OrderRightDetails> {
   String amountHeading = "";
   String amountValue = "";
   List<String> menu = [];
+  String paymentMethodValue = "";
+  String paymentMethodKey = "";
   @override void initState() {
     super.initState();
     if (widget.riderLoadSheetData.paymentMethod == "Cash" || widget.riderLoadSheetData.paymentMethod == "Card") {
@@ -356,7 +358,8 @@ class _OrderRightDetailsState extends State<OrderRightDetails> {
       amountValue = widget.riderLoadSheetData.amountRefund;
     }
     menu = widget.riderLoadSheet.changePaymentMethod;
-    
+    // paymentMethodKey = 
+    paymentMethodValue = widget.riderLoadSheetData.paymentMethod;
   }
   @override
   Widget build(BuildContext context) {
@@ -379,7 +382,7 @@ class _OrderRightDetailsState extends State<OrderRightDetails> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              widget.riderLoadSheetData.paymentMethod,
+              paymentMethodValue,
               style: GoogleFonts.montserrat(
                 color: kPrimaryColor,
                 fontSize: 16,
@@ -391,7 +394,10 @@ class _OrderRightDetailsState extends State<OrderRightDetails> {
                 showDialog(context: context, builder: (_) {
               return WarningAlert(sReasons: menu, heading: 'Payment Method',);
             }).then((value) {
-              print(value);
+              final splitted = value.toString().split('|');
+              setState(() {
+                paymentMethodValue = splitted[1];
+              });
             });
               },
               child: Text(
