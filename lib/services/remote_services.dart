@@ -85,7 +85,7 @@ class RemoteServices {
   }
 
   //Update Rider Order Status....
-  Future<List<UpdateRiderOrder>> updateOrderStatus(
+  Future<List<UpdateRiderOrder>?> updateOrderStatus(
       Map<String, String> data) async {
     bool result = await InternetConnectionChecker().hasConnection;
     if (result == false) {
@@ -108,6 +108,33 @@ class RemoteServices {
       var json = response.body;
       return updateRiderOrderFromJson(json);
     }
-    return [];
+    return null;
+  }
+
+  //Update Payment Mode
+  Future<List<UpdateRiderOrder>?> updatePaymentMode(
+      Map<String, String> data) async {
+    bool result = await InternetConnectionChecker().hasConnection;
+    if (result == false) {
+      return [];
+    }
+    final SharedPreferences pref = await SharedPreferences.getInstance();
+    final token = pref.getString('token');
+    print(token);
+    var client = http.Client();
+    String url =
+        "rider_id=${data['rider_id'] ?? ''}&order_id=${data['order_id'] ?? ''}&order_number=${data['order_number'] ?? ''}&order_status=${data['order_status'] ?? ''}&reason=${data['reason'] ?? ''}";
+    var uri = Uri.parse('$UpdateOrder$url');
+    print(uri);
+
+    var response = await client.post(uri, headers: {
+      'Authorization': 'Bearer $token',
+    });
+
+    if (response.statusCode == 200) {
+      var json = response.body;
+      return updateRiderOrderFromJson(json);
+    }
+    return null;
   }
 }

@@ -41,6 +41,8 @@ OutlineInputBorder outlinedBorder() {
 
 String RiderID = '';
 String InternetError = 'Connect your device with internet first.....';
+String SomethingWentWrong = 'Something Went Wrong\nPlease try again.';
+String Success = 'Success';
 const poweredString = 'Powered by NaheedPk';
 
 //URLs

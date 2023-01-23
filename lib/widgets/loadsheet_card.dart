@@ -98,14 +98,22 @@ class OrderButtons extends StatelessWidget {
                 };
                 updateOrderStatus(data).then((value) {
                   EasyLoading.dismiss();
-                  if (value) {
+                  if (value == 'Success') {
                     Future.delayed(Duration(milliseconds: 100), () {
                       
                     });
                   } else {
-                    EasyLoading.showError(
-                      'Something went wrong'
-                    );
+                    if (value == InternetError) {
+                      EasyLoading.showError(
+                        InternetError
+                      );
+                    } else {
+                      sessionExpired().then((value) => Navigator.of(context)
+                        .pushAndRemoveUntil(
+                            MaterialPageRoute(
+                                builder: (context) => LoginPage()),
+                            (Route<dynamic> route) => false));
+                    }
                   }
                 });
               }
@@ -147,14 +155,22 @@ class OrderButtons extends StatelessWidget {
                 };
                 updateOrderStatus(data).then((value) {
                   EasyLoading.dismiss();
-                  if (value) {
+                  if (value == 'Success') {
                     Future.delayed(Duration(milliseconds: 100), () {
                       
                     });
                   } else {
-                    EasyLoading.showError(
-                      'Something went wrong'
-                    );
+                    if (value == InternetError) {
+                      EasyLoading.showError(
+                        InternetError
+                      );
+                    } else {
+                      sessionExpired().then((value) => Navigator.of(context)
+                        .pushAndRemoveUntil(
+                            MaterialPageRoute(
+                                builder: (context) => LoginPage()),
+                            (Route<dynamic> route) => false));
+                    }
                   }
                 });
               }
@@ -234,16 +250,22 @@ class OrderButtons extends StatelessWidget {
                 };
                 updateOrderStatus(data).then((value) {
                   EasyLoading.dismiss();
-                  if (value) {
+                  if (value == 'Success') {
                     Future.delayed(Duration(milliseconds: 100), () {
                       
                     });
                   } else {
-                    sessionExpired().then((value) => Navigator.of(context)
+                    if (value == InternetError) {
+                      EasyLoading.showError(
+                        InternetError
+                      );
+                    } else {
+                      sessionExpired().then((value) => Navigator.of(context)
                         .pushAndRemoveUntil(
                             MaterialPageRoute(
                                 builder: (context) => LoginPage()),
                             (Route<dynamic> route) => false));
+                    }
                   }
                 });
               }
@@ -266,16 +288,16 @@ class OrderButtons extends StatelessWidget {
     );
   }
   //Network Call to update Order Status.........
-  Future<bool> updateOrderStatus(Map<String,String> data) async {
+  Future<String> updateOrderStatus(Map<String,String> data) async {
     final response = await RemoteServices().updateOrderStatus(data);
-    if (response.isNotEmpty) {
+    if (response != null) {
       if (response[0].status == 1) {
-        return true;
+        return Success;
       } else {
-        return false;
+        return InternetError;
       }
     } else {
-      return false;
+      return SomethingWentWrong;
     }
   }
 
