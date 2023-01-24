@@ -18,6 +18,8 @@ class OTPScreen extends StatefulWidget {
 }
 
 class _OTPScreenState extends State<OTPScreen> {
+  bool enableButton = false;
+  double time = 30.0;
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -88,16 +90,21 @@ class _OTPScreenState extends State<OTPScreen> {
                           fontWeight: FontWeight.w200, fontSize: 18),
                     ),
                     TweenAnimationBuilder(
-                      tween: Tween(begin: 30.0, end: 0.0),
-                      duration: Duration(seconds: 30),
+                      tween: Tween(begin: time, end: 0.0),
+                      duration: Duration(seconds: time.toInt()),
                       builder: (context, value, child) => Text(
-                        "00:${value.toInt()}",
+                        "00:${value.toInt().toString().padLeft(2, '0')}",
                         style: GoogleFonts.montserrat(
                             fontWeight: FontWeight.w500,
                             color: Colors.white,
                             fontSize: 18),
                       ),
-                      onEnd: () {},
+                      onEnd: () {
+                        setState(() {
+                          time = 0.0;
+                          enableButton = true;
+                        });
+                      },
                     ),
                   ],
                 ),
@@ -105,7 +112,12 @@ class _OTPScreenState extends State<OTPScreen> {
                   height: 10,
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: enableButton ? () {
+                    setState(() {
+                      enableButton = false;
+                      time = 30.0;
+                    });
+                  } : null,
                   style: ButtonStyle(
                     foregroundColor: MaterialStateProperty.resolveWith(
                       (states) {
@@ -114,7 +126,7 @@ class _OTPScreenState extends State<OTPScreen> {
                     ),
                     backgroundColor: MaterialStateProperty.resolveWith(
                       (states) {
-                        return Colors.white;
+                        return enableButton ? Colors.white : Colors.grey[400];
                       },
                     ),
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(

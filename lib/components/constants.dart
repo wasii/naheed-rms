@@ -1,4 +1,4 @@
-// ignore_for_file: constant_identifier_names, prefer_interpolation_to_compose_strings, prefer_typing_uninitialized_variables, prefer_const_constructors
+// ignore_for_file: constant_identifier_names, prefer_interpolation_to_compose_strings, prefer_typing_uninitialized_variables, prefer_const_constructors, non_constant_identifier_names
 
 import 'dart:convert';
 
@@ -51,3 +51,4 @@ const LoginURL = BaseURL + "index.php/rest/V1/naheed-rms/login?rider_qr=";
 const VerifyOTP = BaseURL + "index.php/rest/V1/naheed-rms/otpverify?rider_qr=";
 const GetLoadSheet = BaseURL + "index.php/rest/V1/naheed-rms/loadsheet?rider_id=";
 const UpdateOrder = BaseURL + "index.php/rest/V1/naheed-rms/updateorderstatus?";
+const UpdatePaymentMode = BaseURL + "index.php/rest/V1/naheed-rms/updatepaymentmethod?";

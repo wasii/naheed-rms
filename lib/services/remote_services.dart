@@ -123,7 +123,7 @@ class RemoteServices {
     print(token);
     var client = http.Client();
     String url =
-        "rider_id=${data['rider_id'] ?? ''}&order_id=${data['order_id'] ?? ''}&order_number=${data['order_number'] ?? ''}&order_status=${data['order_status'] ?? ''}&reason=${data['reason'] ?? ''}";
+        "rider_id=${data['rider_id'] ?? ''}&order_id=${data['order_id'] ?? ''}&order_number=${data['order_number'] ?? ''}&payment_method=${data['payment_method'] ?? ''}";
     var uri = Uri.parse('$UpdateOrder$url');
     print(uri);
 

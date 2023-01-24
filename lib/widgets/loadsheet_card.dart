@@ -15,7 +15,11 @@ class LoadsheetCard extends StatefulWidget {
   final int index;
   final RiderLoadSheet rLoadSheet;
   final RiderLoadSheetData rLoadSheetData;
-  const LoadsheetCard({super.key, required this.rLoadSheet, required this.rLoadSheetData, required this.index});
+  const LoadsheetCard(
+      {super.key,
+      required this.rLoadSheet,
+      required this.rLoadSheetData,
+      required this.index});
 
   @override
   State<LoadsheetCard> createState() => _LoadsheetCardState();
@@ -67,9 +71,12 @@ class OrderButtons extends StatelessWidget {
   final int index;
   final RiderLoadSheetData rLoadSheetData;
   final RiderLoadSheet rLoadSheet;
-  const OrderButtons({
-    Key? key, required this.rLoadSheet, required this.index, required this.rLoadSheetData
-  }) : super(key: key);
+  const OrderButtons(
+      {Key? key,
+      required this.rLoadSheet,
+      required this.index,
+      required this.rLoadSheetData})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -78,9 +85,14 @@ class OrderButtons extends StatelessWidget {
       children: [
         ElevatedButton(
           onPressed: () {
-            showDialog(context: context, builder: (_) {
-              return WarningAlert(sReasons: rLoadSheet.cancelReasons, heading: 'Cancelled Reasons',);
-            }).then((value) {
+            showDialog(
+                context: context,
+                builder: (_) {
+                  return WarningAlert(
+                    sReasons: rLoadSheet.cancelReasons,
+                    heading: 'Cancelled Reasons',
+                  );
+                }).then((value) {
               print(value);
               if (value != null) {
                 EasyLoading.show(
@@ -89,30 +101,26 @@ class OrderButtons extends StatelessWidget {
                   dismissOnTap: false,
                 );
                 final val = (value as dynamic) as String;
-                Map<String,String> data = {
+                Map<String, String> data = {
                   'rider_id': RiderID,
                   'order_id': rLoadSheetData.orderId,
                   'order_number': rLoadSheetData.orderNumber,
-                  'order_status':'cancelled',
+                  'order_status': 'cancelled',
                   'reason': val
                 };
                 updateOrderStatus(data).then((value) {
                   EasyLoading.dismiss();
                   if (value == 'Success') {
-                    Future.delayed(Duration(milliseconds: 100), () {
-                      
-                    });
+                    Future.delayed(Duration(milliseconds: 100), () {});
                   } else {
                     if (value == InternetError) {
-                      EasyLoading.showError(
-                        InternetError
-                      );
+                      EasyLoading.showError(InternetError);
                     } else {
                       sessionExpired().then((value) => Navigator.of(context)
-                        .pushAndRemoveUntil(
-                            MaterialPageRoute(
-                                builder: (context) => LoginPage()),
-                            (Route<dynamic> route) => false));
+                          .pushAndRemoveUntil(
+                              MaterialPageRoute(
+                                  builder: (context) => LoginPage()),
+                              (Route<dynamic> route) => false));
                     }
                   }
                 });
@@ -132,12 +140,19 @@ class OrderButtons extends StatelessWidget {
                 fontSize: 13, fontWeight: FontWeight.w500),
           ),
         ),
-        SizedBox(width: 8,),
+        SizedBox(
+          width: 8,
+        ),
         ElevatedButton(
           onPressed: () {
-            showDialog(context: context, builder: (_) {
-              return WarningAlert(sReasons: rLoadSheet.undeliveredReasons, heading: 'Undelivered Reasons',);
-            }).then((value) {
+            showDialog(
+                context: context,
+                builder: (_) {
+                  return WarningAlert(
+                    sReasons: rLoadSheet.undeliveredReasons,
+                    heading: 'Undelivered Reasons',
+                  );
+                }).then((value) {
               print(value);
               if (value != null) {
                 EasyLoading.show(
@@ -146,30 +161,26 @@ class OrderButtons extends StatelessWidget {
                   dismissOnTap: false,
                 );
                 final val = (value as dynamic) as String;
-                Map<String,String> data = {
+                Map<String, String> data = {
                   'rider_id': RiderID,
                   'order_id': rLoadSheetData.orderId,
                   'order_number': rLoadSheetData.orderNumber,
-                  'order_status':'undelivered',
+                  'order_status': 'undelivered',
                   'reason': val
                 };
                 updateOrderStatus(data).then((value) {
                   EasyLoading.dismiss();
                   if (value == 'Success') {
-                    Future.delayed(Duration(milliseconds: 100), () {
-                      
-                    });
+                    Future.delayed(Duration(milliseconds: 100), () {});
                   } else {
                     if (value == InternetError) {
-                      EasyLoading.showError(
-                        InternetError
-                      );
+                      EasyLoading.showError(InternetError);
                     } else {
                       sessionExpired().then((value) => Navigator.of(context)
-                        .pushAndRemoveUntil(
-                            MaterialPageRoute(
-                                builder: (context) => LoginPage()),
-                            (Route<dynamic> route) => false));
+                          .pushAndRemoveUntil(
+                              MaterialPageRoute(
+                                  builder: (context) => LoginPage()),
+                              (Route<dynamic> route) => false));
                     }
                   }
                 });
@@ -189,15 +200,18 @@ class OrderButtons extends StatelessWidget {
                 fontSize: 13, fontWeight: FontWeight.w500),
           ),
         ),
-        SizedBox(width: 8,),
+        SizedBox(
+          width: 8,
+        ),
         ElevatedButton(
           onPressed: () {
             showDialog(
-                context: context,
-                builder: (ctx) => AlertDialog(
-                  title: const Text("Order Delivered"),
-                  content: const Text("Are you sure you want to mark this order as Delivered?"),
-                  actions: <Widget>[
+              context: context,
+              builder: (ctx) => AlertDialog(
+                title: const Text("Order Delivered"),
+                content: const Text(
+                    "Are you sure you want to mark this order as Delivered?"),
+                actions: <Widget>[
                   ElevatedButton(
                     onPressed: () {
                       Navigator.of(context).pop();
@@ -217,7 +231,7 @@ class OrderButtons extends StatelessWidget {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pop(context,'Confirm');
+                      Navigator.pop(context, 'Confirm');
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.green[900],
@@ -233,38 +247,34 @@ class OrderButtons extends StatelessWidget {
                     ),
                   ),
                 ],
-                ),
-              ).then((value) {
+              ),
+            ).then((value) {
               if (value == 'Confirm') {
                 EasyLoading.show(
                   status: 'Updating your order....',
                   maskType: EasyLoadingMaskType.black,
                   dismissOnTap: false,
                 );
-                Map<String,String> data = {
+                Map<String, String> data = {
                   'rider_id': RiderID,
                   'order_id': rLoadSheetData.orderId,
                   'order_number': rLoadSheetData.orderNumber,
-                  'order_status':'delivered',
+                  'order_status': 'delivered',
                   'reason': ''
                 };
                 updateOrderStatus(data).then((value) {
                   EasyLoading.dismiss();
-                  if (value == 'Success') {
-                    Future.delayed(Duration(milliseconds: 100), () {
-                      
-                    });
+                  if (value == Success) {
+                    Future.delayed(Duration(milliseconds: 100), () {});
                   } else {
                     if (value == InternetError) {
-                      EasyLoading.showError(
-                        InternetError
-                      );
+                      EasyLoading.showError(InternetError);
                     } else {
                       sessionExpired().then((value) => Navigator.of(context)
-                        .pushAndRemoveUntil(
-                            MaterialPageRoute(
-                                builder: (context) => LoginPage()),
-                            (Route<dynamic> route) => false));
+                          .pushAndRemoveUntil(
+                              MaterialPageRoute(
+                                  builder: (context) => LoginPage()),
+                              (Route<dynamic> route) => false));
                     }
                   }
                 });
@@ -287,8 +297,9 @@ class OrderButtons extends StatelessWidget {
       ],
     );
   }
+
   //Network Call to update Order Status.........
-  Future<String> updateOrderStatus(Map<String,String> data) async {
+  Future<String> updateOrderStatus(Map<String, String> data) async {
     final response = await RemoteServices().updateOrderStatus(data);
     if (response != null) {
       if (response[0].status == 1) {
@@ -349,16 +360,23 @@ class OrderDetails extends StatelessWidget {
         ),
         Expanded(
           flex: 4,
-          child: OrderRightDetails(riderLoadSheetData: rLoadSheet, riderLoadSheet: r,),
+          child: OrderRightDetails(
+            riderLoadSheetData: rLoadSheet,
+            riderLoadSheet: r,
+          ),
         ),
       ],
     );
   }
 }
+
 class OrderRightDetails extends StatefulWidget {
   final RiderLoadSheet riderLoadSheet;
   final RiderLoadSheetData riderLoadSheetData;
-  const OrderRightDetails({super.key, required this.riderLoadSheetData, required this.riderLoadSheet});
+  const OrderRightDetails(
+      {super.key,
+      required this.riderLoadSheetData,
+      required this.riderLoadSheet});
 
   @override
   State<OrderRightDetails> createState() => _OrderRightDetailsState();
@@ -370,9 +388,11 @@ class _OrderRightDetailsState extends State<OrderRightDetails> {
   List<String> menu = [];
   String paymentMethodValue = "";
   String paymentMethodKey = "";
-  @override void initState() {
+  @override
+  void initState() {
     super.initState();
-    if (widget.riderLoadSheetData.paymentMethod == "Cash" || widget.riderLoadSheetData.paymentMethod == "Card") {
+    if (widget.riderLoadSheetData.paymentMethod == "Cash" ||
+        widget.riderLoadSheetData.paymentMethod == "Card") {
       amountHeading = 'Amount Due';
       amountValue = widget.riderLoadSheetData.amountDue;
     } else {
@@ -380,9 +400,10 @@ class _OrderRightDetailsState extends State<OrderRightDetails> {
       amountValue = widget.riderLoadSheetData.amountRefund;
     }
     menu = widget.riderLoadSheet.changePaymentMethod;
-    // paymentMethodKey = 
+    // paymentMethodKey =
     paymentMethodValue = widget.riderLoadSheetData.paymentMethod;
   }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -413,17 +434,52 @@ class _OrderRightDetailsState extends State<OrderRightDetails> {
             ),
             GestureDetector(
               onTap: () {
-                showDialog(context: context, builder: (_) {
-              return WarningAlert(sReasons: menu, heading: 'Payment Method',);
-            }).then((value) {
-              final splitted = value.toString().split('|');
-              setState(() {
-                paymentMethodValue = splitted[1];
-              });
-            });
+                showDialog(
+                    context: context,
+                    builder: (_) {
+                      return WarningAlert(
+                        sReasons: menu,
+                        heading: 'Payment Method',
+                      );
+                    }).then((value) {
+                  final splitted = value.toString().split('|');
+                  EasyLoading.show(
+                    status: 'Updating payment method....',
+                    maskType: EasyLoadingMaskType.black,
+                    dismissOnTap: false,
+                  );
+                  Map<String, String> data = {
+                    'rider_id': RiderID,
+                    'order_id': widget.riderLoadSheetData.orderId,
+                    'order_number': widget.riderLoadSheetData.orderNumber,
+                    'payment_method': splitted[0],
+                  };
+                  updatePayment(data).then((value) {
+                    EasyLoading.dismiss();
+                    if (value == Success) {
+                      Future.delayed(Duration(milliseconds: 100), () {
+                        setState(() {
+                          paymentMethodValue = splitted[1];
+                        });
+                      });
+                    } else {
+                      if (value == InternetError) {
+                        EasyLoading.showError(InternetError);
+                      } else {
+                        sessionExpired().then((value) => Navigator.of(context)
+                            .pushAndRemoveUntil(
+                                MaterialPageRoute(
+                                    builder: (context) => LoginPage()),
+                                (Route<dynamic> route) => false));
+                      }
+                    }
+                  });
+                });
               },
               child: Text(
-                widget.riderLoadSheetData.paymentMethod == 'PrePaid' ? '' : 'change',
+                widget.riderLoadSheetData.paymentMethod == 'PrePaid'
+                    ? ''
+                    : 'change',
                 style: GoogleFonts.montserrat(
                   color: Colors.grey[500],
                   fontSize: 11,
@@ -471,10 +527,32 @@ class _OrderRightDetailsState extends State<OrderRightDetails> {
       ],
     );
   }
-  DropdownMenuItem<String> buildMenuItem(String item) => DropdownMenuItem(
-        child: Text(item),
-        value: item,
-      );
+  //Network Call to update Order Status.........
+  Future<String> updatePayment(Map<String, String> data) async {
+    final response = await RemoteServices().updatePaymentMode(data);
+    if (response != null) {
+      if (response[0].status == 1) {
+        return Success;
+      } else {
+        return InternetError;
+      }
+    } else {
+      return SomethingWentWrong;
+    }
+  }
+
+  Future<void> sessionExpired() async {
+    final SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.remove('token');
+    pref.remove('name');
+    pref.remove('id');
+    pref.remove('cnic');
+    EasyLoading.showError('Session Expired....');
+    Future.delayed(Duration(seconds: 2), () {
+      EasyLoading.dismiss();
+      return false;
+    });
+  }
 }
 
 class OrderLeftDetails extends StatelessWidget {
