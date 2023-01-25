@@ -61,7 +61,7 @@ class RemoteServices {
   }
 
   //Get Rider Load Sheet
-  Future<List<RiderLoadSheet>> riderLoadSheet(String rider_id) async {
+  Future<List<RiderLoadSheet>?> riderLoadSheet(String rider_id) async {
     bool result = await InternetConnectionChecker().hasConnection;
     if (result == false) {
       return [];
@@ -81,7 +81,7 @@ class RemoteServices {
       var json = response.body;
       return riderLoadSheetFromJson(json);
     }
-    return [];
+    return null;
   }
 
   //Update Rider Order Status....
@@ -124,7 +124,7 @@ class RemoteServices {
     var client = http.Client();
     String url =
         "rider_id=${data['rider_id'] ?? ''}&order_id=${data['order_id'] ?? ''}&order_number=${data['order_number'] ?? ''}&payment_method=${data['payment_method'] ?? ''}";
-    var uri = Uri.parse('$UpdateOrder$url');
+    var uri = Uri.parse('$UpdatePaymentMode$url');
     print(uri);
 
     var response = await client.post(uri, headers: {

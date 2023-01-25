@@ -44,20 +44,28 @@ class _LoadSheetState extends State<LoadSheet> {
     );
     final ls = await RemoteServices().riderLoadSheet(RiderID);
     EasyLoading.dismiss();
-    if (ls.isNotEmpty) {
-      if (ls[0].data.isNotEmpty) {
-        listCount = ls[0].data.length;
-        setState(() {
-          isLoaded = true;
+    if (ls != null) {
+      if (ls.isEmpty) {
+        EasyLoading.showError(InternetError);
+        Future.delayed(Duration(seconds: 3), () {
+          Navigator.pop(context);
         });
-        loadSheet = ls;
-        Future.delayed(Duration(milliseconds: 100), () {
-          for (int i = 0; i < listCount; i++) {
-            loadSheetData.insert(i, ls[0].data[i]);
-            _key.currentState!
-                .insertItem(i, duration: Duration(milliseconds: 250));
-          }
-        });
+        return;
+      } else {
+        if (ls[0].data.isNotEmpty) {
+          listCount = ls[0].data.length;
+          setState(() {
+            isLoaded = true;
+          });
+          loadSheet = ls;
+          Future.delayed(Duration(milliseconds: 100), () {
+            for (int i = 0; i < listCount; i++) {
+              loadSheetData.insert(i, ls[0].data[i]);
+              _key.currentState!
+                  .insertItem(i, duration: Duration(milliseconds: 250));
+            }
+          });
+        }
       }
       return;
     } else {
@@ -93,11 +101,11 @@ class _LoadSheetState extends State<LoadSheet> {
           ),
           isLoaded
               ? SizedBox(
-                  height: SizeConfig.screenHeight * 0.94,
+                  height: SizeConfig.screenHeight * 0.92,
                   child: SafeArea(
                     child: Padding(
                       padding:
-                          EdgeInsets.symmetric(vertical: 0, horizontal: 12),
+                          EdgeInsets.symmetric(vertical: 0, horizontal: 10),
                       child: Column(
                         children: [
                           SizedBox(
@@ -162,7 +170,7 @@ class _LoadSheetState extends State<LoadSheet> {
             left: 0,
             right: 0,
             child: Container(
-              height: 60,
+              height: SizeConfig.screenHeight * 0.08,
               decoration: BoxDecoration(
                 shape: BoxShape.rectangle,
                 color: kPrimaryColor,

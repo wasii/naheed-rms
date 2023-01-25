@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_res/release/anim-v21/mtrl_bottom_sheet_slide_in.xml",
+        "source": "/Users/naheedpk/.gradle/caches/transforms-3/8c09bec62be409fe572343fe4d451870/transformed/material-1.3.0/res/anim-v21/mtrl_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "/Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_res/release/anim-v21/design_bottom_sheet_slide_out.xml",
+        "source": "/Users/naheedpk/.gradle/caches/transforms-3/8c09bec62be409fe572343fe4d451870/transformed/material-1.3.0/res/anim-v21/design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "/Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_res/release/anim-v21/design_bottom_sheet_slide_in.xml",
+        "source": "/Users/naheedpk/.gradle/caches/transforms-3/8c09bec62be409fe572343fe4d451870/transformed/material-1.3.0/res/anim-v21/design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "/Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_res/release/anim-v21/mtrl_bottom_sheet_slide_out.xml",
+        "source": "/Users/naheedpk/.gradle/caches/transforms-3/8c09bec62be409fe572343fe4d451870/transformed/material-1.3.0/res/anim-v21/mtrl_bottom_sheet_slide_out.xml"
+    }
+]

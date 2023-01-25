@@ -81,8 +81,8 @@ class _LoginPageState extends State<LoginPage> {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  // scanQRCode();
-                  verifyRider('94/42301-5102628-1');
+                  scanQRCode();
+                  // verifyRider('94/42301-5102628-1');
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,

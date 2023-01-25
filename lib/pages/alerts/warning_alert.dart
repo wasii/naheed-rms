@@ -177,7 +177,7 @@ class _WarningAlertState extends State<WarningAlert> {
                               backgroundColor: Colors.red[600],
                               minimumSize: Size(130, 40),
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20),
+                                borderRadius: BorderRadius.circular(5),
                               ),
                             ),
                             child: Text(
@@ -202,7 +202,7 @@ class _WarningAlertState extends State<WarningAlert> {
                               backgroundColor: kPrimaryColor,
                               minimumSize: Size(130, 40),
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20),
+                                borderRadius: BorderRadius.circular(5),
                               ),
                             ),
                             child: Text(

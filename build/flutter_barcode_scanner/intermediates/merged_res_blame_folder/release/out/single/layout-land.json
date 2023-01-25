@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_res/release/layout-land/material_timepicker.xml",
+        "source": "/Users/naheedpk/.gradle/caches/transforms-3/8c09bec62be409fe572343fe4d451870/transformed/material-1.3.0/res/layout-land/material_timepicker.xml"
+    },
+    {
+        "merged": "/Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_res/release/layout-land/material_clock_period_toggle_land.xml",
+        "source": "/Users/naheedpk/.gradle/caches/transforms-3/8c09bec62be409fe572343fe4d451870/transformed/material-1.3.0/res/layout-land/material_clock_period_toggle_land.xml"
+    },
+    {
+        "merged": "/Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_res/release/layout-land/mtrl_picker_header_dialog.xml",
+        "source": "/Users/naheedpk/.gradle/caches/transforms-3/8c09bec62be409fe572343fe4d451870/transformed/material-1.3.0/res/layout-land/mtrl_picker_header_dialog.xml"
+    }
+]

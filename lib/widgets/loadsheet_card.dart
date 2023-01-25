@@ -81,7 +81,7 @@ class OrderButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         ElevatedButton(
           onPressed: () {
@@ -234,7 +234,7 @@ class OrderButtons extends StatelessWidget {
                       Navigator.pop(context, 'Confirm');
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green[900],
+                      backgroundColor: kPrimaryColor,
                       minimumSize: Size(0, 40),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5),
@@ -302,10 +302,14 @@ class OrderButtons extends StatelessWidget {
   Future<String> updateOrderStatus(Map<String, String> data) async {
     final response = await RemoteServices().updateOrderStatus(data);
     if (response != null) {
-      if (response[0].status == 1) {
-        return Success;
-      } else {
+      if (response.isEmpty) {
         return InternetError;
+      } else {
+        if (response[0].status == 1) {
+        return Success;
+        } else {
+          return InternetError;
+        }
       }
     } else {
       return SomethingWentWrong;
@@ -531,10 +535,14 @@ class _OrderRightDetailsState extends State<OrderRightDetails> {
   Future<String> updatePayment(Map<String, String> data) async {
     final response = await RemoteServices().updatePaymentMode(data);
     if (response != null) {
-      if (response[0].status == 1) {
-        return Success;
-      } else {
+      if (response.isEmpty) {
         return InternetError;
+      } else {
+        if (response[0].status == 1) {
+          return Success;
+        } else {
+          return SomethingWentWrong;
+        }
       }
     } else {
       return SomethingWentWrong;
