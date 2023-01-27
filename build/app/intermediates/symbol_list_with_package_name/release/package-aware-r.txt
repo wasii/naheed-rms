@@ -30,6 +30,7 @@ anim design_snackbar_out
 anim mtrl_bottom_sheet_slide_in
 anim mtrl_bottom_sheet_slide_out
 anim mtrl_card_lowers_interpolator
+anim scan_anim
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -140,6 +141,9 @@ attr behavior_overlapTop
 attr behavior_peekHeight
 attr behavior_saveFlags
 attr behavior_skipCollapsed
+attr borderAlpha
+attr borderColor
+attr borderLength
 attr borderWidth
 attr borderlessButtonStyle
 attr bottomAppBarStyle
@@ -392,6 +396,7 @@ attr fastScrollHorizontalThumbDrawable
 attr fastScrollHorizontalTrackDrawable
 attr fastScrollVerticalThumbDrawable
 attr fastScrollVerticalTrackDrawable
+attr finderOffset
 attr finishPrimaryWithSecondary
 attr finishSecondaryWithPrimary
 attr firstBaselineToTopHeight
@@ -505,6 +510,8 @@ attr keylines
 attr labelBehavior
 attr labelStyle
 attr labelVisibilityMode
+attr laserColor
+attr laserEnabled
 attr lastBaselineToBottomHeight
 attr layout
 attr layoutDescription
@@ -594,6 +601,7 @@ attr listPreferredItemPaddingRight
 attr listPreferredItemPaddingStart
 attr logo
 attr logoDescription
+attr maskColor
 attr materialAlertDialogBodyTextStyle
 attr materialAlertDialogTheme
 attr materialAlertDialogTitleIconStyle
@@ -729,6 +737,7 @@ attr reverseLayout
 attr rippleColor
 attr round
 attr roundPercent
+attr roundedCorner
 attr saturation
 attr scopeUris
 attr scrimAnimationDuration
@@ -750,6 +759,7 @@ attr shapeAppearanceMediumComponent
 attr shapeAppearanceOverlay
 attr shapeAppearanceSmallComponent
 attr shortcutMatchRequired
+attr shouldScaleToFill
 attr showAnimationBehavior
 attr showAsAction
 attr showDelay
@@ -776,6 +786,7 @@ attr splitMinSmallestWidth
 attr splitMinWidth
 attr splitRatio
 attr splitTrack
+attr squaredFinder
 attr srcCompat
 attr stackFromEnd
 attr staggered
@@ -1177,6 +1188,9 @@ color test_mtrl_calendar_day
 color test_mtrl_calendar_day_selected
 color tooltip_background_dark
 color tooltip_background_light
+color viewfinder_border
+color viewfinder_laser
+color viewfinder_mask
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -1706,6 +1720,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_switch_camera
 drawable launch_background
+drawable left_arrow
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -1738,9 +1753,13 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable pay_light
+drawable pay_light_dark
+drawable pay_light_light
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable web_close
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -1807,6 +1826,7 @@ id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
 id action_text
+id actionbar
 id actions
 id activity_chooser_view_content
 id add
@@ -1825,6 +1845,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id back_btn
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -1836,6 +1857,9 @@ id btnBarcodeCaptureCancel
 id buttonPanel
 id cancel_action
 id cancel_button
+id capture_container
+id capture_crop_view
+id capture_preview
 id center
 id center_horizontal
 id center_vertical
@@ -1915,6 +1939,7 @@ id fixed
 id flip
 id floating
 id forever
+id fragment_container
 id ghost_view
 id ghost_view_holder
 id gone
@@ -1960,6 +1985,7 @@ id listMode
 id list_item
 id locale
 id ltr
+id mask_top
 id masked
 id material_clock_display
 id material_clock_face
@@ -2036,6 +2062,8 @@ id parent_matrix
 id password_toggle
 id path
 id pathRelative
+id pay_card_container
+id pb_hori_loading
 id peekHeight
 id percent
 id pin
@@ -2052,6 +2080,7 @@ id right
 id rightToLeft
 id right_icon
 id right_side
+id rl_root
 id rounded
 id row_index_key
 id rtl
@@ -2059,6 +2088,7 @@ id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
 id scale
+id scan_bar
 id screen
 id scroll
 id scrollIndicatorDown
@@ -2150,6 +2180,7 @@ id title
 id titleDividerNoCustom
 id title_template
 id toggle
+id toggle_flashlight
 id top
 id topLayout
 id topPanel
@@ -2162,6 +2193,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tv_title
 id unchecked
 id uniform
 id unlabeled
@@ -2169,6 +2201,7 @@ id up
 id useLogo
 id view_offset_helper
 id visible
+id webview
 id wide
 id withText
 id withinBounds
@@ -2197,6 +2230,8 @@ integer mtrl_chip_anim_duration
 integer mtrl_tab_indicator_anim_duration_ms
 integer show_password_duration
 integer status_bar_notification_info_maxnum
+integer viewfinder_border_length
+integer viewfinder_border_width
 interpolator btn_checkbox_checked_mtrl_animation_interpolator_0
 interpolator btn_checkbox_checked_mtrl_animation_interpolator_1
 interpolator btn_checkbox_unchecked_mtrl_animation_interpolator_0
@@ -2236,6 +2271,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_g_scanner
 layout barcode_capture
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -2253,6 +2289,8 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_scan
+layout fragment_webview
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
@@ -2365,6 +2403,7 @@ string barcode_header
 string barcode_success
 string bottom_sheet_behavior
 string bottomsheet_action_expand_halfway
+string camera_permission_tips
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -2388,10 +2427,13 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string dialog_btn_cancel
+string dialog_btn_go
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string go_to_webview
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
@@ -2455,6 +2497,7 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string permission_camera_rationale
 string read_barcode
+string scanner_title
 string search_menu_title
 string status_bar_notification_info_overflow
 string title_activity_main
@@ -3181,6 +3224,7 @@ style Widget_MaterialComponents_Toolbar_PrimarySurface
 style Widget_MaterialComponents_Toolbar_Surface
 style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
+style noActionbarTheme
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth
@@ -3202,6 +3246,7 @@ styleable AppCompatTextHelper android_textAppearance android_drawableTop android
 styleable AppCompatTextView android_textAppearance autoSizeMaxTextSize autoSizeMinTextSize autoSizePresetSizes autoSizeStepGranularity autoSizeTextType drawableBottomCompat drawableEndCompat drawableLeftCompat drawableRightCompat drawableStartCompat drawableTint drawableTintMode drawableTopCompat firstBaselineToTopHeight fontFamily fontVariationSettings lastBaselineToBottomHeight lineHeight textAllCaps textLocale
 styleable AppCompatTheme android_windowIsFloating android_windowAnimationStyle actionBarDivider actionBarItemBackground actionBarPopupTheme actionBarSize actionBarSplitStyle actionBarStyle actionBarTabBarStyle actionBarTabStyle actionBarTabTextStyle actionBarTheme actionBarWidgetTheme actionButtonStyle actionDropDownStyle actionMenuTextAppearance actionMenuTextColor actionModeBackground actionModeCloseButtonStyle actionModeCloseDrawable actionModeCopyDrawable actionModeCutDrawable actionModeFindDrawable actionModePasteDrawable actionModePopupWindowStyle actionModeSelectAllDrawable actionModeShareDrawable actionModeSplitBackground actionModeStyle actionModeWebSearchDrawable actionOverflowButtonStyle actionOverflowMenuStyle activityChooserViewStyle alertDialogButtonGroupStyle alertDialogCenterButtons alertDialogStyle alertDialogTheme autoCompleteTextViewStyle borderlessButtonStyle buttonBarButtonStyle buttonBarNegativeButtonStyle buttonBarNeutralButtonStyle buttonBarPositiveButtonStyle buttonBarStyle buttonStyle buttonStyleSmall checkboxStyle checkedTextViewStyle colorAccent colorBackgroundFloating colorButtonNormal colorControlActivated colorControlHighlight colorControlNormal colorError colorPrimary colorPrimaryDark colorSwitchThumbNormal controlBackground dialogCornerRadius dialogPreferredPadding dialogTheme dividerHorizontal dividerVertical dropDownListViewStyle dropdownListPreferredItemHeight editTextBackground editTextColor editTextStyle homeAsUpIndicator imageButtonStyle listChoiceBackgroundIndicator listChoiceIndicatorMultipleAnimated listChoiceIndicatorSingleAnimated listDividerAlertDialog listMenuViewStyle listPopupWindowStyle listPreferredItemHeight listPreferredItemHeightLarge listPreferredItemHeightSmall listPreferredItemPaddingEnd listPreferredItemPaddingLeft listPreferredItemPaddingRight listPreferredItemPaddingStart panelBackground panelMenuListTheme panelMenuListWidth popupMenuStyle popupWindowStyle radioButtonStyle ratingBarStyle ratingBarStyleIndicator ratingBarStyleSmall searchViewStyle seekBarStyle selectableItemBackground selectableItemBackgroundBorderless spinnerDropDownItemStyle spinnerStyle switchStyle textAppearanceLargePopupMenu textAppearanceListItem textAppearanceListItemSecondary textAppearanceListItemSmall textAppearancePopupMenuHeader textAppearanceSearchResultSubtitle textAppearanceSearchResultTitle textAppearanceSmallPopupMenu textColorAlertDialogListItem textColorSearchUrl toolbarNavigationButtonStyle toolbarStyle tooltipForegroundColor tooltipFrameBackground viewInflaterClass windowActionBar windowActionBarOverlay windowActionModeOverlay windowFixedHeightMajor windowFixedHeightMinor windowFixedWidthMajor windowFixedWidthMinor windowMinWidthMajor windowMinWidthMinor windowNoTitle
 styleable Badge backgroundColor badgeGravity badgeTextColor horizontalOffset maxCharacterCount number verticalOffset
+styleable BarcodeScannerView borderAlpha borderColor borderLength borderWidth cornerRadius finderOffset laserColor laserEnabled maskColor roundedCorner shouldScaleToFill squaredFinder
 styleable BaseProgressIndicator android_indeterminate hideAnimationBehavior indicatorColor minHideDelay showAnimationBehavior showDelay trackColor trackCornerRadius trackThickness
 styleable BottomAppBar backgroundTint elevation fabAlignmentMode fabAnimationMode fabCradleMargin fabCradleRoundedCornerRadius fabCradleVerticalOffset hideOnScroll paddingBottomSystemWindowInsets paddingLeftSystemWindowInsets paddingRightSystemWindowInsets
 styleable BottomNavigationView backgroundTint elevation itemBackground itemHorizontalTranslationEnabled itemIconSize itemIconTint itemRippleColor itemTextAppearanceActive itemTextAppearanceInactive itemTextColor labelVisibilityMode menu

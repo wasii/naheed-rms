@@ -1,0 +1,52 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/naheedpk/Desktop/naheed-rms/build/majascan/intermediates/merged_res/release/values-de-rDE/values-de-rDE.xml",
+            "map": [
+                {
+                    "source": "/Users/naheedpk/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/majascan-0.5.0/android/src/main/res/values-de-rDE/strings.xml",
+                    "from": {
+                        "startLines": "2,9,8,7,1",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "73,590,534,464,16",
+                        "endLines": "6,9,8,7,1",
+                        "endColumns": "17,55,55,69,56",
+                        "endOffsets": "459,641,585,529,68"
+                    },
+                    "to": {
+                        "startLines": "2,7,8,9,10",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,446,502,558,628",
+                        "endLines": "6,7,8,9,10",
+                        "endColumns": "17,55,55,69,56",
+                        "endOffsets": "441,497,553,623,680"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/naheedpk/Desktop/naheed-rms/build/majascan/intermediates/incremental/mergeReleaseResources/merged.dir/values-de-rDE/values-de-rDE.xml",
+            "map": [
+                {
+                    "source": "/Users/naheedpk/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/majascan-0.5.0/android/src/main/res/values-de-rDE/strings.xml",
+                    "from": {
+                        "startLines": "2,9,8,7,1",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "73,590,534,464,16",
+                        "endLines": "6,9,8,7,1",
+                        "endColumns": "17,55,55,69,56",
+                        "endOffsets": "459,641,585,529,68"
+                    },
+                    "to": {
+                        "startLines": "2,7,8,9,10",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,446,502,558,628",
+                        "endLines": "6,7,8,9,10",
+                        "endColumns": "17,55,55,69,56",
+                        "endOffsets": "441,497,553,623,680"
+                    }
+                }
+            ]
+        }
+    ]
+}

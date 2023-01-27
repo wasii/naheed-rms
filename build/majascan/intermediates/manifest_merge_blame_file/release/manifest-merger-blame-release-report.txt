@@ -1,0 +1,25 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.djgeo.majascan" >
+4
+5    <uses-sdk
+6        android:minSdkVersion="16"
+6-->/Users/naheedpk/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/majascan-0.5.0/android/src/main/AndroidManifest.xml
+7        android:targetSdkVersion="16" />
+7-->/Users/naheedpk/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/majascan-0.5.0/android/src/main/AndroidManifest.xml
+8
+9    <uses-permission android:name="android.permission.INTERNET" />
+9-->/Users/naheedpk/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/majascan-0.5.0/android/src/main/AndroidManifest.xml:4:5-67
+9-->/Users/naheedpk/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/majascan-0.5.0/android/src/main/AndroidManifest.xml:4:22-64
+10    <uses-permission android:name="android.permission.CAMERA" />
+10-->/Users/naheedpk/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/majascan-0.5.0/android/src/main/AndroidManifest.xml:5:5-65
+10-->/Users/naheedpk/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/majascan-0.5.0/android/src/main/AndroidManifest.xml:5:22-62
+11
+12    <uses-feature android:name="android.hardware.camera" />
+12-->/Users/naheedpk/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/majascan-0.5.0/android/src/main/AndroidManifest.xml:7:5-60
+12-->/Users/naheedpk/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/majascan-0.5.0/android/src/main/AndroidManifest.xml:7:19-57
+13    <uses-feature android:name="android.hardware.camera.autofocus" />
+13-->/Users/naheedpk/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/majascan-0.5.0/android/src/main/AndroidManifest.xml:8:5-70
+13-->/Users/naheedpk/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/majascan-0.5.0/android/src/main/AndroidManifest.xml:8:19-67
+14
+15</manifest>

@@ -1,0 +1,11 @@
+framework module majascan {
+  umbrella header "majascan-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module majascan.Swift {
+  header "majascan-Swift.h"
+  requires objc
+}

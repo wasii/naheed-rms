@@ -1,0 +1,31 @@
+R_DEF: Internal format may change without notice
+local
+anim scan_anim
+drawable left_arrow
+drawable pay_light
+drawable pay_light_dark
+drawable pay_light_light
+drawable web_close
+id actionbar
+id back_btn
+id capture_container
+id capture_crop_view
+id capture_preview
+id fragment_container
+id mask_top
+id pay_card_container
+id pb_hori_loading
+id rl_root
+id scan_bar
+id toggle_flashlight
+id tv_title
+id webview
+layout activity_g_scanner
+layout fragment_scan
+layout fragment_webview
+string camera_permission_tips
+string dialog_btn_cancel
+string dialog_btn_go
+string go_to_webview
+string scanner_title
+style noActionbarTheme

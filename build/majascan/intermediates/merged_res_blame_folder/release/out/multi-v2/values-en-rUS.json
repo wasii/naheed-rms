@@ -1,0 +1,48 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/naheedpk/Desktop/naheed-rms/build/majascan/intermediates/merged_res/release/values-en-rUS/values-en-rUS.xml",
+            "map": [
+                {
+                    "source": "/Users/naheedpk/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/majascan-0.5.0/android/src/main/res/values-en-rUS/strings.xml",
+                    "from": {
+                        "startLines": "2,5,4,3,1",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "70,506,456,383,16",
+                        "endColumns": "312,52,49,72,53",
+                        "endOffsets": "378,554,501,451,65"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,368,421,471,544",
+                        "endColumns": "312,52,49,72,53",
+                        "endOffsets": "363,416,466,539,593"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/naheedpk/Desktop/naheed-rms/build/majascan/intermediates/incremental/mergeReleaseResources/merged.dir/values-en-rUS/values-en-rUS.xml",
+            "map": [
+                {
+                    "source": "/Users/naheedpk/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/majascan-0.5.0/android/src/main/res/values-en-rUS/strings.xml",
+                    "from": {
+                        "startLines": "2,5,4,3,1",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "70,506,456,383,16",
+                        "endColumns": "312,52,49,72,53",
+                        "endOffsets": "378,554,501,451,65"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,368,421,471,544",
+                        "endColumns": "312,52,49,72,53",
+                        "endOffsets": "363,416,466,539,593"
+                    }
+                }
+            ]
+        }
+    ]
+}

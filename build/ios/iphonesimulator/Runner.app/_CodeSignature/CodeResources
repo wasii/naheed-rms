@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		KvaKhYNpInR8XSvWSJc+Tv05EXs=
+		s42ndMjVOxZ8xilU0uGTKW40XbU=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,11 +54,11 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		Yd6/kdcFEevfr7T4BuIt6+d/xcY=
+		y9Jp9/DH6TsIFsIVChxWMZjN5Xs=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		WwNrZSgZniDbhEysavNMMuKNfYw=
+		bmmpvLamRzwu+4tskKLZ7QsmWSQ=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		RYDryHx7EVzAMNojpoItDeMoL9o=
+		EhvnRJdnluqWdD7DWByFezwRjLM=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/backgrounds/login.png</key>
 		<data>
@@ -114,11 +114,19 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		One8Ks6LpPAgVFGgzpMnt6Wjb8Q=
+		6E6nSABwoxQ4woYiNOPDc81lWPI=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
 		P7bb/oR3EhwqCIH1M6LyTuBIWYU=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/packages/majascan/assets/back.png</key>
+		<data>
+		eowHIr+Cwgmc3KSQdxB4fhWItDs=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/packages/majascan/assets/flashlight.png</key>
+		<data>
+		9D5OQMLOfnrtRLDSOxTwsQn7PqU=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/shaders/ink_sparkle.frag</key>
 		<data>
@@ -222,7 +230,7 @@
 		</data>
 		<key>Frameworks/flutter_barcode_scanner.framework/flutter_barcode_scanner</key>
 		<data>
-		6J6VpdB9l+pb6MUzz2IeozIaUDs=
+		0QsesSnxPpxjfILHMKVuDsOZlM8=
 		</data>
 		<key>Frameworks/flutter_barcode_scanner.framework/ic_flash_off.png</key>
 		<data>
@@ -236,6 +244,49 @@
 		<data>
 		gtHii5KzG/DlLjplzRap3o1dBgU=
 		</data>
+		<key>Frameworks/majascan.framework/Info.plist</key>
+		<data>
+		gdqitUOzsknp7pE7JGfXtfIQHZ8=
+		</data>
+		<key>Frameworks/majascan.framework/_CodeSignature/CodeResources</key>
+		<data>
+		gziA6pgNpJUhPbErsFouBFyp3nc=
+		</data>
+		<key>Frameworks/majascan.framework/majascan</key>
+		<data>
+		BOJvaXCnuHYZ2kfBKXG8VLmhcEk=
+		</data>
+		<key>Frameworks/majascan.framework/majascanLocalizeBundle.bundle/Info.plist</key>
+		<data>
+		uVTT4vK3VGFER7ff2fCEJsQ6imU=
+		</data>
+		<key>Frameworks/majascan.framework/majascanLocalizeBundle.bundle/de.lproj/majascan.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			+V9FoNviXQggm+D3d8OBRA+BnOc=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/majascan.framework/majascanLocalizeBundle.bundle/en.lproj/majascan.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			768VO3JHsPUbcNotPxFCszcONJ8=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/majascan.framework/majascanLocalizeBundle.bundle/zh-Hant.lproj/majascan.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			52J1Tv+az2AMG2uC5gQfg3cqdWY=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>Frameworks/path_provider_ios.framework/Info.plist</key>
 		<data>
 		lXZWU7Z+nJ1hS6rptgpla5/LbdY=
@@ -262,7 +313,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		IuoWZyyM+COpwFVT8TxOEQPfaoc=
+		4hmd0U4BC/BKyLvpB1O7Mhwzl+U=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -345,7 +396,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			INRLuijQYSjQtqWoP31vxW7+PXuh0zxg3gyScfDEwI4=
+			//jo/k+05barBF4c9fhaZ3cARXXF2YhZQlSwv9bDVJQ=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -359,14 +410,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			jrV5YSddKCpHJCH2WeCASE6A8kw+jIUloTCN/FDXmVI=
+			Je0+dQ/m02Bb3mmzGHh25HQsLA4679aQttoQUisth+o=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vIeucygHmPlSK8EbWT2a9UFkb1aCelgDH2CirgLg43w=
+			sTLYmUyiX+Wpz5zQTnp2ZtmmFwgbP/vwVFqETYP3Mvg=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -380,7 +431,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9+xzs7+yXYlVycN9h/c5UEisxwJnWF469IsO4fcffvU=
+			qxOe93uZCR5VsBDFMFhIW1sc9pkmahSdZZ58JivVzKo=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/backgrounds/login.png</key>
@@ -464,7 +515,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			lLFqGKFFdcEJqAPXYSujXZ/kDPgDLxVQJgkDoHtNqxI=
+			+YBi/1AAeE18DL8LuHcgIy0Lzj+Sv1fMs2s/7w6F6wo=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -472,6 +523,20 @@
 			<key>hash2</key>
 			<data>
 			x6NX+tjyECiQtyzbbjyY8U2zoZ7GDbJtE+T+k/dzgI0=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/packages/majascan/assets/back.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+hkZgtad0Wt/f9ejKdz6etD+golOQG8bZE/mrT69vqA=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/packages/majascan/assets/flashlight.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dWlyD0BpvYVZfTy8eruzc17R8k1eLFk2Rffsgo2WpOo=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/shaders/ink_sparkle.frag</key>
@@ -653,7 +718,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RHfBbvPUfaQP9/YAElLpd668Z4eTbAm98U9ohrcWv/8=
+			0i/La9GQRo0YScqin1GVaFk8A/4cisZuU1A1speiiB4=
 			</data>
 		</dict>
 		<key>Frameworks/flutter_barcode_scanner.framework/ic_flash_off.png</key>
@@ -676,6 +741,61 @@
 			<data>
 			CiZyEnZwvp4i6TPluzx+L7OJBKiMBE3uF72UK1divQ8=
 			</data>
+		</dict>
+		<key>Frameworks/majascan.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			K3Ty5Xn1yG0m4/UqRqqpBy/pcwCrDg2Fjkm32y6hAZg=
+			</data>
+		</dict>
+		<key>Frameworks/majascan.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			xLcfwi+nQAlv7S7XO3ZJkPHdU7cs0e1mM70+lI9X2CU=
+			</data>
+		</dict>
+		<key>Frameworks/majascan.framework/majascan</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			buOlHQXK8D9PFmz0STjnQathxbCwaAVJU8Za69GTgIw=
+			</data>
+		</dict>
+		<key>Frameworks/majascan.framework/majascanLocalizeBundle.bundle/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ORcXVDSZH2F3R6nB+fAjnG1d4aaWC2hlTSccEevweF0=
+			</data>
+		</dict>
+		<key>Frameworks/majascan.framework/majascanLocalizeBundle.bundle/de.lproj/majascan.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wOwlO+IxhiNK+6dtzKfZpsD8nOcDVq3NmobojkZsB3k=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/majascan.framework/majascanLocalizeBundle.bundle/en.lproj/majascan.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Xz+by+HtGzBXF1lPQlg6gLRDoad/PcXvzrZv4njmqro=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/majascan.framework/majascanLocalizeBundle.bundle/zh-Hant.lproj/majascan.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			OKqZfQ7KBlsK0HSDWeWDdOiEXuTiL6D+/cNdVE7W3og=
+			</data>
+			<key>optional</key>
+			<true/>
 		</dict>
 		<key>Frameworks/path_provider_ios.framework/Info.plist</key>
 		<dict>

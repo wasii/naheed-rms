@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/naheedpk/Desktop/naheed-rms/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-de-rDE/values-de-rDE.xml",
+            "map": [
+                {
+                    "source": "/Users/naheedpk/Desktop/naheed-rms/build/majascan/intermediates/packaged_res/debug/values-de-rDE/values-de-rDE.xml",
+                    "from": {
+                        "startLines": "2,7,8,9,10",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,446,502,558,628",
+                        "endLines": "6,7,8,9,10",
+                        "endColumns": "17,55,55,69,56",
+                        "endOffsets": "441,497,553,623,680"
+                    }
+                }
+            ]
+        }
+    ]
+}
