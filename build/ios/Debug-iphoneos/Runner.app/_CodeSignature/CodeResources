@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		EBTETFtrBuRMePnuUo6WnJ8XQWs=
+		XrmYZj/GQ13SvP5XLDZJSoaQ1I4=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,11 +54,11 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		RNRA5bSo8mMAbn2iAmlU8NRZ0eI=
+		JJHhvUStBF6ZaqF+d5p7HAhEHR4=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		bmmpvLamRzwu+4tskKLZ7QsmWSQ=
+		WwNrZSgZniDbhEysavNMMuKNfYw=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		EhvnRJdnluqWdD7DWByFezwRjLM=
+		RYDryHx7EVzAMNojpoItDeMoL9o=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/backgrounds/login.png</key>
 		<data>
@@ -114,19 +114,11 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		z7kPsmW2xQvm8bPztGqhhvdBS84=
+		eQM2gTNc93wfFAL7dDQBZAY4Jo0=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
 		P7bb/oR3EhwqCIH1M6LyTuBIWYU=
-		</data>
-		<key>Frameworks/App.framework/flutter_assets/packages/majascan/assets/back.png</key>
-		<data>
-		eowHIr+Cwgmc3KSQdxB4fhWItDs=
-		</data>
-		<key>Frameworks/App.framework/flutter_assets/packages/majascan/assets/flashlight.png</key>
-		<data>
-		9D5OQMLOfnrtRLDSOxTwsQn7PqU=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/shaders/ink_sparkle.frag</key>
 		<data>
@@ -230,7 +222,7 @@
 		</data>
 		<key>Frameworks/flutter_barcode_scanner.framework/flutter_barcode_scanner</key>
 		<data>
-		oXy4exhrcwRU+qPi6swViAoQSS4=
+		HcRiJQfic1jwi/ec6lXYs3MROP4=
 		</data>
 		<key>Frameworks/flutter_barcode_scanner.framework/ic_flash_off.png</key>
 		<data>
@@ -246,15 +238,15 @@
 		</data>
 		<key>Frameworks/majascan.framework/Info.plist</key>
 		<data>
-		2CzaMogGhmJzZ54/0pOGRPbG0U8=
+		mFsMK6/KKKvkpRwXXnw+pmdGoFQ=
 		</data>
 		<key>Frameworks/majascan.framework/_CodeSignature/CodeResources</key>
 		<data>
-		BNcByjMcVq7ObGgTkbQJm17lJks=
+		0+U/Ov/nsjPKA8/u6sFXTF2jtbs=
 		</data>
 		<key>Frameworks/majascan.framework/majascan</key>
 		<data>
-		l1/8U8NqwcSpfz4o87Ws9kbXe+Y=
+		kGxwvvF2cUZKXwvH165yXVxFlK0=
 		</data>
 		<key>Frameworks/majascan.framework/majascanLocalizeBundle.bundle/Info.plist</key>
 		<data>
@@ -289,31 +281,31 @@
 		</dict>
 		<key>Frameworks/path_provider_ios.framework/Info.plist</key>
 		<data>
-		GST4Az6v8krsHw/rCv7JHuFvk1o=
+		fjve6mJyjsDJLEI10drq6+rb+AU=
 		</data>
 		<key>Frameworks/path_provider_ios.framework/_CodeSignature/CodeResources</key>
 		<data>
-		G/3ZKrFyIBMivGpjKakZfkYcjes=
+		YVJM+pqAIQP3ApzLnPPGoTFgduc=
 		</data>
 		<key>Frameworks/path_provider_ios.framework/path_provider_ios</key>
 		<data>
-		XSNLa8Q0JjKv5xpSxbc2neP1Ziw=
+		2XwJ0ISHrna1eEd0MeBhPW0KCcI=
 		</data>
 		<key>Frameworks/shared_preferences_ios.framework/Info.plist</key>
 		<data>
-		x2GWazScjSwGroUTEHlIhblto8I=
+		R599js2PDjFGk54pjvg4L4sIct4=
 		</data>
 		<key>Frameworks/shared_preferences_ios.framework/_CodeSignature/CodeResources</key>
 		<data>
-		FGvoUX1PZwmWaX9sL83GzFxtN70=
+		CCJMgvngWSlsqn5r8IZiEDx01yo=
 		</data>
 		<key>Frameworks/shared_preferences_ios.framework/shared_preferences_ios</key>
 		<data>
-		zjRS3UMjhGYFCRq2yggPyi91Vzk=
+		xXeScNC3anbtnQJdQtpbPjnEPjM=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		fnL2qMlADRfpxnncoqQEjgyopog=
+		2HHp5EwfzrPpfuIjPiq4xjyQH0U=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -321,7 +313,7 @@
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
-		8fXaMUIW8P2eK++BNQlM92vG9wg=
+		+SS5ZtwnOv5TU4eiIi/FkFFu67s=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -400,7 +392,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rQlK4NNNbRhJL8Ubx/vUuIxFQLy+kF+yROmkECTOmQQ=
+			UHLVjnJixiLG6dAX4FJ0L/d0juhoP982343gr9HKPTE=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -414,14 +406,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			CRKFy0JMBXAe1MCjEc6KUaQ2mqNp3V4fS5JHbDlR1xo=
+			TDLwN83xsHjG9Xnhbysa3dSVUWtkBrNs2d0PpP+O+Tc=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sTLYmUyiX+Wpz5zQTnp2ZtmmFwgbP/vwVFqETYP3Mvg=
+			vIeucygHmPlSK8EbWT2a9UFkb1aCelgDH2CirgLg43w=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -435,7 +427,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			qxOe93uZCR5VsBDFMFhIW1sc9pkmahSdZZ58JivVzKo=
+			9+xzs7+yXYlVycN9h/c5UEisxwJnWF469IsO4fcffvU=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/backgrounds/login.png</key>
@@ -519,7 +511,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			i01oholVEDe7AiVmlCDfMsK5ivO1WCWaa1w0YDhK9n8=
+			q2fLHjLOFnHLmcKo8/HVkOJwFVhiDWCQsA0VtPxp7ic=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -527,20 +519,6 @@
 			<key>hash2</key>
 			<data>
 			x6NX+tjyECiQtyzbbjyY8U2zoZ7GDbJtE+T+k/dzgI0=
-			</data>
-		</dict>
-		<key>Frameworks/App.framework/flutter_assets/packages/majascan/assets/back.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			+hkZgtad0Wt/f9ejKdz6etD+golOQG8bZE/mrT69vqA=
-			</data>
-		</dict>
-		<key>Frameworks/App.framework/flutter_assets/packages/majascan/assets/flashlight.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			dWlyD0BpvYVZfTy8eruzc17R8k1eLFk2Rffsgo2WpOo=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/shaders/ink_sparkle.frag</key>
@@ -722,7 +700,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8gBI3OSRBTzxHHN5ckbkr+nCyhJswe+dwq9mf5pQn50=
+			6TYPtWgxOVcO3pbyRBIKOG1mdAd+g+7DqKfIL6rro7U=
 			</data>
 		</dict>
 		<key>Frameworks/flutter_barcode_scanner.framework/ic_flash_off.png</key>
@@ -750,21 +728,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Zpmpzn5uHqxD7sdqdi6MZYgbSGGMpLZD7kgzKphcUeo=
+			7MtTc4g2tGuhbr4mTxMSNeeqBU46KmDRZqSE0mWxc9M=
 			</data>
 		</dict>
 		<key>Frameworks/majascan.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			GSO5ApoqxJBhvNE6NvN7saOIWzAGugZQSgyDeK+y5jw=
+			avvrGTwMZ8Xli3HZq9+tVozb6Ue04P4uGa4ENKQ+yag=
 			</data>
 		</dict>
 		<key>Frameworks/majascan.framework/majascan</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pDwQB113Ax/zY8XgRefdgsP2WntJtNF2ln+aVSqAj2w=
+			ZOFO5aAf5xSpT6x8g9Hy4AMdGCsqfVGQz3OGvtNE3kc=
 			</data>
 		</dict>
 		<key>Frameworks/majascan.framework/majascanLocalizeBundle.bundle/Info.plist</key>
@@ -805,49 +783,49 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			H6WDsCA4T3phdPT23oOYGzruIhkbuJOjRe/fFUBTI8c=
+			k6V4zGo3K9mbgLpcajZS/7PvDUu/4lgqnRWGNsUrLEA=
 			</data>
 		</dict>
 		<key>Frameworks/path_provider_ios.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			S1lANK3TkSbcucTQyC9PBA5fJThZxJ9bOqCMwNCHtZM=
+			KPELBlyPYGrtSroy6NB0cXOUkXKyQbqTtKQUmSzw6Es=
 			</data>
 		</dict>
 		<key>Frameworks/path_provider_ios.framework/path_provider_ios</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Sk9XocB+Kos5d0qNjOKEeJ5moYrJKJdQ3JoX5Tfuk6E=
+			zu+9RbtIOoKW7gAaR3ubLsBmePiNlFKCGwWHhjViqhY=
 			</data>
 		</dict>
 		<key>Frameworks/shared_preferences_ios.framework/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8QAK8LGBXn1NH9DWNPCygPF0vhFKGp5/9gsteEu7PYI=
+			/HqmId66n3QDvjsyXFLecEu8B4wUetEbl9ox+0TcOaw=
 			</data>
 		</dict>
 		<key>Frameworks/shared_preferences_ios.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tCqoj+rITDmrAYefLHPhR9BuVPKbCuhkbIN73bK+3WQ=
+			GP2juppSp4C8td4445SkOfMP6oyr4soh0JmIcgZ82BQ=
 			</data>
 		</dict>
 		<key>Frameworks/shared_preferences_ios.framework/shared_preferences_ios</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			EXAityOkvKBeD0BNjtba/Fc6+dPWmZM8Bz6cxC9zAVk=
+			H4QKDegViYSgrK+IsXNFkZakAVi483OEX0SGWuCPY8I=
 			</data>
 		</dict>
 		<key>embedded.mobileprovision</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Soph26M5hlDxv1FCGt8bSavgXcB52qD6Hn+o0/+d6aM=
+			KXCFITwZa25fYTvDD2JuRlRB6RukZxnxPg1R7ZnjdSo=
 			</data>
 		</dict>
 	</dict>

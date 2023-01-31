@@ -1,7 +1,7 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.example.naheed_rider"
-4    android:versionCode="1"
+4    android:versionCode="4001"
 5    android:versionName="1.0.0" >
 6
 7    <uses-sdk
@@ -11,120 +11,114 @@
 9-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.CAMERA" />
-11-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:3:5-67
-11-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:3:22-64
-12    <uses-permission android:name="android.permission.INTERNET" />
-12-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:4:5-68
-12-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:4:22-66
-13
-14    <uses-feature android:name="android.hardware.camera" />
-14-->[:majascan] /Users/naheedpk/Desktop/naheed-rms/build/majascan/intermediates/merged_manifest/release/AndroidManifest.xml:12:5-60
-14-->[:majascan] /Users/naheedpk/Desktop/naheed-rms/build/majascan/intermediates/merged_manifest/release/AndroidManifest.xml:12:19-57
-15    <uses-feature android:name="android.hardware.camera.autofocus" />
-15-->[:majascan] /Users/naheedpk/Desktop/naheed-rms/build/majascan/intermediates/merged_manifest/release/AndroidManifest.xml:13:5-70
-15-->[:majascan] /Users/naheedpk/Desktop/naheed-rms/build/majascan/intermediates/merged_manifest/release/AndroidManifest.xml:13:19-67
+11-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-65
+11-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:9:22-62
+12
+13    <uses-feature android:name="android.hardware.camera" />
+13-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:11:5-60
+13-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:11:19-57
+14
+15    <uses-permission android:name="android.permission.FLASHLIGHT" />
+15-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:13:5-69
+15-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:13:22-66
 16
-17    <uses-permission android:name="android.permission.FLASHLIGHT" />
-17-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:13:5-69
-17-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:13:22-66
-18
-19    <application
-20        android:name="android.app.Application"
-20-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:7:9-42
-21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-21-->[androidx.core:core:1.6.0] /Users/naheedpk/.gradle/caches/transforms-3/acbce933e4b464a5224ed377a62db1f5/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
-22        android:icon="@mipmap/ic_launcher"
-22-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:8:9-43
-23        android:label="naheed_rider"
-23-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:6:9-37
-24        android:largeHeap="true"
-24-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:16:9-33
-25        android:theme="@style/Theme.AppCompat.NoActionBar" >
-25-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:17:9-59
-26        <activity
-26-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:9:9-29:20
-27            android:name="com.example.naheed_rider.MainActivity"
-27-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:10:13-41
-28            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-28-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:14:13-163
-29            android:exported="true"
-29-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:11:13-36
-30            android:hardwareAccelerated="true"
-30-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:15:13-47
-31            android:launchMode="singleTop"
-31-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:12:13-43
-32            android:theme="@style/LaunchTheme"
-32-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:13:13-47
-33            android:windowSoftInputMode="adjustResize" >
-33-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:16:13-55
-34
-35            <!--
-36                 Specifies an Android theme to apply to this Activity as soon as
-37                 the Android process has started. This theme is visible to the user
-38                 while the Flutter UI initializes. After that, this theme continues
-39                 to determine the Window background behind the Flutter UI.
-40            -->
-41            <meta-data
-41-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:21:13-24:17
-42                android:name="io.flutter.embedding.android.NormalTheme"
-42-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:22:15-70
-43                android:resource="@style/NormalTheme" />
-43-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:23:15-52
-44
-45            <intent-filter>
-45-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:25:13-28:29
-46                <action android:name="android.intent.action.MAIN" />
-46-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:26:17-68
-46-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:26:25-66
-47
-48                <category android:name="android.intent.category.LAUNCHER" />
-48-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:27:17-76
-48-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:27:27-74
-49            </intent-filter>
-50        </activity>
-51        <!--
-52             Don't delete the meta-data below.
-53             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
-54        -->
-55        <meta-data
-55-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:32:9-34:33
-56            android:name="flutterEmbedding"
-56-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:33:13-44
-57            android:value="2" />
-57-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:34:13-30
+17    <application
+18        android:name="android.app.Application"
+18-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:5:9-42
+19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+19-->[androidx.core:core:1.6.0] /Users/naheedpk/.gradle/caches/transforms-3/acbce933e4b464a5224ed377a62db1f5/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
+20        android:icon="@mipmap/ic_launcher"
+20-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:6:9-43
+21        android:label="naheed_rider"
+21-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:4:9-37
+22        android:largeHeap="true"
+22-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:16:9-33
+23        android:theme="@style/Theme.AppCompat.NoActionBar" >
+23-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:17:9-59
+24        <activity
+24-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:7:9-27:20
+25            android:name="com.example.naheed_rider.MainActivity"
+25-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:8:13-41
+26            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+26-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:12:13-163
+27            android:exported="true"
+27-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:9:13-36
+28            android:hardwareAccelerated="true"
+28-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:13:13-47
+29            android:launchMode="singleTop"
+29-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:10:13-43
+30            android:theme="@style/LaunchTheme"
+30-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:11:13-47
+31            android:windowSoftInputMode="adjustResize" >
+31-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:14:13-55
+32
+33            <!--
+34                 Specifies an Android theme to apply to this Activity as soon as
+35                 the Android process has started. This theme is visible to the user
+36                 while the Flutter UI initializes. After that, this theme continues
+37                 to determine the Window background behind the Flutter UI.
+38            -->
+39            <meta-data
+39-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:19:13-22:17
+40                android:name="io.flutter.embedding.android.NormalTheme"
+40-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:20:15-70
+41                android:resource="@style/NormalTheme" />
+41-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:21:15-52
+42
+43            <intent-filter>
+43-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:23:13-26:29
+44                <action android:name="android.intent.action.MAIN" />
+44-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:24:17-68
+44-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:24:25-66
+45
+46                <category android:name="android.intent.category.LAUNCHER" />
+46-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:25:17-76
+46-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:25:27-74
+47            </intent-filter>
+48        </activity>
+49        <!--
+50             Don't delete the meta-data below.
+51             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+52        -->
+53        <meta-data
+53-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:30:9-32:33
+54            android:name="flutterEmbedding"
+54-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:31:13-44
+55            android:value="2" />
+55-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:32:13-30
+56
+57        <activity android:name="com.amolg.flutterbarcodescanner.BarcodeCaptureActivity" />
+57-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:18:9-91
+57-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:18:19-88
 58
-59        <activity android:name="com.amolg.flutterbarcodescanner.BarcodeCaptureActivity" />
-59-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:18:9-91
-59-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:18:19-88
-60
-61        <uses-library
-61-->[androidx.window:window:1.0.0-beta04] /Users/naheedpk/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
-62            android:name="androidx.window.extensions"
-62-->[androidx.window:window:1.0.0-beta04] /Users/naheedpk/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
-63            android:required="false" />
-63-->[androidx.window:window:1.0.0-beta04] /Users/naheedpk/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
-64        <uses-library
-64-->[androidx.window:window:1.0.0-beta04] /Users/naheedpk/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
-65            android:name="androidx.window.sidecar"
-65-->[androidx.window:window:1.0.0-beta04] /Users/naheedpk/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
-66            android:required="false" />
-66-->[androidx.window:window:1.0.0-beta04] /Users/naheedpk/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
-67
-68        <activity
-68-->[com.google.android.gms:play-services-base:17.4.0] /Users/naheedpk/.gradle/caches/transforms-3/6068c20e673d4349a1bd1f4e3933aa39/transformed/jetified-play-services-base-17.4.0/AndroidManifest.xml:23:9-26:75
-69            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-69-->[com.google.android.gms:play-services-base:17.4.0] /Users/naheedpk/.gradle/caches/transforms-3/6068c20e673d4349a1bd1f4e3933aa39/transformed/jetified-play-services-base-17.4.0/AndroidManifest.xml:24:13-79
-70            android:exported="false"
-70-->[com.google.android.gms:play-services-base:17.4.0] /Users/naheedpk/.gradle/caches/transforms-3/6068c20e673d4349a1bd1f4e3933aa39/transformed/jetified-play-services-base-17.4.0/AndroidManifest.xml:25:13-37
-71            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-71-->[com.google.android.gms:play-services-base:17.4.0] /Users/naheedpk/.gradle/caches/transforms-3/6068c20e673d4349a1bd1f4e3933aa39/transformed/jetified-play-services-base-17.4.0/AndroidManifest.xml:26:13-72
-72
-73        <meta-data
-73-->[com.google.android.gms:play-services-basement:17.4.0] /Users/naheedpk/.gradle/caches/transforms-3/8126e1f02fbd5b999f38c6a32c8e233c/transformed/jetified-play-services-basement-17.4.0/AndroidManifest.xml:23:9-25:69
-74            android:name="com.google.android.gms.version"
-74-->[com.google.android.gms:play-services-basement:17.4.0] /Users/naheedpk/.gradle/caches/transforms-3/8126e1f02fbd5b999f38c6a32c8e233c/transformed/jetified-play-services-basement-17.4.0/AndroidManifest.xml:24:13-58
-75            android:value="@integer/google_play_services_version" />
-75-->[com.google.android.gms:play-services-basement:17.4.0] /Users/naheedpk/.gradle/caches/transforms-3/8126e1f02fbd5b999f38c6a32c8e233c/transformed/jetified-play-services-basement-17.4.0/AndroidManifest.xml:25:13-66
-76    </application>
-77
-78</manifest>
+59        <uses-library
+59-->[androidx.window:window:1.0.0-beta04] /Users/naheedpk/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+60            android:name="androidx.window.extensions"
+60-->[androidx.window:window:1.0.0-beta04] /Users/naheedpk/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+61            android:required="false" />
+61-->[androidx.window:window:1.0.0-beta04] /Users/naheedpk/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+62        <uses-library
+62-->[androidx.window:window:1.0.0-beta04] /Users/naheedpk/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+63            android:name="androidx.window.sidecar"
+63-->[androidx.window:window:1.0.0-beta04] /Users/naheedpk/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+64            android:required="false" />
+64-->[androidx.window:window:1.0.0-beta04] /Users/naheedpk/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+65
+66        <activity
+66-->[com.google.android.gms:play-services-base:17.4.0] /Users/naheedpk/.gradle/caches/transforms-3/6068c20e673d4349a1bd1f4e3933aa39/transformed/jetified-play-services-base-17.4.0/AndroidManifest.xml:23:9-26:75
+67            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+67-->[com.google.android.gms:play-services-base:17.4.0] /Users/naheedpk/.gradle/caches/transforms-3/6068c20e673d4349a1bd1f4e3933aa39/transformed/jetified-play-services-base-17.4.0/AndroidManifest.xml:24:13-79
+68            android:exported="false"
+68-->[com.google.android.gms:play-services-base:17.4.0] /Users/naheedpk/.gradle/caches/transforms-3/6068c20e673d4349a1bd1f4e3933aa39/transformed/jetified-play-services-base-17.4.0/AndroidManifest.xml:25:13-37
+69            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+69-->[com.google.android.gms:play-services-base:17.4.0] /Users/naheedpk/.gradle/caches/transforms-3/6068c20e673d4349a1bd1f4e3933aa39/transformed/jetified-play-services-base-17.4.0/AndroidManifest.xml:26:13-72
+70
+71        <meta-data
+71-->[com.google.android.gms:play-services-basement:17.4.0] /Users/naheedpk/.gradle/caches/transforms-3/8126e1f02fbd5b999f38c6a32c8e233c/transformed/jetified-play-services-basement-17.4.0/AndroidManifest.xml:23:9-25:69
+72            android:name="com.google.android.gms.version"
+72-->[com.google.android.gms:play-services-basement:17.4.0] /Users/naheedpk/.gradle/caches/transforms-3/8126e1f02fbd5b999f38c6a32c8e233c/transformed/jetified-play-services-basement-17.4.0/AndroidManifest.xml:24:13-58
+73            android:value="@integer/google_play_services_version" />
+73-->[com.google.android.gms:play-services-basement:17.4.0] /Users/naheedpk/.gradle/caches/transforms-3/8126e1f02fbd5b999f38c6a32c8e233c/transformed/jetified-play-services-basement-17.4.0/AndroidManifest.xml:25:13-66
+74    </application>
+75
+76</manifest>

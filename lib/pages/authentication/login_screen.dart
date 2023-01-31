@@ -4,15 +4,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:majascan/majascan.dart';
-// import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
-// import 'package:qrscan/qrscan.dart' as scanner;
+
+import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:naheed_rider/components/constants.dart';
 import 'package:naheed_rider/pages/authentication/otp/otp_screen.dart';
 import 'package:naheed_rider/services/remote_services.dart';
-import 'package:permission_handler/permission_handler.dart';
+
 
 import '../../models/verify_user.dart';
 
@@ -86,21 +86,8 @@ class _LoginPageState extends State<LoginPage> {
               ),
               child: ElevatedButton(
                 onPressed: () async {
-                  // // scanQRCode();
-                  // // return;
-                  // PermissionStatus camera = await Permission.camera.request();
-                  // if (camera == PermissionStatus.granted) {
-                  //   scanQRCode();
-                  //   return;
-                  // }
-                  // if (camera == PermissionStatus.denied) {
-                  //   EasyLoading.showError('You need to provide\nCamera permission.');
-                  //   return;
-                  // }
-                  // if (camera == PermissionStatus.permanentlyDenied) {
-                  //   openAppSettings();
-                  // }
-                  verifyRider('94/42301-5102628-1');
+                  scanQRCode();
+                  // verifyRider('94/42301-5102628-1');
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -142,53 +129,20 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  // void scanQRCode() async {
-  //   try {
-  //     String qrCode = await scanner.scan() ?? '';
-  //     // final qrCode = await FlutterBarcodeScanner.scanBarcode(
-  //     //     kPrimaryColorString, 'Cancel', false, ScanMode.QR);
-
-  //     if (!mounted) return;
-  //     setState(() {
-  //       if (qrCode != "-1") {
-  //         verifyRider(qrCode);
-  //       }
-  //     });
-  //     print('QRCode Result');
-  //     print(qrCode);
-  //   } on PlatformException {
-  //     getResult = 'Failed to scan QR Code';
-  //   }
-  // }
-  Future scanQRCode() async {
+  scanQRCode() async {
     try {
-      String? qrResult = await MajaScan.startScan(
-          title: "QRcode scanner",
-          titleColor: Colors.amberAccent[700],
-          qRCornerColor: Colors.orange,
-          qRScannerColor: Colors.orange);
+      
+      String qrCode = await FlutterBarcodeScanner.scanBarcode(
+          kPrimaryColorString, 'Cancel', false, ScanMode.QR);
       setState(() {
-        String result = qrResult ?? 'null string';
-        print(result);
+        if (qrCode != "-1") {
+          verifyRider(qrCode);
+        }
       });
-    } on PlatformException catch (ex) {
-      if (ex.code == MajaScan.CameraAccessDenied) {
-        setState(() {
-          String result = "Camera permission was denied";
-        });
-      } else {
-        setState(() {
-          String result = "Unknown Error $ex";
-        });
-      }
-    } on FormatException {
-      setState(() {
-        String result = "You pressed the back button before scanning anything";
-      });
-    } catch (ex) {
-      setState(() {
-        String result = "Unknown Error $ex";
-      });
+      print('QRCode Result');
+      print(qrCode);
+    } on PlatformException {
+      getResult = 'Failed to scan QR Code';
     }
   }
 

@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 application
-INJECTED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:5:4-35:19
+INJECTED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:3:4-33:19
 MERGED from [:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:15:5-19:19
 MERGED from [:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:15:5-19:19
 MERGED from [androidx.window:window:1.0.0-beta04] /Users/naheedpk/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:24:5-31:19
@@ -9,10 +9,6 @@ MERGED from [com.google.android.material:material:1.3.0] /Users/naheedpk/.gradle
 MERGED from [com.google.android.material:material:1.3.0] /Users/naheedpk/.gradle/caches/transforms-3/8c09bec62be409fe572343fe4d451870/transformed/material-1.3.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/naheedpk/.gradle/caches/transforms-3/4776d5ff4ca486a35dfa7b3008192806/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/naheedpk/.gradle/caches/transforms-3/4776d5ff4ca486a35dfa7b3008192806/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
-MERGED from [me.dm7.barcodescanner:zxing:1.9.13] /Users/naheedpk/.gradle/caches/transforms-3/92ede0c4529208209622d85ac0556edb/transformed/jetified-zxing-1.9.13/AndroidManifest.xml:11:5-20
-MERGED from [me.dm7.barcodescanner:zxing:1.9.13] /Users/naheedpk/.gradle/caches/transforms-3/92ede0c4529208209622d85ac0556edb/transformed/jetified-zxing-1.9.13/AndroidManifest.xml:11:5-20
-MERGED from [me.dm7.barcodescanner:core:1.9.13] /Users/naheedpk/.gradle/caches/transforms-3/9841e2daa5fa8e101cc443903acb8b0e/transformed/jetified-core-1.9.13/AndroidManifest.xml:11:5-20
-MERGED from [me.dm7.barcodescanner:core:1.9.13] /Users/naheedpk/.gradle/caches/transforms-3/9841e2daa5fa8e101cc443903acb8b0e/transformed/jetified-core-1.9.13/AndroidManifest.xml:11:5-20
 MERGED from [com.google.android.gms:play-services-vision:20.1.3] /Users/naheedpk/.gradle/caches/transforms-3/27f9da0f8b190121ab0ced046498959d/transformed/jetified-play-services-vision-20.1.3/AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-vision:20.1.3] /Users/naheedpk/.gradle/caches/transforms-3/27f9da0f8b190121ab0ced046498959d/transformed/jetified-play-services-vision-20.1.3/AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-vision-common:19.1.3] /Users/naheedpk/.gradle/caches/transforms-3/277d860c4bbd4092eedf906643ca4b9e/transformed/jetified-play-services-vision-common-19.1.3/AndroidManifest.xml:7:5-20
@@ -34,24 +30,22 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/nahe
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.6.0] /Users/naheedpk/.gradle/caches/transforms-3/acbce933e4b464a5224ed377a62db1f5/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:6:9-37
+		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:4:9-37
 	android:largeHeap
 		ADDED from [:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:16:9-33
 	android:icon
-		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:8:9-43
+		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:6:9-43
 	android:theme
 		ADDED from [:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:17:9-59
 	android:name
 		INJECTED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:7:9-42
+		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:5:9-42
 manifest
-ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:1:1-36:12
-INJECTED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:1:1-36:12
-INJECTED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:1:1-36:12
-INJECTED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:1:1-36:12
+ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:1:1-34:12
+INJECTED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:1:1-34:12
+INJECTED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:1:1-34:12
+INJECTED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:1:1-34:12
 MERGED from [:shared_preferences_android] /Users/naheedpk/Desktop/naheed-rms/build/shared_preferences_android/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
-MERGED from [:permission_handler_android] /Users/naheedpk/Desktop/naheed-rms/build/permission_handler_android/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
-MERGED from [:majascan] /Users/naheedpk/Desktop/naheed-rms/build/majascan/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-15:12
 MERGED from [:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-21:12
 MERGED from [:flutter_plugin_android_lifecycle] /Users/naheedpk/Desktop/naheed-rms/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
 MERGED from [:path_provider_android] /Users/naheedpk/Desktop/naheed-rms/build/path_provider_android/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
@@ -60,8 +54,6 @@ MERGED from [androidx.window:window:1.0.0-beta04] /Users/naheedpk/.gradle/caches
 MERGED from [com.google.android.material:material:1.3.0] /Users/naheedpk/.gradle/caches/transforms-3/8c09bec62be409fe572343fe4d451870/transformed/material-1.3.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/naheedpk/.gradle/caches/transforms-3/4776d5ff4ca486a35dfa7b3008192806/transformed/constraintlayout-2.0.1/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.2.0] /Users/naheedpk/.gradle/caches/transforms-3/c5e6066e343a23cadf0e84126bc54229/transformed/appcompat-1.2.0/AndroidManifest.xml:17:1-24:12
-MERGED from [me.dm7.barcodescanner:zxing:1.9.13] /Users/naheedpk/.gradle/caches/transforms-3/92ede0c4529208209622d85ac0556edb/transformed/jetified-zxing-1.9.13/AndroidManifest.xml:2:1-13:12
-MERGED from [me.dm7.barcodescanner:core:1.9.13] /Users/naheedpk/.gradle/caches/transforms-3/9841e2daa5fa8e101cc443903acb8b0e/transformed/jetified-core-1.9.13/AndroidManifest.xml:2:1-13:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/naheedpk/.gradle/caches/transforms-3/93c965e24040f9ba88efcc81151050cd/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/naheedpk/.gradle/caches/transforms-3/c564864b85a0960493dadaf97ef781d3/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-vision:20.1.3] /Users/naheedpk/.gradle/caches/transforms-3/27f9da0f8b190121ab0ced046498959d/transformed/jetified-play-services-vision-20.1.3/AndroidManifest.xml:2:1-9:12
@@ -107,47 +99,29 @@ MERGED from [androidx.print:print:1.0.0] /Users/naheedpk/.gradle/caches/transfor
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/naheedpk/.gradle/caches/transforms-3/274a6366c1fa82a9cda5f98fe858df07/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/naheedpk/.gradle/caches/transforms-3/ed9734c73cdec898947618088fbe87b0/transformed/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/naheedpk/.gradle/caches/transforms-3/58e3540d7f5a5bac6af9a8f8fab44363/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
-INJECTED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:1:1-36:12
-INJECTED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:1:1-36:12
-INJECTED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:1:1-36:12
+INJECTED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:1:1-34:12
+INJECTED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:1:1-34:12
+INJECTED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:1:1-34:12
 	package
 		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:2:5-39
 		INJECTED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:1:1-36:12
+		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:1:1-34:12
 		INJECTED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:1:1-36:12
+		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:1:1-34:12
 		INJECTED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:1:11-69
-uses-permission#android.permission.CAMERA
-ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:3:5-67
-MERGED from [:majascan] /Users/naheedpk/Desktop/naheed-rms/build/majascan/intermediates/merged_manifest/release/AndroidManifest.xml:10:5-65
-MERGED from [:majascan] /Users/naheedpk/Desktop/naheed-rms/build/majascan/intermediates/merged_manifest/release/AndroidManifest.xml:10:5-65
-MERGED from [:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-65
-MERGED from [:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-65
-	android:name
-		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:3:22-64
-uses-permission#android.permission.INTERNET
-ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:4:5-68
-MERGED from [:majascan] /Users/naheedpk/Desktop/naheed-rms/build/majascan/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-67
-MERGED from [:majascan] /Users/naheedpk/Desktop/naheed-rms/build/majascan/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-67
-	android:name
-		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:4:22-66
 uses-sdk
 INJECTED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml
 INJECTED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml
 MERGED from [:shared_preferences_android] /Users/naheedpk/Desktop/naheed-rms/build/shared_preferences_android/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
 MERGED from [:shared_preferences_android] /Users/naheedpk/Desktop/naheed-rms/build/shared_preferences_android/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:permission_handler_android] /Users/naheedpk/Desktop/naheed-rms/build/permission_handler_android/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:permission_handler_android] /Users/naheedpk/Desktop/naheed-rms/build/permission_handler_android/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:majascan] /Users/naheedpk/Desktop/naheed-rms/build/majascan/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:majascan] /Users/naheedpk/Desktop/naheed-rms/build/majascan/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_plugin_android_lifecycle] /Users/naheedpk/Desktop/naheed-rms/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
@@ -164,10 +138,6 @@ MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/naheedpk/.
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/naheedpk/.gradle/caches/transforms-3/4776d5ff4ca486a35dfa7b3008192806/transformed/constraintlayout-2.0.1/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.appcompat:appcompat:1.2.0] /Users/naheedpk/.gradle/caches/transforms-3/c5e6066e343a23cadf0e84126bc54229/transformed/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.2.0] /Users/naheedpk/.gradle/caches/transforms-3/c5e6066e343a23cadf0e84126bc54229/transformed/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [me.dm7.barcodescanner:zxing:1.9.13] /Users/naheedpk/.gradle/caches/transforms-3/92ede0c4529208209622d85ac0556edb/transformed/jetified-zxing-1.9.13/AndroidManifest.xml:7:5-9:41
-MERGED from [me.dm7.barcodescanner:zxing:1.9.13] /Users/naheedpk/.gradle/caches/transforms-3/92ede0c4529208209622d85ac0556edb/transformed/jetified-zxing-1.9.13/AndroidManifest.xml:7:5-9:41
-MERGED from [me.dm7.barcodescanner:core:1.9.13] /Users/naheedpk/.gradle/caches/transforms-3/9841e2daa5fa8e101cc443903acb8b0e/transformed/jetified-core-1.9.13/AndroidManifest.xml:7:5-9:41
-MERGED from [me.dm7.barcodescanner:core:1.9.13] /Users/naheedpk/.gradle/caches/transforms-3/9841e2daa5fa8e101cc443903acb8b0e/transformed/jetified-core-1.9.13/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/naheedpk/.gradle/caches/transforms-3/93c965e24040f9ba88efcc81151050cd/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/naheedpk/.gradle/caches/transforms-3/93c965e24040f9ba88efcc81151050cd/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/naheedpk/.gradle/caches/transforms-3/c564864b85a0960493dadaf97ef781d3/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
@@ -269,53 +239,51 @@ INJECTED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidMan
 		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml
 activity#com.example.naheed_rider.MainActivity
-ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:9:9-29:20
+ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:7:9-27:20
 	android:launchMode
-		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:12:13-43
+		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:10:13-43
 	android:hardwareAccelerated
-		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:15:13-47
-	android:windowSoftInputMode
-		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:16:13-55
-	android:exported
-		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:11:13-36
-	android:configChanges
-		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:14:13-163
-	android:theme
 		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:13:13-47
+	android:windowSoftInputMode
+		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:14:13-55
+	android:exported
+		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:9:13-36
+	android:configChanges
+		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:12:13-163
+	android:theme
+		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:11:13-47
 	android:name
-		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:10:13-41
+		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:8:13-41
 meta-data#io.flutter.embedding.android.NormalTheme
-ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:21:13-24:17
+ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:19:13-22:17
 	android:resource
-		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:23:15-52
+		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:21:15-52
 	android:name
-		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:22:15-70
+		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:20:15-70
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:25:13-28:29
+ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:23:13-26:29
 action#android.intent.action.MAIN
-ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:26:17-68
+ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:24:17-68
 	android:name
-		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:26:25-66
+		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:24:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:27:17-76
+ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:25:17-76
 	android:name
-		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:27:27-74
+		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:25:27-74
 meta-data#flutterEmbedding
-ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:32:9-34:33
+ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:30:9-32:33
 	android:value
-		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:34:13-30
+		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:32:13-30
 	android:name
-		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:33:13-44
+		ADDED from /Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:31:13-44
+uses-permission#android.permission.CAMERA
+ADDED from [:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-65
+	android:name
+		ADDED from [:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:9:22-62
 uses-feature#android.hardware.camera
-ADDED from [:majascan] /Users/naheedpk/Desktop/naheed-rms/build/majascan/intermediates/merged_manifest/release/AndroidManifest.xml:12:5-60
-MERGED from [:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:11:5-60
-MERGED from [:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:11:5-60
+ADDED from [:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:11:5-60
 	android:name
-		ADDED from [:majascan] /Users/naheedpk/Desktop/naheed-rms/build/majascan/intermediates/merged_manifest/release/AndroidManifest.xml:12:19-57
-uses-feature#android.hardware.camera.autofocus
-ADDED from [:majascan] /Users/naheedpk/Desktop/naheed-rms/build/majascan/intermediates/merged_manifest/release/AndroidManifest.xml:13:5-70
-	android:name
-		ADDED from [:majascan] /Users/naheedpk/Desktop/naheed-rms/build/majascan/intermediates/merged_manifest/release/AndroidManifest.xml:13:19-67
+		ADDED from [:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:11:19-57
 uses-permission#android.permission.FLASHLIGHT
 ADDED from [:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:13:5-69
 	android:name

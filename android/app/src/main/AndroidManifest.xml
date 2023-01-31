@@ -1,7 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.naheed_rider">
-    <uses-permission android:name = "android.permission.CAMERA" />
-    <uses-permission android:name = "android.permission.INTERNET"/> 
+    package="com.example.naheed_rider"> 
    <application
         android:label="naheed_rider"
         android:name="${applicationName}"

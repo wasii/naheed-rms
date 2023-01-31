@@ -17,32 +17,6 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="/Users/naheedpk/Desktop/naheed-rms/android@@:permission_handler_android::release"
-      jars="/Users/naheedpk/Desktop/naheed-rms/build/permission_handler_android/.transforms/41f40ffe77b5beb0003ae33894cdc15d/transformed/out/jars/classes.jar"
-      resolved="com.baseflow.permissionhandler:permission_handler_android:unspecified"
-      folder="/Users/naheedpk/Desktop/naheed-rms/build/permission_handler_android/.transforms/41f40ffe77b5beb0003ae33894cdc15d/transformed/out"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="/Users/naheedpk/Desktop/naheed-rms/android@@:majascan::release"
-      jars="/Users/naheedpk/Desktop/naheed-rms/build/majascan/.transforms/97119b1c5f1db875ab44e8e54dbcc258/transformed/out/jars/classes.jar"
-      resolved="com.djgeo.majascan:majascan:unspecified"
-      folder="/Users/naheedpk/Desktop/naheed-rms/build/majascan/.transforms/97119b1c5f1db875ab44e8e54dbcc258/transformed/out"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
       name="/Users/naheedpk/Desktop/naheed-rms/android@@:flutter_plugin_android_lifecycle::release"
       jars="/Users/naheedpk/Desktop/naheed-rms/build/flutter_plugin_android_lifecycle/.transforms/4f2f42dded334905cb1b6a2396a80941/transformed/out/jars/classes.jar"
       resolved="io.flutter.plugins.flutter_plugin_android_lifecycle:flutter_plugin_android_lifecycle:unspecified"
@@ -397,32 +371,6 @@
       jars="/Users/naheedpk/.gradle/caches/transforms-3/c5e6066e343a23cadf0e84126bc54229/transformed/appcompat-1.2.0/jars/classes.jar"
       resolved="androidx.appcompat:appcompat:1.2.0"
       folder="/Users/naheedpk/.gradle/caches/transforms-3/c5e6066e343a23cadf0e84126bc54229/transformed/appcompat-1.2.0"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="me.dm7.barcodescanner:zxing:1.9.13@aar"
-      jars="/Users/naheedpk/.gradle/caches/transforms-3/92ede0c4529208209622d85ac0556edb/transformed/jetified-zxing-1.9.13/jars/classes.jar"
-      resolved="me.dm7.barcodescanner:zxing:1.9.13"
-      folder="/Users/naheedpk/.gradle/caches/transforms-3/92ede0c4529208209622d85ac0556edb/transformed/jetified-zxing-1.9.13"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="me.dm7.barcodescanner:core:1.9.13@aar"
-      jars="/Users/naheedpk/.gradle/caches/transforms-3/9841e2daa5fa8e101cc443903acb8b0e/transformed/jetified-core-1.9.13/jars/classes.jar"
-      resolved="me.dm7.barcodescanner:core:1.9.13"
-      folder="/Users/naheedpk/.gradle/caches/transforms-3/9841e2daa5fa8e101cc443903acb8b0e/transformed/jetified-core-1.9.13"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -821,10 +769,6 @@
       symbolFile="R.txt"
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
-  <library
-      name="com.google.zxing:core:3.3.3@jar"
-      jars="/Users/naheedpk/.gradle/caches/modules-2/files-2.1/com.google.zxing/core/3.3.3/b640badcc97f18867c4dfd249ef8d20ec0204c07/core-3.3.3.jar"
-      resolved="com.google.zxing:core:3.3.3"/>
   <library
       name="androidx.constraintlayout:constraintlayout-solver:2.0.1@jar"
       jars="/Users/naheedpk/.gradle/caches/modules-2/files-2.1/androidx.constraintlayout/constraintlayout-solver/2.0.1/30988fe2d77f3fe3bf7551bb8a8b795fad7e7226/constraintlayout-solver-2.0.1.jar"
