@@ -27,6 +27,7 @@ class _LoginPageState extends State<LoginPage> {
   List<VerifyUser>? user;
   var isLoaded = false;
   var getResult = 'QR Code Result';
+  final controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -74,53 +75,97 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
           Positioned(
-            left: 110,
-            right: 110,
-            top: height * 0.70,
+            left: 20,
+            right: 20,
+            top: height * 0.55,
             child: Container(
-              height: 50,
-              decoration: BoxDecoration(
-                boxShadow: [
-                  kDefaultShadow,
-                ],
-              ),
-              child: ElevatedButton(
-                onPressed: () async {
-                  scanQRCode();
-                  // verifyRider('94/42301-5102628-1');
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      'assets/icons/login-icon.png',
-                      height: 30,
-                      width: 30,
+              width: 50,
+              height: 350,
+              // decoration: BoxDecoration(
+              //   boxShadow: [
+              //     kDefaultShadow,
+              //   ],
+              // ),
+              child: Column(
+                children: [
+                  Container(
+                    height: 60,
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        kDefaultShadow,
+                      ],
+                      color: Colors.white70,
+                      borderRadius: BorderRadius.all(Radius.circular(30),),
                     ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Text(
-                      'Login',
+                    child: TextField(
+                      controller: controller,
                       style: GoogleFonts.montserrat(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                          color: kPrimaryColor),
+                        fontSize: 19,
+                        fontWeight: FontWeight.w500
+                      ),
+                      cursorColor: kPrimaryColor,
+                      keyboardType: TextInputType.number,
+                      decoration: InputDecoration(
+                          border: InputBorder.none,
+                          focusedBorder: InputBorder.none,
+                          enabledBorder: InputBorder.none,
+                          errorBorder: InputBorder.none,
+                          disabledBorder: InputBorder.none,
+                          contentPadding: EdgeInsets.only(
+                            left: 15,
+                            bottom: 11,
+                            top: 18,
+                            right: 15,
+                          ),
+                        hintText: "Enter your phone number",
+                      ),
+                      inputFormatters: [
+                        LengthLimitingTextInputFormatter(11)
+                      ],
                     ),
-                  ],
-                ),
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.resolveWith(
-                    (states) {
-                      return Colors.white;
-                    },
                   ),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
+                  SizedBox(height: 20,),
+                  SizedBox(
+                    width: 200,
+                    height: 50,
+                    child: ElevatedButton(
+                      onPressed:  
+                        scanQRCode,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            'assets/icons/login-icon.png',
+                            height: 30,
+                            width: 30,
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Text(
+                            'Login',
+                            style: GoogleFonts.montserrat(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                                color: kPrimaryColor),
+                          ),
+                        ],
+                      ),
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.resolveWith(
+                          (states) {
+                            return Colors.white;
+                          },
+                        ),
+                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                        ),
+                      ),
                     ),
                   ),
-                ),
+                ],
               ),
             ),
           ),
@@ -129,21 +174,22 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  scanQRCode() async {
-    try {
-      
-      String qrCode = await FlutterBarcodeScanner.scanBarcode(
-          kPrimaryColorString, 'Cancel', false, ScanMode.QR);
-      setState(() {
-        if (qrCode != "-1") {
-          verifyRider(qrCode);
-        }
-      });
-      print('QRCode Result');
-      print(qrCode);
-    } on PlatformException {
-      getResult = 'Failed to scan QR Code';
+  scanQRCode() {
+    if (controller.text == "") {
+      EasyLoading.showError(
+          'Phone number cannot be left blank...',
+          duration: Duration(seconds: 3,),
+        );
+      return;
     }
+    if (controller.text.length < 11) {
+      EasyLoading.showError(
+          'Please give a proper\nPhone number...',
+          duration: Duration(seconds: 3,),
+        );
+      return;
+    }
+    verifyRider(controller.text);
   }
 
   verifyRider(String qrCode) async {

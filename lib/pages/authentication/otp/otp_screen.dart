@@ -1,7 +1,7 @@
 // ignore_for_file: sized_box_for_whitespace, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 import 'package:naheed_rider/components/constants.dart';
 import 'package:naheed_rider/components/size_config.dart';
