@@ -1,7 +1,7 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.example.naheed_rider"
-4    android:versionCode="4001"
+4    android:versionCode="1"
 5    android:versionName="1.0.0" >
 6
 7    <uses-sdk
@@ -10,47 +10,49 @@
 9        android:targetSdkVersion="31" />
 9-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml
 10
-11    <uses-permission android:name="android.permission.CAMERA" />
-11-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-65
-11-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:9:22-62
-12
-13    <uses-feature android:name="android.hardware.camera" />
-13-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:11:5-60
-13-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:11:19-57
-14
-15    <uses-permission android:name="android.permission.FLASHLIGHT" />
-15-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:13:5-69
-15-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:13:22-66
-16
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:3:1-62
+11-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:3:18-60
+12    <uses-permission android:name="android.permission.CAMERA" />
+12-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-65
+12-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:9:22-62
+13
+14    <uses-feature android:name="android.hardware.camera" />
+14-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:11:5-60
+14-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:11:19-57
+15
+16    <uses-permission android:name="android.permission.FLASHLIGHT" /> <!-- Add this -->
+16-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:13:5-69
+16-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:13:22-66
 17    <application
 18        android:name="android.app.Application"
-18-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:5:9-42
+18-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:6:9-42
 19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 19-->[androidx.core:core:1.6.0] /Users/naheedpk/.gradle/caches/transforms-3/acbce933e4b464a5224ed377a62db1f5/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
 20        android:icon="@mipmap/ic_launcher"
-20-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:6:9-43
+20-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:7:9-43
 21        android:label="naheed_rider"
-21-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:4:9-37
+21-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:5:9-37
 22        android:largeHeap="true"
 22-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:16:9-33
 23        android:theme="@style/Theme.AppCompat.NoActionBar" >
 23-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:17:9-59
 24        <activity
-24-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:7:9-27:20
+24-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:8:9-28:20
 25            android:name="com.example.naheed_rider.MainActivity"
-25-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:8:13-41
+25-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:9:13-41
 26            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-26-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:12:13-163
+26-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:13:13-163
 27            android:exported="true"
-27-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:9:13-36
+27-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:10:13-36
 28            android:hardwareAccelerated="true"
-28-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:13:13-47
+28-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:14:13-47
 29            android:launchMode="singleTop"
-29-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:10:13-43
+29-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:11:13-43
 30            android:theme="@style/LaunchTheme"
-30-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:11:13-47
+30-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:12:13-47
 31            android:windowSoftInputMode="adjustResize" >
-31-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:14:13-55
+31-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:15:13-55
 32
 33            <!--
 34                 Specifies an Android theme to apply to this Activity as soon as
@@ -59,21 +61,21 @@
 37                 to determine the Window background behind the Flutter UI.
 38            -->
 39            <meta-data
-39-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:19:13-22:17
+39-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:20:13-23:17
 40                android:name="io.flutter.embedding.android.NormalTheme"
-40-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:20:15-70
+40-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:21:15-70
 41                android:resource="@style/NormalTheme" />
-41-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:21:15-52
+41-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:22:15-52
 42
 43            <intent-filter>
-43-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:23:13-26:29
+43-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:24:13-27:29
 44                <action android:name="android.intent.action.MAIN" />
-44-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:24:17-68
-44-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:24:25-66
+44-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:25:17-68
+44-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:25:25-66
 45
 46                <category android:name="android.intent.category.LAUNCHER" />
-46-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:25:17-76
-46-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:25:27-74
+46-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:26:17-76
+46-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:26:27-74
 47            </intent-filter>
 48        </activity>
 49        <!--
@@ -81,11 +83,11 @@
 51             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
 52        -->
 53        <meta-data
-53-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:30:9-32:33
+53-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:31:9-33:33
 54            android:name="flutterEmbedding"
-54-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:31:13-44
+54-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:32:13-44
 55            android:value="2" />
-55-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:32:13-30
+55-->/Users/naheedpk/Desktop/naheed-rms/android/app/src/main/AndroidManifest.xml:33:13-30
 56
 57        <activity android:name="com.amolg.flutterbarcodescanner.BarcodeCaptureActivity" />
 57-->[:flutter_barcode_scanner] /Users/naheedpk/Desktop/naheed-rms/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:18:9-91

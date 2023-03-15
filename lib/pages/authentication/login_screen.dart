@@ -27,8 +27,13 @@ class _LoginPageState extends State<LoginPage> {
   List<VerifyUser>? user;
   var isLoaded = false;
   var getResult = 'QR Code Result';
-  final controller = TextEditingController();
+  var controller = TextEditingController();
 
+  @override
+  void initState() {
+    // TODO: implement initState
+    controller = TextEditingController(text: "03");
+  }
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -118,6 +123,7 @@ class _LoginPageState extends State<LoginPage> {
                             right: 15,
                           ),
                         hintText: "Enter your phone number",
+                        
                       ),
                       inputFormatters: [
                         LengthLimitingTextInputFormatter(11)
